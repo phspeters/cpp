@@ -1,4 +1,4 @@
-#include "sed.hpp"
+#include "Sed.hpp"
 
 sed::sed(std::string filename, std::string toSearch, std::string toReplace)
 {
