@@ -12,7 +12,7 @@ private:
 public:
     HumanB(std::string name);
     void setWeapon(Weapon& weapon);
-    void attack();
+    void attack() const;
 };
 
 #endif

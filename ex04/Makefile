@@ -1,7 +1,8 @@
 NAME = sed
 CC = c++
 CFLAGS = -std=c++98 -Wall -Werror -Wextra
-FILES = main.cpp 
+FILES = main.cpp \
+		sed.cpp
 OBJS = $(FILES:%.cpp=$(OBJ_DIR)/%.o)
 OBJ_DIR = obj
 
@@ -16,6 +17,7 @@ $(NAME): $(OBJS)
 
 clean:
 	@rm -rf $(OBJ_DIR)
+	@rm -f *.replace
 
 fclean: clean
 	@rm -rf $(NAME)

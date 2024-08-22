@@ -7,7 +7,7 @@ void HumanB::setWeapon(Weapon& weapon)
 	this->weapon = &weapon;
 }
 
-void HumanB::attack()
+void HumanB::attack() const
 {
 	if (weapon)
 	{
