@@ -7,10 +7,10 @@ bool bsp( Point const a, Point const b, Point const c, Point const point)
     Line bc(b, c);
     Line ca(c, a);
     
-    double side1 = ab.sideOfLine(point);
-    double side2 = bc.sideOfLine(point);
-    double side3 = ca.sideOfLine(point);
+    double sideAB = ab.sideOfLine(point);
+    double sideBC = bc.sideOfLine(point);
+    double sideCA = ca.sideOfLine(point);
     
-    return (side1 >= 0 && side2 >= 0 && side3 >= 0) || 
-           (side1 <= 0 && side2 <= 0 && side3 <= 0);
+    return (sideAB >= 0 && sideBC >= 0 && sideCA >= 0) || 
+           (sideAB <= 0 && sideBC <= 0 && sideCA <= 0);
 }

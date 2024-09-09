@@ -3,11 +3,11 @@
 
 int	main(void)
 {
-	Point a(1.1f, 2.2f);
-	Point b(3.3f, 4.4f);
-	Point c(5.5f, 6.6f);
+	Point a(0, 0);
+	Point b(3.0f, 0);
+	Point c(3.0f, 4.0f);
 
-	std::cout << bsp(a, b, c, Point(7.7f, 8.8f)) << std::endl;
+	std::cout << bsp(a, b, c, Point(1.7f, 1.0f)) << std::endl;
 
 	return (0);
 }
