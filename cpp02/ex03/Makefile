@@ -4,7 +4,6 @@ CFLAGS = -std=c++98 -Wall -Werror -Wextra
 FILES = main.cpp \
 		Fixed.cpp \
 		Point.cpp \
-		Line.cpp \
 		bsp.cpp
 OBJS = $(FILES:%.cpp=$(OBJ_DIR)/%.o)
 OBJ_DIR = obj

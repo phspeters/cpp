@@ -22,6 +22,9 @@ public:
 	float getX() const;
 	float getY() const;
 
+	//member functions
+	double sideOfLine(const Point a, const Point b) const;
+
 private:
 	Fixed _x;
 	Fixed _y;
