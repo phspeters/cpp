@@ -1,4 +1,4 @@
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int	main(void)
 {
@@ -54,5 +54,13 @@ int	main(void)
 	std::cout << claptrap.getName() << " has " << claptrap.getEnergyPoints() << " energy points" << std::endl;
 	std::cout << std::endl;
 
+
+	ScavTrap scavtrap("SC4V-TP");
+	std::cout << std::endl;
+	
+	ScavTrap scavtrap2(scavtrap);
+	std::cout << std::endl;
+
+	std::cout << "Destroying ClapTrap objects:" << std::endl;
 	return 0;
 }

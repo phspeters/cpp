@@ -10,8 +10,7 @@ Point::~Point() {}
 
 Point &Point::operator=(const Point &other)
 {
-	_x = other._x;
-	_y = other._y;
+	(void)other;
 	return (*this);
 }
 
