@@ -1,6 +1,9 @@
 NAME = horde
+
 CC = c++
-CFLAGS = -std=c++98 -Wall -Werror -Wextra
+CFLAGS = -std=c++98 -Wall -Werror -Wextra -I include
+
+VPATH = src
 FILES = main.cpp \
 		Zombie.cpp \
 		zombieHorde.cpp

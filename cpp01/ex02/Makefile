@@ -1,7 +1,10 @@
 NAME = brain
+
 CC = c++
 CFLAGS = -std=c++98 -Wall -Werror -Wextra
+
 FILES = main.cpp
+
 OBJS = $(FILES:%.cpp=$(OBJ_DIR)/%.o)
 OBJ_DIR = obj
 

@@ -1,8 +1,12 @@
 NAME = fixed
+
 CC = c++
-CFLAGS = -std=c++98 -Wall -Werror -Wextra
+CFLAGS = -std=c++98 -Wall -Werror -Wextra -I include
+
+VPATH = src
 FILES = main.cpp \
 		Fixed.cpp
+		
 OBJS = $(FILES:%.cpp=$(OBJ_DIR)/%.o)
 OBJ_DIR = obj
 
