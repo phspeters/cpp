@@ -8,16 +8,16 @@
 
 class sed
 {
+public:
+	sed(std::string filename, std::string toSearch, std::string toReplace);
+	~sed();
+	void replace();
+
 private:
 	std::string _filename;
 	std::string _toReplace;
 	std::string _toSearch;
 	std::ifstream _file;
-
-public:
-	sed(std::string filename, std::string toSearch, std::string toReplace);
-	~sed();
-	void replace();
 };
 
 #endif
