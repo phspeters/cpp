@@ -2,9 +2,9 @@
 
 HumanB::HumanB(std::string name) : name(name), weapon(NULL) {}
 
-void HumanB::setWeapon(Weapon& weapon)
+void HumanB::setWeapon(Weapon& newWeapon)
 {
-	this->weapon = &weapon;
+	weapon = &newWeapon;
 }
 
 void HumanB::attack() const

@@ -9,17 +9,17 @@ public:
 	Harl();
 	~Harl();
 	
-	void complain( std::string level );
+	void complain(std::string level);
 
 private:
-	typedef void (Harl::*HarlMemFn)(void);
+	typedef void (Harl::*HarlMemberFunction)(void);
 
-	int	Harl::getStartLevel( std::string level );
+	int	getStartLevel(std::string level);
 
-	void debug( void );
-	void info( void );
-	void warning( void );
-	void error( void );
+	void debug(void);
+	void info(void);
+	void warning(void);
+	void error(void);
 
 	enum Level
 	{

@@ -2,6 +2,10 @@
 # define ZOMBIE_HPP
 
 #include <iostream>
+#include <sstream>
+
+#define HORDE_NAME "Zombie"
+#define HORDE_SIZE 5
 
 class Zombie
 {
@@ -16,6 +20,6 @@ public:
 	void setName(std::string name);
 };
 
-Zombie* zombieHorde( int N, std::string name );
+Zombie* zombieHorde(int N, std::string name);
 
 #endif

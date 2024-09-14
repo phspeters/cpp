@@ -5,7 +5,7 @@ sed::sed(std::string filename, std::string toSearch, std::string toReplace)
 	_file.open(filename.c_str());
 	if (!_file.is_open())
 	{
-		std::cerr << "Error: could not open file" << std::endl;
+		std::cerr << "Error: could not input open file" << std::endl;
 		exit(1);
 	}
 
@@ -24,14 +24,14 @@ void sed::replace()
 	std::ofstream output((_filename + ".replace").c_str());
 	if (!output.is_open())
 	{
-		std::cerr << "Error: could not open file" << std::endl;
+		std::cerr << "Error: could not output open file" << std::endl;
 		exit(1);
 	}
 
 	std::string line;
 	while (std::getline(_file, line))
 	{
-		size_t pos = 0;
+		std::size_t pos = 0;
 		while ((pos = line.find(_toSearch, pos)) != std::string::npos)
 		{
 			line.erase(pos, _toSearch.length());

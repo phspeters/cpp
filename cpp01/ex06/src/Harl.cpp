@@ -4,27 +4,27 @@ Harl::Harl() {}
 
 Harl::~Harl() {}
 
-void Harl::complain( std::string level )
+void Harl::complain(std::string level)
 {
 
 	int startLevel = getStartLevel(level);
 	switch (startLevel)
 	{
 		case DEBUG:
-			Harl::debug();
+			debug();
 		case INFO:
-			Harl::info();
+			info();
 		case WARNING:
-			Harl::warning();
+			warning();
 		case ERROR:
-			Harl::error();
+			error();
 			break;
 		default:
 			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 	}
 }
 
-int	Harl::getStartLevel( std::string level )
+int	Harl::getStartLevel(std::string level)
 {
 	std::string levels[] = { "DEBUG", "INFO", "WARNING", "ERROR" };
 

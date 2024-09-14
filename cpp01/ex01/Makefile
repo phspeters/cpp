@@ -1,7 +1,8 @@
 NAME = horde
 
 CC = c++
-CFLAGS = -std=c++98 -Wall -Werror -Wextra -I include
+CFLAGS = -std=c++98 -Wall -Werror -Wextra
+INCLUDES = -I include
 
 VPATH = src
 FILES = main.cpp \
@@ -15,7 +16,7 @@ all: $(NAME)
 
 $(OBJ_DIR)/%.o: %.cpp
 	@mkdir -p $(dir $@)
-	@$(CC) $(CFLAGS) -I . -c $< -o $@ && printf "Compiling: $(notdir $<)\n"
+	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@ && printf "Compiling: $(notdir $<)\n"
 
 $(NAME): $(OBJS)
 	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)

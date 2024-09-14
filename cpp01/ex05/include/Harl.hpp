@@ -8,14 +8,14 @@ class Harl
 public:
 	Harl();
 	~Harl();
-	void complain( std::string level );
+	void complain(std::string level);
 
 private:
-	typedef void (Harl::*HarlMemFn)(void);
-	void debug( void );
-	void info( void );
-	void warning( void );
-	void error( void );
+	typedef void (Harl::*HarlMemberFunction)(void);
+	void debug(void);
+	void info(void);
+	void warning(void);
+	void error(void);
 };
 
 #endif

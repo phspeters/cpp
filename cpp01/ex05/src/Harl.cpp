@@ -10,16 +10,16 @@ Harl::~Harl()
 	std::cout << "Harl went away." << std::endl;
 }
 
-void Harl::complain( std::string level )
+void Harl::complain(std::string level)
 {
-	HarlMemFn fnPtrs[] = { &Harl::debug, &Harl::info, &Harl::warning, &Harl::error };
+	HarlMemberFunction functionPointers[] = { &Harl::debug, &Harl::info, &Harl::warning, &Harl::error };
 	std::string levels[] = { "DEBUG", "INFO", "WARNING", "ERROR" };
 
 	for (int i = 0; i < 4; i++)
 	{
 		if (levels[i] == level)
 		{
-			(this->*fnPtrs[i])();
+			(this->*functionPointers[i])();
 			return;
 		}
 	}

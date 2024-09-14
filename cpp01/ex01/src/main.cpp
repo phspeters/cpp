@@ -2,8 +2,8 @@
 
 int	main()
 {
-	int hordeSize = 5;
-	std::string name = "Zombie";
+	int hordeSize = HORDE_SIZE;
+	std::string name = HORDE_NAME;
 
 	std::cout << "Allocating Zombie horde of " << hordeSize << " zombies on the heap:" << std::endl;
 	Zombie* horde = zombieHorde(hordeSize, name);
@@ -11,7 +11,7 @@ int	main()
 
 
 	std::cout << "Announcing the horde:" << std::endl;
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < HORDE_SIZE; i++)
 		horde[i].announce();
 	std::cout << std::endl;
 
