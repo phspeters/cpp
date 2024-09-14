@@ -7,7 +7,7 @@
 /********** default constructor ***********/
 Fixed::Fixed() : _value(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	//std::cout << "Default constructor called" << std::endl;
 }
 
 /************ copy constructor ************/
@@ -15,20 +15,20 @@ Fixed::Fixed(const Fixed &other)
 {
 	*this = other;
 	
-	std::cout << "Copy constructor called" << std::endl;
+	//std::cout << "Copy constructor called" << std::endl;
 }
 
 /************ int constructor *************/
 Fixed::Fixed(const int value)
 {
-	std::cout << "Int constructor called" << std::endl;
+	//std::cout << "Int constructor called" << std::endl;
 	_value = value << _fractionalBits;
 }
 
 /*********** float constructor ************/
 Fixed::Fixed(const float value)
 {
-	std::cout << "Float constructor called" << std::endl;
+	//std::cout << "Float constructor called" << std::endl;
 	_value = roundf(value * (1 << _fractionalBits));
 }
 
@@ -39,7 +39,7 @@ Fixed::Fixed(const float value)
 /*********** default destructor ***********/
 Fixed::~Fixed()
 {
-	std::cout << "Destructor called" << std::endl;
+	//std::cout << "Destructor called" << std::endl;
 }
 
 /*******************************************
@@ -49,7 +49,7 @@ Fixed::~Fixed()
 /********** assignment operator ***********/
 Fixed &Fixed::operator=(const Fixed &other)
 {
-	std::cout << "Assignment operator called" << std::endl;
+	//std::cout << "Assignment operator called" << std::endl;
 	if (this != &other)
 		_value = other.getRawBits();
 	return (*this);
@@ -153,13 +153,13 @@ Fixed Fixed::operator--(int) // Post-decrement
 /*********** getter and setter ************/
 int Fixed::getRawBits() const
 {
-	std::cout << "getRawBits member function called" << std::endl;
+	//std::cout << "getRawBits member function called" << std::endl;
 	return (_value);
 }
 
 void Fixed::setRawBits(int const raw)
 {
-	std::cout << "setRawBits member function called" << std::endl;
+	//std::cout << "setRawBits member function called" << std::endl;
 	_value = raw;
 }
 
