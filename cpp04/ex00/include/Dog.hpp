@@ -10,7 +10,7 @@ public:
 	Dog();
 	Dog(const Dog &copy);
 
-	//assignation operator
+	//assignment operator
 	Dog &operator=(const Dog &copy);
 
 	//destructor

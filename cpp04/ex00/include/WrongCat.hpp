@@ -10,7 +10,7 @@ public:
 	WrongCat();
 	WrongCat(const WrongCat &copy);
 
-	//assignation operator
+	//assignment operator
 	WrongCat &operator=(const WrongCat &copy);
 
 	//destructor

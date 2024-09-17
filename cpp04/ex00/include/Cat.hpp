@@ -10,7 +10,7 @@ public:
 	Cat();
 	Cat(const Cat &copy);
 
-	//assignation operator
+	//assignment operator
 	Cat &operator=(const Cat &copy);
 
 	//destructor

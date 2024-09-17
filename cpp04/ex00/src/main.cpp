@@ -20,7 +20,14 @@ int	main(void)
 	std::cout << "Because the makeSound() function is virtual, the correct function is called for each object using the vtable" << std::endl;
 	std::cout << std::endl;
 
-	std::cout << "But we can use the scope resolution operator to call the makeSound() function of the Animal class" << std::endl;
+	std::cout << "We can see that the Animal and Cat objects are 8 bytes larger than the WrongAnimal and WrongCat objects, respectively, because they have a vtable pointer." << std::endl;
+	std::cout << "Size of Animal: " << sizeof(Animal) << std::endl;
+	std::cout << "Size of WrongAnimal: " << sizeof(WrongAnimal) << std::endl;
+	std::cout << "Size of Cat: " << sizeof(Cat) << std::endl;
+	std::cout << "Size of WrongCat: " << sizeof(WrongCat) << std::endl;
+	std::cout << std::endl;
+
+	std::cout << "But we can still use the scope resolution operator to call the makeSound() function of the Animal class, if we'd like" << std::endl;
 	std::cout << "The "<< cat->getType() << " goes: ";
 	cat->Animal::makeSound();
 	std::cout << "The "<< dog->getType() << " goes: ";

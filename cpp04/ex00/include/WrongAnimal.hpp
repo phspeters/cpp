@@ -10,7 +10,7 @@ public:
 	WrongAnimal();
 	WrongAnimal(const WrongAnimal &copy);
 
-	//assignation operator
+	//assignment operator
 	WrongAnimal &operator=(const WrongAnimal &copy);
 
 	//destructor

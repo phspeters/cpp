@@ -10,7 +10,7 @@ public:
 	Animal();
 	Animal(const Animal &copy);
 
-	//assignation operator
+	//assignment operator
 	Animal &operator=(const Animal &copy);
 
 	//destructor
@@ -21,7 +21,7 @@ public:
 	virtual void makeSound() const;
 
 protected:
-	std::string type;
+	std::string _type;
 };
 
 #endif
