@@ -6,25 +6,24 @@
 
 class Contact
 {
-public:
-	Contact();
-	~Contact();
-	
-	void		setContactInfo();
-	void		displayContactInfo();
+	private:
+		std::string	firstName;
+		std::string	lastName;
+		std::string	nickname;
+		std::string	phoneNumber;
+		std::string	darkestSecret;
 
-	std::string	getFirstName();
-	std::string	getLastName();
-	std::string	getNickname();
-
-private:
-	std::string	firstName;
-	std::string	lastName;
-	std::string	nickname;
-	std::string	phoneNumber;
-	std::string	darkestSecret;
+	public:
+		Contact();
+		~Contact();
+		void		setContactInfo();
+		void		displayContactInfo() const;
+		std::string	getFirstName() const;
+		std::string	getLastName() const;
+		std::string	getNickname() const;
 };
 
-std::string truncateString(const std::string& str);
+std::string	truncateString(const std::string& str);
+void 		readInput(std::istream &input, std::string& buffer);
 
 #endif

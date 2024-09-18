@@ -9,16 +9,15 @@
 
 class PhoneBook
 {
-public:
-	PhoneBook();
-	~PhoneBook();
-	
-	void	addContact();
-	void	searchContact();
-
-private:
-	Contact	contacts[8];
-	int		contactCount;
+	private:
+		Contact	contacts[8];
+		int		contactCount;
+		
+	public:
+		PhoneBook();
+		~PhoneBook();
+		void	addContact();
+		void	searchContact();
 };
 
 #endif

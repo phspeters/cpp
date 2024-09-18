@@ -7,19 +7,24 @@ Contact::~Contact() {}
 void Contact::setContactInfo()
 {
 	std::cout << "Enter first name: ";
-	std::cin >> firstName;
+	readInput(std::cin, firstName);
+
 	std::cout << "Enter last name: ";
-	std::cin >> lastName;
+	readInput(std::cin, lastName);
+
 	std::cout << "Enter nickname: ";
-	std::cin >> nickname;
+	readInput(std::cin, nickname);
+
 	std::cout << "Enter phone number: ";
-	std::cin >> phoneNumber;
+	readInput(std::cin, phoneNumber);
+
 	std::cout << "Enter darkest secret: ";
-	std::cin >> darkestSecret;
+	readInput(std::cin, darkestSecret);
+	
 	std::cout << "Contact saved\n" << std::endl;
 }
 
-void	Contact::displayContactInfo()
+void	Contact::displayContactInfo() const
 {
 	std::cout << "First name: " << firstName << std::endl;
 	std::cout << "Last name: " << lastName << std::endl;
@@ -29,17 +34,17 @@ void	Contact::displayContactInfo()
 
 }
 
-std::string	Contact::getFirstName()
+std::string	Contact::getFirstName() const
 {
 	return firstName;
 }
 
-std::string	Contact::getLastName()
+std::string	Contact::getLastName() const
 {
 	return lastName;
 }
 
-std::string	Contact::getNickname()
+std::string	Contact::getNickname() const
 {
 	return nickname;
 }
@@ -51,4 +56,14 @@ std::string truncateString(const std::string& str)
         return str.substr(0, 9) + ".";
     }
     return str;
+}
+
+void readInput(std::istream &input, std::string& buffer)
+{
+	std::getline(input, buffer);
+	while (buffer.empty())
+	{
+		std::cout << "Contact field cannot be empty. Please try again: ";
+		std::getline(input, buffer);
+	}
 }

@@ -15,7 +15,7 @@ all: $(NAME)
 
 $(OBJ_DIR)/%.o: %.cpp
 	@mkdir -p $(dir $@)
-	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@ && printf "Compiling: $(notdir $<)\n"
+	@$(CC) $(CFLAGS) ($INCLUDES) -c $< -o $@ && printf "Compiling: $(notdir $<)\n"
 
 $(NAME): $(OBJS)
 	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
