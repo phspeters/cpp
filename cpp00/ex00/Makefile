@@ -2,9 +2,7 @@ NAME = megaphone
 
 CC = c++
 CFLAGS = -std=c++98 -Wall -Werror -Wextra
-INCLUDES = -I include
 
-VPATH = src
 FILES = megaphone.cpp
 
 OBJS = $(FILES:%.cpp=$(OBJ_DIR)/%.o)
@@ -14,7 +12,7 @@ all: $(NAME)
 
 $(OBJ_DIR)/%.o: %.cpp
 	@mkdir -p $(dir $@)
-	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@ && printf "Compiling: $(notdir $<)\n"
+	@$(CC) $(CFLAGS) -c $< -o $@ && printf "Compiling: $(notdir $<)\n"
 
 $(NAME): $(OBJS)
 	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
