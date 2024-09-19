@@ -5,7 +5,12 @@ CFLAGS = -std=c++98 -Wall -Werror -Wextra -Wshadow
 INCLUDES = -I include
 
 VPATH = src
-FILES = main.cpp
+FILES = main.cpp \
+		AMateria.cpp \
+		Character.cpp \
+		Cure.cpp \
+		Ice.cpp \
+		MateriaSource.cpp
 		
 OBJS = $(FILES:%.cpp=$(OBJ_DIR)/%.o)
 OBJ_DIR = obj

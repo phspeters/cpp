@@ -6,8 +6,10 @@
 class MateriaSource : public IMateriaSource
 {
 private:
-	static int const MAX_MATERIAS = 4;
-	AMateria *_learntMaterias[MAX_MATERIAS];
+	static int const MATERIAS_INVENTORY = 4;
+	AMateria *_learntMaterias[MATERIAS_INVENTORY];
+	static int const MAX_MATERIAS = 50;
+	AMateria *_createdMaterias[MAX_MATERIAS];
 
 public:
 	MateriaSource();
@@ -17,6 +19,8 @@ public:
 
 	void learnMateria(AMateria *materia);
 	AMateria *createMateria(std::string const &type);
+
+	void manageMaterias(AMateria *materia);
 };
 
 #endif

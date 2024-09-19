@@ -1,16 +1,8 @@
 #include "Character.hpp"
 
-Character::Character() : _name("default")
-{
-	for (int i = 0; i < INVENTORY_SIZE; i++)
-		_inventory[i] = NULL;
-}
+Character::Character() : _name("default"), _inventory() {}
 
-Character::Character(std::string const &name) : _name(name)
-{
-	for (int i = 0; i < INVENTORY_SIZE; i++)
-		_inventory[i] = NULL;
-}
+Character::Character(std::string const &name) : _name(name), _inventory() {}
 
 Character::Character(Character const &copy)
 {
@@ -22,9 +14,10 @@ Character &Character::operator=(Character const &copy)
 	_name = copy._name;
 	for (int i = 0; i < INVENTORY_SIZE; i++)
 	{
-		if (_inventory[i])
-			delete _inventory[i];
-		_inventory[i] = copy._inventory[i]->clone();
+		delete _inventory[i];
+		_inventory[i] = NULL;
+		if (copy._inventory[i])
+			_inventory[i] = copy._inventory[i]->clone();
 	}
 	return *this;
 }
