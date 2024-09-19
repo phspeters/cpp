@@ -20,6 +20,7 @@ MateriaSource::~MateriaSource()
 		delete _learntMaterias[i];
 		_learntMaterias[i] = NULL;
 	}
+	
 	for (int i = 0; i < MAX_MATERIAS; i++)
 	{
 		delete _createdMaterias[i];
@@ -56,9 +57,11 @@ void MateriaSource::learnMateria(AMateria *materia)
 			_learntMaterias[i] = materia->clone();
 			break;
 		}
+
 		if (i == 3)
 			std::cerr << "MateriaSource: No more space to learn new materia" << std::endl;
 	}
+
 	manageMaterias(materia);
 }
 
