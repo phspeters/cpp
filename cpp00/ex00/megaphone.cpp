@@ -1,16 +1,11 @@
 #include <iostream>
 #include <cctype>
 
-void	print(std::string str)
-{
-	std::cout << str << std::endl;
-}
-
 int main(int argc, char *argv[])
 {
     if (argc == 1)
 	{
-		print("* LOUD AND UNBEARABLE FEEDBACK NOISE *");
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << '\n';
 		return 0;
 	}
 
@@ -21,7 +16,7 @@ int main(int argc, char *argv[])
 	for (std::string::size_type i = 0; i < input.length(); i++)
 		input[i] = std::toupper(input[i]);
 
-	print(input);
+	std::cout << input << '\n';
 
     return 0;
 }

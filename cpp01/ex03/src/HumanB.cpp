@@ -11,7 +11,7 @@ void HumanB::attack() const
 {
 	if (weapon)
 	{
-		std::cout << name << " attacks with their " << weapon->getType() << std::endl;
+		std::cout << name << " attacks with their " << weapon->getType() << '\n';
 	}
 	else
 	{

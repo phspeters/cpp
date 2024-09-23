@@ -1,6 +1,6 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(void) : ClapTrap(), ScavTrap(), FragTrap(), _name("who shall not be named")
+DiamondTrap::DiamondTrap(void) : ClapTrap(), ScavTrap(), FragTrap(), _name("nameless")
 {
 	_hitPoints = FragTrap::_hitPoints;
 	_energyPoints = ScavTrap::_energyPoints;
@@ -31,7 +31,7 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &diamondtrap)
 		_name = diamondtrap._name;
 	}
 
-	std::cout << "DiamondTrap has been assigned the attributes of " << _name << std::endl;
+	std::cout << "DiamondTrap has been assigned the attributes of " << _name << '\n';
 	
 	return *this;
 }
@@ -43,7 +43,7 @@ DiamondTrap::~DiamondTrap(void)
 
 void DiamondTrap::whoAmI(void)
 {
-	std::cout << "DiamondTrap " << getName() << " is also known as ClapTrap " << ClapTrap::getName() << std::endl;
+	std::cout << "DiamondTrap " << getName() << " is also known as ClapTrap " << ClapTrap::getName() << '\n';
 }
 
 std::string DiamondTrap::getName(void)

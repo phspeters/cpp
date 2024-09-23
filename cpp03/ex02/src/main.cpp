@@ -13,29 +13,29 @@ int	main(void)
 	firstFragTrap.setHitPoints(42);
 	firstFragTrap.setEnergyPoints(42);
 	std::cout << "Before assignment:\n";
-	std::cout << "Name: " << fourthFragTrap.getName() << "\t" << "Name: " << firstFragTrap.getName() << std::endl;
-	std::cout << "Hitpoints: " << fourthFragTrap.getHitPoints() << "\t\t\t" << "Hitpoints: " << firstFragTrap.getHitPoints() << std::endl;
-	std::cout << "Energy Points: " << fourthFragTrap.getEnergyPoints() << "\t\t" << "Energy Points: " << firstFragTrap.getEnergyPoints() << std::endl;
-	std::cout << "Attack Damage: " << fourthFragTrap.getAttackDamage() << "\t\t" << "Attack Damage: " << firstFragTrap.getAttackDamage() << std::endl;
+	std::cout << "Name: " << fourthFragTrap.getName() << "\t" << "Name: " << firstFragTrap.getName() << '\n';
+	std::cout << "Hitpoints: " << fourthFragTrap.getHitPoints() << "\t\t\t" << "Hitpoints: " << firstFragTrap.getHitPoints() << '\n';
+	std::cout << "Energy Points: " << fourthFragTrap.getEnergyPoints() << "\t\t" << "Energy Points: " << firstFragTrap.getEnergyPoints() << '\n';
+	std::cout << "Attack Damage: " << fourthFragTrap.getAttackDamage() << "\t\t" << "Attack Damage: " << firstFragTrap.getAttackDamage() << '\n';
 	std::cout << '\n';
 
 	fourthFragTrap = firstFragTrap;
 	std::cout << '\n';
 
 	std::cout << "After assignment:\n";
-	std::cout << "Name: " << fourthFragTrap.getName() << "\t\t\t" << "Name: " << firstFragTrap.getName() << std::endl;
-	std::cout << "Hitpoints: " << fourthFragTrap.getHitPoints() << "\t\t\t" << "Hitpoints: " << firstFragTrap.getHitPoints() << std::endl;
-	std::cout << "Energy Points: " << fourthFragTrap.getEnergyPoints() << "\t\t" << "Energy Points: " << firstFragTrap.getEnergyPoints() << std::endl;
-	std::cout << "Attack Damage: " << fourthFragTrap.getAttackDamage() << "\t\t" << "Attack Damage: " << firstFragTrap.getAttackDamage() << std::endl;
+	std::cout << "Name: " << fourthFragTrap.getName() << "\t\t\t" << "Name: " << firstFragTrap.getName() << '\n';
+	std::cout << "Hitpoints: " << fourthFragTrap.getHitPoints() << "\t\t\t" << "Hitpoints: " << firstFragTrap.getHitPoints() << '\n';
+	std::cout << "Energy Points: " << fourthFragTrap.getEnergyPoints() << "\t\t" << "Energy Points: " << firstFragTrap.getEnergyPoints() << '\n';
+	std::cout << "Attack Damage: " << fourthFragTrap.getAttackDamage() << "\t\t" << "Attack Damage: " << firstFragTrap.getAttackDamage() << '\n';
 	std::cout << '\n';
 
 	std::cout << "INITIAL STATE:\n";
 	FragTrap fragtrap("FR4G-TP");
 	std::cout << '\n';
-    std::cout << "Name: " << fragtrap.getName() << std::endl;
-    std::cout << "Hitpoints: " << fragtrap.getHitPoints() << std::endl;
-    std::cout << "Energy Points: " << fragtrap.getEnergyPoints() << std::endl;
-    std::cout << "Attack Damage: " << fragtrap.getAttackDamage() << std::endl;
+    std::cout << "Name: " << fragtrap.getName() << '\n';
+    std::cout << "Hitpoints: " << fragtrap.getHitPoints() << '\n';
+    std::cout << "Energy Points: " << fragtrap.getEnergyPoints() << '\n';
+    std::cout << "Attack Damage: " << fragtrap.getAttackDamage() << '\n';
 	std::cout << '\n';
 
 	fragtrap.attack("Jack");

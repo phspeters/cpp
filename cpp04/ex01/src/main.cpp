@@ -50,7 +50,7 @@ void	testingCats(void)
 	std::cout << "Pippin's ideas:\n";
 	for (int i = 0; i < 4; i++)
 	{
-		std::cout << Pippin->getBrain()->getIdea(i) << std::endl;
+		std::cout << Pippin->getBrain()->getIdea(i) << '\n';
 	}
 	std::cout << '\n';
 
@@ -61,7 +61,7 @@ void	testingCats(void)
 	std::cout << "Padme's ideas:\n";
 	for (int i = 0; i < 4; i++)
 	{
-		std::cout << Padme->getBrain()->getIdea(i) << std::endl;
+		std::cout << Padme->getBrain()->getIdea(i) << '\n';
 	}
 	std::cout << '\n';
 
@@ -75,14 +75,14 @@ void	testingCats(void)
 	std::cout << "Pippin's ideas:\n";
 	for (int i = 0; i < 4; i++)
 	{
-		std::cout << Pippin->getBrain()->getIdea(i) << std::endl;
+		std::cout << Pippin->getBrain()->getIdea(i) << '\n';
 	}
 	std::cout << '\n';
 
 	std::cout << "Padme's ideas:\n";
 	for (int i = 0; i < 4; i++)
 	{
-		std::cout << Padme->getBrain()->getIdea(i) << std::endl;
+		std::cout << Padme->getBrain()->getIdea(i) << '\n';
 	}
 	std::cout << '\n';
 	
@@ -107,7 +107,7 @@ void	testingDogs(void)
 	std::cout << "Caetano's ideas:\n";
 	for (int i = 0; i < 4; i++)
 	{
-		std::cout << Caetano.getBrain()->getIdea(i) << std::endl;
+		std::cout << Caetano.getBrain()->getIdea(i) << '\n';
 	}
 	std::cout << '\n';
 
@@ -118,7 +118,7 @@ void	testingDogs(void)
 	std::cout << "Madalena's ideas:\n";
 	for (int i = 0; i < 4; i++)
 	{
-		std::cout << Madalena.getBrain()->getIdea(i) << std::endl;
+		std::cout << Madalena.getBrain()->getIdea(i) << '\n';
 	}
 	std::cout << '\n';
 
@@ -132,14 +132,14 @@ void	testingDogs(void)
 	std::cout << "Caetano's ideas:\n";
 	for (int i = 0; i < 4; i++)
 	{
-		std::cout << Caetano.getBrain()->getIdea(i) << std::endl;
+		std::cout << Caetano.getBrain()->getIdea(i) << '\n';
 	}
 	std::cout << '\n';
 
 	std::cout << "Madalena's ideas:\n";
 	for (int i = 0; i < 4; i++)
 	{
-		std::cout << Madalena.getBrain()->getIdea(i) << std::endl;
+		std::cout << Madalena.getBrain()->getIdea(i) << '\n';
 	}
 	std::cout << '\n';
 }

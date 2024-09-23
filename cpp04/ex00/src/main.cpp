@@ -21,10 +21,10 @@ int	main(void)
 	std::cout << '\n';
 
 	std::cout << "We can see that the Animal and Cat objects are 8 bytes larger than the WrongAnimal and WrongCat objects, respectively, because they have a vtable pointer.\n";
-	std::cout << "Size of Animal: " << sizeof(Animal) << std::endl;
-	std::cout << "Size of WrongAnimal: " << sizeof(WrongAnimal) << std::endl;
-	std::cout << "Size of Cat: " << sizeof(Cat) << std::endl;
-	std::cout << "Size of WrongCat: " << sizeof(WrongCat) << std::endl;
+	std::cout << "Size of Animal: " << sizeof(Animal) << '\n';
+	std::cout << "Size of WrongAnimal: " << sizeof(WrongAnimal) << '\n';
+	std::cout << "Size of Cat: " << sizeof(Cat) << '\n';
+	std::cout << "Size of WrongCat: " << sizeof(WrongCat) << '\n';
 	std::cout << '\n';
 
 	std::cout << "But we can still use the scope resolution operator to call the makeSound() function of the Animal class, if we'd like\n";

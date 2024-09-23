@@ -1,6 +1,6 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(void) : _name("who shall not be named"), _hitPoints(10), _energyPoints(10), _attackDamage(0)
+ClapTrap::ClapTrap(void) : _name("nameless"), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
 	std::cout << "ClapTrap " << _name << " has been constructed by default!\n";
 }
@@ -27,7 +27,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other)
 		_attackDamage = other._attackDamage;
 	}
 
-	std::cout << "ClapTrap has been assigned the attributes of " << _name << std::endl;
+	std::cout << "ClapTrap has been assigned the attributes of " << _name << '\n';
 
 	return *this;
 }

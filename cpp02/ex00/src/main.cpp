@@ -16,9 +16,9 @@ int	main(void)
 	std::cout << '\n';
 
 	std::cout << "GET RAW BITS:\n";
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
+	std::cout << a.getRawBits() << '\n';
+	std::cout << b.getRawBits() << '\n';
+	std::cout << c.getRawBits() << '\n';
 	std::cout << '\n';
 
 	std::cout << "SET RAW BITS:\n";
@@ -28,9 +28,9 @@ int	main(void)
 	std::cout << '\n';
 
 	std::cout << "GET RAW BITS:\n";
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
+	std::cout << a.getRawBits() << '\n';
+	std::cout << b.getRawBits() << '\n';
+	std::cout << c.getRawBits() << '\n';
 	std::cout << '\n';
 
 	std::cout << "DESTRUCTOR:\n";

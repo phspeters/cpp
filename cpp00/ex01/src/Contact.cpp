@@ -21,16 +21,16 @@ void Contact::setContactInfo()
 	std::cout << "Enter darkest secret: ";
 	readInput(std::cin, darkestSecret);
 	
-	std::cout << "Contact saved\n" << std::endl;
+	std::cout << "Contact saved\n" << '\n';
 }
 
 void	Contact::displayContactInfo() const
 {
-	std::cout << "First name: " << firstName << std::endl;
-	std::cout << "Last name: " << lastName << std::endl;
-	std::cout << "Nickname: " << nickname << std::endl;
-	std::cout << "Phone number: " << phoneNumber << std::endl;
-	std::cout << "Darkest secret: " << darkestSecret << '\n' << std::endl;
+	std::cout << "First name: " << firstName << '\n';
+	std::cout << "Last name: " << lastName << '\n';
+	std::cout << "Nickname: " << nickname << '\n';
+	std::cout << "Phone number: " << phoneNumber << '\n';
+	std::cout << "Darkest secret: " << darkestSecret << '\n' << '\n';
 
 }
 

@@ -23,10 +23,10 @@ int	main(void)
 	std::cout << '\n';
 
 	std::cout << "PRINTING VALUES AND FIXED POINT:\n";
-	std::cout << "a is " << a << std::endl;
-	std::cout << "b is " << b << std::endl;
-	std::cout << "c is " << c << std::endl;
-	std::cout << "d is " << d << std::endl;
+	std::cout << "a is " << a << '\n';
+	std::cout << "b is " << b << '\n';
+	std::cout << "c is " << c << '\n';
+	std::cout << "d is " << d << '\n';
 	std::cout << '\n';
 
 	std::cout << "PRINTING VALUES AS INTEGER:\n";

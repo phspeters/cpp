@@ -27,9 +27,9 @@ void PhoneBook::searchContact()
 		std::cout << std::setw(10) << i << "|";
 		std::cout << std::setw(10) << truncateString(contacts[i].getFirstName()) << "|";
 		std::cout << std::setw(10) << truncateString(contacts[i].getLastName()) << "|";
-		std::cout << std::setw(10) << truncateString(contacts[i].getNickname()) << std::endl;
+		std::cout << std::setw(10) << truncateString(contacts[i].getNickname()) << '\n';
 	}
-	std::cout << "-------------------------------------------" << '\n' << std::endl;
+	std::cout << "-------------------------------------------" << '\n' << '\n';
 
 	std::cout << "Enter index of contact to be displayed: ";
 	std::string str_index;

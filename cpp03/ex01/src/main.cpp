@@ -13,29 +13,29 @@ int	main(void)
 	firstScavTrap.setHitPoints(42);
 	firstScavTrap.setEnergyPoints(42);
 	std::cout << "Before assignment:\n";
-	std::cout << "Name: " << fourthScavTrap.getName() << "\t" << "Name: " << firstScavTrap.getName() << std::endl;
-	std::cout << "Hitpoints: " << fourthScavTrap.getHitPoints() << "\t\t\t" << "Hitpoints: " << firstScavTrap.getHitPoints() << std::endl;
-	std::cout << "Energy Points: " << fourthScavTrap.getEnergyPoints() << "\t\t" << "Energy Points: " << firstScavTrap.getEnergyPoints() << std::endl;
-	std::cout << "Attack Damage: " << fourthScavTrap.getAttackDamage() << "\t\t" << "Attack Damage: " << firstScavTrap.getAttackDamage() << std::endl;
+	std::cout << "Name: " << fourthScavTrap.getName() << "\t" << "Name: " << firstScavTrap.getName() << '\n';
+	std::cout << "Hitpoints: " << fourthScavTrap.getHitPoints() << "\t\t\t" << "Hitpoints: " << firstScavTrap.getHitPoints() << '\n';
+	std::cout << "Energy Points: " << fourthScavTrap.getEnergyPoints() << "\t\t" << "Energy Points: " << firstScavTrap.getEnergyPoints() << '\n';
+	std::cout << "Attack Damage: " << fourthScavTrap.getAttackDamage() << "\t\t" << "Attack Damage: " << firstScavTrap.getAttackDamage() << '\n';
 	std::cout << '\n';
 
 	fourthScavTrap = firstScavTrap;
 	std::cout << '\n';
 
 	std::cout << "After assignment:\n";
-	std::cout << "Name: " << fourthScavTrap.getName() << "\t\t\t" << "Name: " << firstScavTrap.getName() << std::endl;
-	std::cout << "Hitpoints: " << fourthScavTrap.getHitPoints() << "\t\t\t" << "Hitpoints: " << firstScavTrap.getHitPoints() << std::endl;
-	std::cout << "Energy Points: " << fourthScavTrap.getEnergyPoints() << "\t\t" << "Energy Points: " << firstScavTrap.getEnergyPoints() << std::endl;
-	std::cout << "Attack Damage: " << fourthScavTrap.getAttackDamage() << "\t\t" << "Attack Damage: " << firstScavTrap.getAttackDamage() << std::endl;
+	std::cout << "Name: " << fourthScavTrap.getName() << "\t\t\t" << "Name: " << firstScavTrap.getName() << '\n';
+	std::cout << "Hitpoints: " << fourthScavTrap.getHitPoints() << "\t\t\t" << "Hitpoints: " << firstScavTrap.getHitPoints() << '\n';
+	std::cout << "Energy Points: " << fourthScavTrap.getEnergyPoints() << "\t\t" << "Energy Points: " << firstScavTrap.getEnergyPoints() << '\n';
+	std::cout << "Attack Damage: " << fourthScavTrap.getAttackDamage() << "\t\t" << "Attack Damage: " << firstScavTrap.getAttackDamage() << '\n';
 	std::cout << '\n';
 
 	std::cout << "INITIAL STATE:\n";
 	ScavTrap scavtrap("SC4V-TP");
 	std::cout << '\n';
-    std::cout << "Name: " << scavtrap.getName() << std::endl;
-    std::cout << "Hitpoints: " << scavtrap.getHitPoints() << std::endl;
-    std::cout << "Energy Points: " << scavtrap.getEnergyPoints() << std::endl;
-    std::cout << "Attack Damage: " << scavtrap.getAttackDamage() << std::endl;
+    std::cout << "Name: " << scavtrap.getName() << '\n';
+    std::cout << "Hitpoints: " << scavtrap.getHitPoints() << '\n';
+    std::cout << "Energy Points: " << scavtrap.getEnergyPoints() << '\n';
+    std::cout << "Attack Damage: " << scavtrap.getAttackDamage() << '\n';
 	std::cout << '\n';
 
 	scavtrap.attack("Jack");

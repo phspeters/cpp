@@ -13,29 +13,29 @@ int	main(void)
 	firstClapTrap.setHitPoints(5);
 	firstClapTrap.setEnergyPoints(4);
 	std::cout << "Before assignment:\n";
-	std::cout << "Name: " << fourthClapTrap.getName() << "\t" << "Name: " << firstClapTrap.getName() << std::endl;
-	std::cout << "Hitpoints: " << fourthClapTrap.getHitPoints() << "\t\t\t" << "Hitpoints: " << firstClapTrap.getHitPoints() << std::endl;
-	std::cout << "Energy Points: " << fourthClapTrap.getEnergyPoints() << "\t\t" << "Energy Points: " << firstClapTrap.getEnergyPoints() << std::endl;
-	std::cout << "Attack Damage: " << fourthClapTrap.getAttackDamage() << "\t\t" << "Attack Damage: " << firstClapTrap.getAttackDamage() << std::endl;
+	std::cout << "Name: " << fourthClapTrap.getName() << "\t" << "Name: " << firstClapTrap.getName() << '\n';
+	std::cout << "Hitpoints: " << fourthClapTrap.getHitPoints() << "\t\t\t" << "Hitpoints: " << firstClapTrap.getHitPoints() << '\n';
+	std::cout << "Energy Points: " << fourthClapTrap.getEnergyPoints() << "\t\t" << "Energy Points: " << firstClapTrap.getEnergyPoints() << '\n';
+	std::cout << "Attack Damage: " << fourthClapTrap.getAttackDamage() << "\t\t" << "Attack Damage: " << firstClapTrap.getAttackDamage() << '\n';
 	std::cout << '\n';
 
 	fourthClapTrap = firstClapTrap;
 	std::cout << '\n';
 
 	std::cout << "After assignment:\n";
-	std::cout << "Name: " << fourthClapTrap.getName() << "\t\t\t" << "Name: " << firstClapTrap.getName() << std::endl;
-	std::cout << "Hitpoints: " << fourthClapTrap.getHitPoints() << "\t\t\t" << "Hitpoints: " << firstClapTrap.getHitPoints() << std::endl;
-	std::cout << "Energy Points: " << fourthClapTrap.getEnergyPoints() << "\t\t" << "Energy Points: " << firstClapTrap.getEnergyPoints() << std::endl;
-	std::cout << "Attack Damage: " << fourthClapTrap.getAttackDamage() << "\t\t" << "Attack Damage: " << firstClapTrap.getAttackDamage() << std::endl;
+	std::cout << "Name: " << fourthClapTrap.getName() << "\t\t\t" << "Name: " << firstClapTrap.getName() << '\n';
+	std::cout << "Hitpoints: " << fourthClapTrap.getHitPoints() << "\t\t\t" << "Hitpoints: " << firstClapTrap.getHitPoints() << '\n';
+	std::cout << "Energy Points: " << fourthClapTrap.getEnergyPoints() << "\t\t" << "Energy Points: " << firstClapTrap.getEnergyPoints() << '\n';
+	std::cout << "Attack Damage: " << fourthClapTrap.getAttackDamage() << "\t\t" << "Attack Damage: " << firstClapTrap.getAttackDamage() << '\n';
 	std::cout << '\n';
 
 	std::cout << "INITIAL STATE:\n";
 	ClapTrap claptrap("CL4P-TP");
 	std::cout << '\n';
-    std::cout << "Name: " << claptrap.getName() << std::endl;
-    std::cout << "Hitpoints: " << claptrap.getHitPoints() << std::endl;
-    std::cout << "Energy Points: " << claptrap.getEnergyPoints() << std::endl;
-    std::cout << "Attack Damage: " << claptrap.getAttackDamage() << std::endl;
+    std::cout << "Name: " << claptrap.getName() << '\n';
+    std::cout << "Hitpoints: " << claptrap.getHitPoints() << '\n';
+    std::cout << "Energy Points: " << claptrap.getEnergyPoints() << '\n';
+    std::cout << "Attack Damage: " << claptrap.getAttackDamage() << '\n';
 	std::cout << '\n';
 
 	claptrap.attack("Jack");

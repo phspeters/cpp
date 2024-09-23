@@ -30,7 +30,7 @@ FragTrap &FragTrap::operator=(const FragTrap &fragtrap)
 		ClapTrap::operator=(fragtrap);
 	}
 
-	std::cout << "FragTrap has been assigned the attributes of " << _name << std::endl;
+	std::cout << "FragTrap has been assigned the attributes of " << _name << '\n';
 	
 	return *this;
 }

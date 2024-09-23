@@ -19,10 +19,10 @@ int	main(void)
 	bool resultR = bsp(a, b, c, r);
 	bool resultS = bsp(a, b, c, s);
 
-	std::cout << "Is the point 'p' inside the triagle abc?\n" << (resultP ? "Yes" : "No") << std::endl;
-	std::cout << "Is the point 'q' inside the triagle abc?\n" << (resultQ ? "Yes" : "No") << std::endl;
-	std::cout << "Is the point 'r' inside the triagle abc?\n" << (resultR ? "Yes" : "No") << std::endl;
-	std::cout << "Is the point 's' inside the triagle abc?\n" << (resultS ? "Yes" : "No") << std::endl;
+	std::cout << "Is the point 'p' inside the triagle abc?\n" << (resultP ? "Yes" : "No") << '\n';
+	std::cout << "Is the point 'q' inside the triagle abc?\n" << (resultQ ? "Yes" : "No") << '\n';
+	std::cout << "Is the point 'r' inside the triagle abc?\n" << (resultR ? "Yes" : "No") << '\n';
+	std::cout << "Is the point 's' inside the triagle abc?\n" << (resultS ? "Yes" : "No") << '\n';
 
 	return (0);
 }

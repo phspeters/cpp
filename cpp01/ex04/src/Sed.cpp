@@ -38,6 +38,6 @@ void sed::replace()
 			line.insert(pos, _toReplace);
 			pos += _toReplace.length();
 		}
-		output << line << std::endl;
+		output << line << '\n';
 	}
 }

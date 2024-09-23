@@ -13,29 +13,29 @@ int	main(void)
 	firstDiamondTrap.setHitPoints(42);
 	firstDiamondTrap.setEnergyPoints(42);
 	std::cout << "Before assignment:\n";
-	std::cout << "Name: " << fourthDiamondTrap.getName() << "\t" << "Name: " << firstDiamondTrap.getName() << std::endl;
-	std::cout << "Hitpoints: " << fourthDiamondTrap.getHitPoints() << "\t\t\t" << "Hitpoints: " << firstDiamondTrap.getHitPoints() << std::endl;
-	std::cout << "Energy Points: " << fourthDiamondTrap.getEnergyPoints() << "\t\t" << "Energy Points: " << firstDiamondTrap.getEnergyPoints() << std::endl;
-	std::cout << "Attack Damage: " << fourthDiamondTrap.getAttackDamage() << "\t\t" << "Attack Damage: " << firstDiamondTrap.getAttackDamage() << std::endl;
+	std::cout << "Name: " << fourthDiamondTrap.getName() << "\t" << "Name: " << firstDiamondTrap.getName() << '\n';
+	std::cout << "Hitpoints: " << fourthDiamondTrap.getHitPoints() << "\t\t\t" << "Hitpoints: " << firstDiamondTrap.getHitPoints() << '\n';
+	std::cout << "Energy Points: " << fourthDiamondTrap.getEnergyPoints() << "\t\t" << "Energy Points: " << firstDiamondTrap.getEnergyPoints() << '\n';
+	std::cout << "Attack Damage: " << fourthDiamondTrap.getAttackDamage() << "\t\t" << "Attack Damage: " << firstDiamondTrap.getAttackDamage() << '\n';
 	std::cout << '\n';
 
 	fourthDiamondTrap = firstDiamondTrap;
 	std::cout << '\n';
 
 	std::cout << "After assignment:\n";
-	std::cout << "Name: " << fourthDiamondTrap.getName() << "\t\t\t" << "Name: " << firstDiamondTrap.getName() << std::endl;
-	std::cout << "Hitpoints: " << fourthDiamondTrap.getHitPoints() << "\t\t\t" << "Hitpoints: " << firstDiamondTrap.getHitPoints() << std::endl;
-	std::cout << "Energy Points: " << fourthDiamondTrap.getEnergyPoints() << "\t\t" << "Energy Points: " << firstDiamondTrap.getEnergyPoints() << std::endl;
-	std::cout << "Attack Damage: " << fourthDiamondTrap.getAttackDamage() << "\t\t" << "Attack Damage: " << firstDiamondTrap.getAttackDamage() << std::endl;
+	std::cout << "Name: " << fourthDiamondTrap.getName() << "\t\t\t" << "Name: " << firstDiamondTrap.getName() << '\n';
+	std::cout << "Hitpoints: " << fourthDiamondTrap.getHitPoints() << "\t\t\t" << "Hitpoints: " << firstDiamondTrap.getHitPoints() << '\n';
+	std::cout << "Energy Points: " << fourthDiamondTrap.getEnergyPoints() << "\t\t" << "Energy Points: " << firstDiamondTrap.getEnergyPoints() << '\n';
+	std::cout << "Attack Damage: " << fourthDiamondTrap.getAttackDamage() << "\t\t" << "Attack Damage: " << firstDiamondTrap.getAttackDamage() << '\n';
 	std::cout << '\n';
 
 	std::cout << "INITIAL STATE:\n";
 	DiamondTrap diamondtrap("DI4M0ND-TP");
 	std::cout << '\n';
-    std::cout << "Name: " << diamondtrap.getName() << std::endl;
-    std::cout << "Hitpoints: " << diamondtrap.getHitPoints() << std::endl;
-    std::cout << "Energy Points: " << diamondtrap.getEnergyPoints() << std::endl;
-    std::cout << "Attack Damage: " << diamondtrap.getAttackDamage() << std::endl;
+    std::cout << "Name: " << diamondtrap.getName() << '\n';
+    std::cout << "Hitpoints: " << diamondtrap.getHitPoints() << '\n';
+    std::cout << "Energy Points: " << diamondtrap.getEnergyPoints() << '\n';
+    std::cout << "Attack Damage: " << diamondtrap.getAttackDamage() << '\n';
 	std::cout << '\n';
 
 	diamondtrap.whoAmI();
