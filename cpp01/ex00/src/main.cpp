@@ -2,29 +2,25 @@
 
 int	main()
 {
-	std::cout << "Allocating first zombie on the heap" << std::endl;
+	std::cout << "Allocating first zombie on the heap\n";
 	Zombie*	zombie1 = newZombie("Zombie1");
-	std::cout << "Allocating second zombie on the heap" << std::endl;
+	std::cout << "Allocating second zombie on the heap\n";
 	Zombie*	zombie2 = newZombie("Zombie2");
-	std::cout << std::endl;
+	std::cout << '\n';
 
-
-	std::cout << "First zombie announcing itself" << std::endl;
+	std::cout << "First zombie announcing itself\n";
 	zombie1->announce();
-	std::cout << "Second zombie announcing itself" << std::endl;
+	std::cout << "Second zombie announcing itself\n";
 	zombie2->announce();
-	std::cout << std::endl;
+	std::cout << '\n';
 
-
-
-	std::cout << "Allocating third zombie on the stack" << std::endl;
+	std::cout << "Allocating third zombie on the stack\n";
 	randomChump("Zombie3");
-	std::cout << std::endl;
+	std::cout << '\n';
 
-
-	std::cout << "Deleting first zombie allocated on the heap" << std::endl;
+	std::cout << "Deleting first zombie allocated on the heap\n";
 	delete zombie1;
-	std::cout << "Deleting second zombie allocated on the heap" << std::endl;
+	std::cout << "Deleting second zombie allocated on the heap\n";
 	delete zombie2;
 
 	return (0);

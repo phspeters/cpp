@@ -20,5 +20,5 @@ AMateria *Ice::clone() const
 
 void Ice::use(ICharacter &target)
 {
-	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *\n";
 }

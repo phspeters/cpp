@@ -4,12 +4,12 @@ Dog::Dog() : Animal()
 {
 	type = "Dog";
 
-	std::cout << "Dog default constructor" << std::endl;
+	std::cout << "Dog default constructor\n";
 }
 
 Dog::Dog(const Dog &copy) : Animal(copy)
 {
-	std::cout << "Dog copy constructor" << std::endl;
+	std::cout << "Dog copy constructor\n";
 }
 
 Dog &Dog::operator=(const Dog &copy)
@@ -19,17 +19,17 @@ Dog &Dog::operator=(const Dog &copy)
 		Animal::operator=(copy);
 	}
 
-	std::cout << "Dog assignment operator" << std::endl;
+	std::cout << "Dog assignment operator\n";
 
 	return (*this);
 }
 
 Dog::~Dog()
 {
-	std::cout << "Dog destructor" << std::endl;
+	std::cout << "Dog destructor\n";
 }
 
 void Dog::makeSound() const
 {
-	std::cout << "Woof woof" << std::endl;
+	std::cout << "Woof woof\n";
 }

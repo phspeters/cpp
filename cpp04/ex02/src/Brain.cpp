@@ -2,14 +2,14 @@
 
 Brain::Brain()
 {
-	std::cout << "Brain default constructor" << std::endl;
+	std::cout << "Brain default constructor\n";
 }
 
 Brain::Brain(const Brain &copy)
 {
 	*this = copy;
 
-	std::cout << "Brain copy constructor" << std::endl;
+	std::cout << "Brain copy constructor\n";
 }
 
 Brain &Brain::operator=(const Brain &copy)
@@ -22,14 +22,14 @@ Brain &Brain::operator=(const Brain &copy)
 		}
 	}
 	
-	std::cout << "Brain assignment operator" << std::endl;
+	std::cout << "Brain assignment operator\n";
 
 	return (*this);
 }
 
 Brain::~Brain()
 {
-	std::cout << "Brain destructor" << std::endl;
+	std::cout << "Brain destructor\n";
 }
 
 std::string Brain::getIdea(int index) const

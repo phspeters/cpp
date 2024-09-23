@@ -8,13 +8,13 @@ int	main()
 
 	std::cout << "The value of the string variable: " << string << std::endl;
 	std::cout << "The memory address of the string variable: " << &string << std::endl;
-	std::cout << std::endl;
+	std::cout << '\n';
 
 	std::cout << "The value of the stringPTR value: " << stringPTR << std::endl;
 	std::cout << "The memory address of the stringPTR variable: " << &stringPTR << std::endl;
-	std::cout << std::endl;
+	std::cout << '\n';
 
 	std::cout << "The value of the stringREF variable " << stringREF << std::endl;
 	std::cout << "The memory address of the stringREF variable: " << &stringREF << std::endl;
-	std::cout << std::endl;
+	std::cout << '\n';
 }

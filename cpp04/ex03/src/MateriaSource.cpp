@@ -59,7 +59,7 @@ void MateriaSource::learnMateria(AMateria *materia)
 		}
 
 		if (i == 3)
-			std::cerr << "MateriaSource: No more space to learn new materia" << std::endl;
+			std::cerr << "MateriaSource: No more space to learn new materia\n";
 	}
 
 	manageMaterias(materia);
@@ -90,7 +90,7 @@ void MateriaSource::manageMaterias(AMateria *materia)
 		}
 	}
 
-	std::cerr << "MateriaSource: No more space for new materia in this simulation" << std::endl;
-	std::cerr << "Deleting the last created materia" << std::endl;
+	std::cerr << "MateriaSource: No more space for new materia in this simulation\n";
+	std::cerr << "Deleting the last created materia\n";
 	delete materia;
 }

@@ -63,6 +63,8 @@ void readInput(std::istream &input, std::string& buffer)
 	std::getline(input, buffer);
 	while (buffer.empty())
 	{
+		if (input.eof())
+			exit(0);
 		std::cout << "Contact field cannot be empty. Please try again: ";
 		std::getline(input, buffer);
 	}

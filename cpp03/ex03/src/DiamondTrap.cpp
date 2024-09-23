@@ -6,7 +6,7 @@ DiamondTrap::DiamondTrap(void) : ClapTrap(), ScavTrap(), FragTrap(), _name("who 
 	_energyPoints = ScavTrap::_energyPoints;
 	_attackDamage = FragTrap::_attackDamage;
 
-	std::cout << "DiamondTrap " << _name << " has been constructed by default!" << std::endl;
+	std::cout << "DiamondTrap " << _name << " has been constructed by default!\n";
 }
 
 DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name), _name(name)
@@ -15,12 +15,12 @@ DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), Scav
 	_energyPoints = ScavTrap::_energyPoints;
 	_attackDamage = FragTrap::_attackDamage;
 
-	std::cout << "DiamondTrap " << _name << " has been constructed!" << std::endl;
+	std::cout << "DiamondTrap " << _name << " has been constructed!\n";
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &diamondtrap) : ClapTrap(diamondtrap._name + "_clap_name"), ScavTrap(diamondtrap), FragTrap(diamondtrap), _name(diamondtrap._name)
 {
-	std::cout << "DiamondTrap " << _name << " has been copy constructed!" << std::endl;
+	std::cout << "DiamondTrap " << _name << " has been copy constructed!\n";
 }
 
 DiamondTrap &DiamondTrap::operator=(const DiamondTrap &diamondtrap)
@@ -38,7 +38,7 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &diamondtrap)
 
 DiamondTrap::~DiamondTrap(void)
 {
-	std::cout << "DiamondTrap " << _name << " has been destroyed!" << std::endl;
+	std::cout << "DiamondTrap " << _name << " has been destroyed!\n";
 }
 
 void DiamondTrap::whoAmI(void)

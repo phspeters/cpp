@@ -10,6 +10,6 @@ int main(int argc, char **argv)
 		return (0);
 	}
 	
-	std::cerr << "Usage: ./harlFilter [DEBUG|INFO|WARNING|ERROR]" << std::endl;
+	std::cerr << "Usage: ./harlFilter [DEBUG|INFO|WARNING|ERROR]\n";
 	return (1);
 }

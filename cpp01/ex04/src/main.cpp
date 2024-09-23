@@ -4,7 +4,7 @@ int	main(int argc, char **argv)
 {
 	if (argc != 4)
 	{
-		std::cerr << "Usage: ./sed [filename] [original string] [new string] " << std::endl;
+		std::cerr << "Usage: ./sed [filename] [original string] [new string] \n";
 		return 1;
 	}
 

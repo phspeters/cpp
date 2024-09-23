@@ -8,7 +8,7 @@ int	main()
 
 	while (true)
 	{
-		std::cout << "Commands: ADD, SEARCH, EXIT" << std::endl;
+		std::cout << "Commands: ADD, SEARCH, EXIT\n";
 		std::cout << "Enter a command: " << std::flush;
 
 		std::string	command;
@@ -21,6 +21,6 @@ int	main()
 		else if (command == "SEARCH")
 			phonebook.searchContact();
 		else
-			std::cout << "Invalid command\n" << std::endl;
+			std::cout << "Invalid command\n\n";
 	}
 }

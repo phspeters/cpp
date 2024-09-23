@@ -5,20 +5,20 @@ int	main()
 	int hordeSize = HORDE_SIZE;
 	std::string name = HORDE_NAME;
 
-	std::cout << "Allocating Zombie horde of " << hordeSize << " zombies on the heap:" << std::endl;
+	std::cout << "Allocating Zombie horde of " << hordeSize << " zombies on the heap:\n";
 	Zombie* horde = zombieHorde(hordeSize, name);
-	std::cout << std::endl;
+	std::cout << '\n';
 
 
-	std::cout << "Announcing the horde:" << std::endl;
+	std::cout << "Announcing the horde:\n";
 	for (int i = 0; i < HORDE_SIZE; i++)
 		horde[i].announce();
-	std::cout << std::endl;
+	std::cout << '\n';
 
 
-	std::cout << "Deallocating Zombie horde:" << std::endl;
+	std::cout << "Deallocating Zombie horde:\n";
 	delete[] horde;
-	std::cout << std::endl;
+	std::cout << '\n';
 
 	return (0);
 }

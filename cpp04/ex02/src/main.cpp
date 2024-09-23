@@ -3,33 +3,33 @@
 
 int	main(void)
 {
-	std::cout << "CREATING ANIMAL OBJECTS ON THE STACK" << std::endl;
+	std::cout << "CREATING ANIMAL OBJECTS ON THE STACK\n";
 	//Animal animal;
 	Cat cat;
 	Dog dog;
-	std::cout << std::endl;
+	std::cout << '\n';
 
-	std::cout << "CALLING makeSound() ON ANIMAL OBJECTS" << std::endl;
+	std::cout << "CALLING makeSound() ON ANIMAL OBJECTS\n";
 	cat.makeSound();
 	dog.makeSound();
-	std::cout << std::endl;
+	std::cout << '\n';
 
-	std::cout << "CREATING ANIMAL OBJECTS ON THE HEAP" << std::endl;
+	std::cout << "CREATING ANIMAL OBJECTS ON THE HEAP\n";
 	//Animal *animal2 = new Animal();
 	Animal *cat2 = new Cat(cat);
 	Animal *dog2 = new Dog(dog);
-	std::cout << std::endl;
+	std::cout << '\n';
 
-	std::cout << "CALLING makeSound() ON ANIMAL OBJECTS" << std::endl;
+	std::cout << "CALLING makeSound() ON ANIMAL OBJECTS\n";
 	cat2->makeSound();
 	dog2->makeSound();
-	std::cout << std::endl;
+	std::cout << '\n';
 
-	std::cout << "DELETING ANIMAL OBJECTS ON THE HEAP" << std::endl;
+	std::cout << "DELETING ANIMAL OBJECTS ON THE HEAP\n";
 	delete cat2;
 	delete dog2;
-	std::cout << std::endl;
+	std::cout << '\n';
 	
-	std::cout << "DELETING ANIMAL OBJECTS ON THE STACK" << std::endl;
+	std::cout << "DELETING ANIMAL OBJECTS ON THE STACK\n";
 	return (0);
 }

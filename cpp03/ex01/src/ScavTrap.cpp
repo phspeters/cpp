@@ -6,7 +6,7 @@ ScavTrap::ScavTrap(void) : ClapTrap()
 	_energyPoints = 50;
 	_attackDamage = 20;
 
-	std::cout << "ScavTrap " << _name << " has been constructed by default!" << std::endl;
+	std::cout << "ScavTrap " << _name << " has been constructed by default!\n";
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
@@ -15,12 +15,12 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 	_energyPoints = 50;
 	_attackDamage = 20;
 
-	std::cout << "ScavTrap " << _name << " has been constructed!" << std::endl;
+	std::cout << "ScavTrap " << _name << " has been constructed!\n";
 }
 
 ScavTrap::ScavTrap(const ScavTrap &scavtrap) : ClapTrap(scavtrap)
 {
-	std::cout << "ScavTrap " << _name << " has been copy constructed!" << std::endl;
+	std::cout << "ScavTrap " << _name << " has been copy constructed!\n";
 }
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &scavtrap)
@@ -37,43 +37,43 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &scavtrap)
 
 ScavTrap::~ScavTrap(void)
 {
-	std::cout << "ScavTrap " << _name << " has been destroyed!" << std::endl;
+	std::cout << "ScavTrap " << _name << " has been destroyed!\n";
 }
 
 void ScavTrap::attack(const std::string &target)
 {
 	if (_hitPoints == 0)
 	{
-		std::cout << "ScavTrap " << _name << " is already dead and can't attack!" << std::endl;
+		std::cout << "ScavTrap " << _name << " is already dead and can't attack!\n";
 		return ;
 	}
 
 	if (_energyPoints == 0)
 	{
-		std::cout << "ScavTrap " << _name << " is out of energy points and can't attack!" << std::endl;
+		std::cout << "ScavTrap " << _name << " is out of energy points and can't attack!\n";
 		return ;
 	}
 
 	_energyPoints--;
 
-	std::cout << "ScavTrap " << _name << " attacks " << target << ", causing " << _attackDamage << " points of damage!" << std::endl;
+	std::cout << "ScavTrap " << _name << " attacks " << target << ", causing " << _attackDamage << " points of damage!\n";
 }
 
 void ScavTrap::guardGate(void)
 {
 	if (_hitPoints == 0)
 	{
-		std::cout << "ScavTrap " << _name << " is already dead and can't guard the gate!" << std::endl;
+		std::cout << "ScavTrap " << _name << " is already dead and can't guard the gate!\n";
 		return ;
 	}
 
 	if (_energyPoints == 0)
 	{
-		std::cout << "ScavTrap " << _name << " is out of energy points and can't guard the gate!" << std::endl;
+		std::cout << "ScavTrap " << _name << " is out of energy points and can't guard the gate!\n";
 		return ;
 	}
 	
 	_energyPoints--;
 
-	std::cout << "Careful! ScavTrap " << _name << " is now guarding the gate!" << std::endl;
+	std::cout << "Careful! ScavTrap " << _name << " is now guarding the gate!\n";
 }

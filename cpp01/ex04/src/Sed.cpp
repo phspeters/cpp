@@ -5,7 +5,7 @@ sed::sed(std::string filename, std::string toSearch, std::string toReplace)
 	_file.open(filename.c_str());
 	if (!_file.is_open())
 	{
-		std::cerr << "Error: could not input open file" << std::endl;
+		std::cerr << "Error: could not input open file\n";
 		exit(1);
 	}
 
@@ -24,7 +24,7 @@ void sed::replace()
 	std::ofstream output((_filename + ".replace").c_str());
 	if (!output.is_open())
 	{
-		std::cerr << "Error: could not output open file" << std::endl;
+		std::cerr << "Error: could not output open file\n";
 		exit(1);
 	}
 

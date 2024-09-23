@@ -15,6 +15,6 @@ void HumanB::attack() const
 	}
 	else
 	{
-		std::cout << name << " has no weapon to attack with!" << std::endl;
+		std::cout << name << " has no weapon to attack with!\n";
 	}
 };
