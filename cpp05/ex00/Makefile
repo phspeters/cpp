@@ -1,4 +1,4 @@
-NAME = polymorphism
+NAME = bureaucrat
 
 CC = c++
 CFLAGS = -std=c++98 -Wall -Werror -Wextra -Wshadow
