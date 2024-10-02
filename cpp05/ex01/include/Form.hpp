@@ -16,7 +16,7 @@ public:
 	Form(std::string const name, int gradeToSign, int gradeToExecute);
 	Form(Form const &other);
 
-	//Assignation operator
+	//Assignment operator
 	Form &operator=(Form const &other);
 
 	//Destructor

@@ -17,14 +17,20 @@ MateriaSource::~MateriaSource()
 {
 	for (int i = 0; i < MATERIAS_INVENTORY; i++)
 	{
-		delete _learntMaterias[i];
-		_learntMaterias[i] = NULL;
+		if (_learntMaterias[i])
+		{
+			delete _learntMaterias[i];
+			_learntMaterias[i] = NULL;
+		}
 	}
 	
 	for (int i = 0; i < MAX_MATERIAS; i++)
 	{
-		delete _createdMaterias[i];
-		_createdMaterias[i] = NULL;
+		if (_createdMaterias[i])
+		{
+			delete _createdMaterias[i];
+			_createdMaterias[i] = NULL;
+		}
 	}
 }
 

@@ -16,7 +16,7 @@ public:
 	Bureaucrat(std::string const name, int grade);
 	Bureaucrat(Bureaucrat const &other);
 
-	//Assignation operator
+	//Assignment operator
 	Bureaucrat &operator=(Bureaucrat const &other);
 
 	//Destructor

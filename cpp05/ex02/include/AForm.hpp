@@ -1,5 +1,5 @@
-#ifndef FORM_HPP
-#define FORM_HPP
+#ifndef AFORM_HPP
+#define AFORM_HPP
 
 #include <iostream>
 #include <string>
@@ -8,27 +8,28 @@
 
 class Bureaucrat;
 
-class Form
+class AForm
 {
 public:
 	//Constructors
-	Form();
-	Form(std::string const name, int gradeToSign, int gradeToExecute);
-	Form(Form const &other);
+	AForm();
+	AForm(std::string const name, int gradeToSign, int gradeToExecute, std::string const target);
+	AForm(AForm const &other);
 
-	//Assignation operator
-	Form &operator=(Form const &other);
+	//Assignment operator
+	AForm &operator=(AForm const &other);
 
 	//Destructor
-	~Form();
+	~AForm();
 
 	//Member functions
 	std::string const getName() const;
 	bool getSigned() const;
 	int getGradeToSign() const;
 	int getGradeToExecute() const;
-	void beSigned(Bureaucrat const &bureaucrat);
-	virtual void execute(Bureaucrat const &executor) const = 0;
+	std::string const getTarget() const;
+	void beSigned(Bureaucrat const &signee);
+	void beExecuted(Bureaucrat const &executor) const;
 
 	//Exceptions
 	class GradeTooHighException : public std::exception
@@ -41,15 +42,23 @@ public:
 	public:
 		virtual const char *what() const throw();
 	};
+	class FormNotSignedException : public std::exception
+	{
+	public:
+		virtual const char *what() const throw();
+	};
+	
+protected:
+	virtual void execute() const = 0;
 
 private:
 	std::string const _name;
 	bool _signed;
 	int const _gradeToSign;
 	int const _gradeToExecute;
+	std::string const _target;
 };
 
-std::ostream &operator<<(std::ostream &out, Form const &form);
-void testForm(std::string const name, int gradeToSign, int gradeToExecute);
+std::ostream &operator<<(std::ostream &out, AForm const &form);
 
 #endif

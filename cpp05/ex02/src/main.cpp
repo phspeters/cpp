@@ -1,41 +1,27 @@
-#include "Form.hpp"
+#include "Bureaucrat.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int	main(void)
 {
-	std::cout << "--> TESTING FORM DEFAULT CONSTRUCTOR\n";
-	Form defaultForm;
-	std::cout << defaultForm << '\n';
-	std::cout << '\n';
+	Bureaucrat	bureaucrat("Arthur Dent", 42);
+	ShrubberyCreationForm	shrubberyCreationForm("home");
+	RobotomyRequestForm		robotomyRequestForm("Marvin");
+	PresidentialPardonForm	presidentialPardonForm("Ford Prefect");
 
-	std::cout << "--> TESTING FORM PARAMETERIZED CONSTRUCTOR\n";
-	testForm("A24", 1, 1);
-	testForm("B64", 150, 150);
-	testForm("C42", 0, 99);
-	testForm("D69", 99, 0);
-	testForm("E2", 200, 100);
-	testForm("F420", 99, 200);
-	std::cout << '\n';
+	std::cout << bureaucrat << std::endl;
+	std::cout << shrubberyCreationForm << std::endl;
+	std::cout << robotomyRequestForm << std::endl;
+	std::cout << presidentialPardonForm << std::endl;
 
-	std::cout << "--> TESTING FORM COPY CONSTRUCTOR\n";
-	Form a("A24", 1, 1);
-	Form b(a);
-	std::cout << "...printing 'a'" << '\n';
-	std::cout << a << '\n';
-	std::cout << "...printing 'b'" << '\n';
-	std::cout << b << '\n';
-	std::cout << '\n';
+	bureaucrat.signForm(shrubberyCreationForm);
+	bureaucrat.signForm(robotomyRequestForm);
+	bureaucrat.signForm(presidentialPardonForm);
 
-	std::cout << "--> TESTING FORM SIGNING\n";
-	Bureaucrat bureaucrat("Ananias", 2);
-	std::cout << bureaucrat << '\n';
-	std::cout << "... Ananias is signing form\n";
-	bureaucrat.signForm(a);
-	std::cout << a << '\n';
-	std::cout << "... incrementing Ananias grade\n";
-	bureaucrat.incrementGrade();
-	std::cout << bureaucrat << '\n';
-	std::cout << "... Ananias is signing form again\n";
-	bureaucrat.signForm(a);
-	std::cout << a << '\n';
-	std::cout << '\n';
+	bureaucrat.executeForm(shrubberyCreationForm);
+	bureaucrat.executeForm(robotomyRequestForm);
+	bureaucrat.executeForm(presidentialPardonForm);
+
+	return (0);
 }
