@@ -51,6 +51,12 @@ int	main(void)
 	highLevelBureaucrat.signForm(presidentialPardonForm);
 	std::cout << '\n';
 
+	std::cout << "FORMS STATUS\n";
+	std::cout << shrubberyCreationForm << '\n';
+	std::cout << robotomyRequestForm << '\n';
+	std::cout << presidentialPardonForm << '\n';
+	std::cout << '\n';
+
 	std::cout << "LOW LEVEL BUREAUCRAT ATTEMPTS TO EXECUTE FORMS\n";
 	lowLevelBureaucrat.executeForm(shrubberyCreationForm);
 	lowLevelBureaucrat.executeForm(robotomyRequestForm);
@@ -63,6 +69,6 @@ int	main(void)
 	highLevelBureaucrat.executeForm(presidentialPardonForm);
 	std::cout << '\n';
 
-	std::cout << "CALLING DESTRUCTORS\n";
+	std::cout << "CALLING DESTRUCTORS...\n";
 	return (0);
 }
