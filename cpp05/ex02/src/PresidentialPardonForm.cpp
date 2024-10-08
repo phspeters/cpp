@@ -25,7 +25,7 @@ PresidentialPardonForm::~PresidentialPardonForm()
 {
 }
 
-void PresidentialPardonForm::execute() const
+void PresidentialPardonForm::beExecuted() const
 {
 	std::cout << getTarget() << " has been pardoned by Zafod Beeblebrox.\n";
 }

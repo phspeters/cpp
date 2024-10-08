@@ -19,7 +19,7 @@ public:
 	~ShrubberyCreationForm();
 
 	//Member functions
-	void execute() const;
+	void beExecuted() const;
 };
 
 #endif

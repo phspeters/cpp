@@ -25,7 +25,7 @@ RobotomyRequestForm::~RobotomyRequestForm()
 {
 }
 
-void RobotomyRequestForm::execute() const
+void RobotomyRequestForm::beExecuted() const
 {
 	std::cout << "Wzzzzt... VRRRRRRRRRRR... ZZZZZZZZZZZT... BRRRRRRR... Vrrrr\n";
 	if (rand() % 2)

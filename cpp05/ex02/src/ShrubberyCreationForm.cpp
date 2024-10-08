@@ -25,7 +25,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 {
 }
 
-void ShrubberyCreationForm::execute() const
+void ShrubberyCreationForm::beExecuted() const
 {
 	std::ofstream file((getTarget() + "_shrubbery").c_str());
 	if (file.is_open())

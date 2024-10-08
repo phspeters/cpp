@@ -18,7 +18,7 @@ public:
 	~PresidentialPardonForm();
 
 	//Member functions
-	void execute() const;
+	void beExecuted() const;
 };
 
 #endif

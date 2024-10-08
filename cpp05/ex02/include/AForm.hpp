@@ -29,7 +29,7 @@ public:
 	int getGradeToExecute() const;
 	std::string const getTarget() const;
 	void beSigned(Bureaucrat const &signee);
-	void beExecuted(Bureaucrat const &executor) const;
+	void execute(Bureaucrat const &executor) const;
 
 	//Exceptions
 	class GradeTooHighException : public std::exception
@@ -49,7 +49,7 @@ public:
 	};
 	
 protected:
-	virtual void execute() const = 0;
+	virtual void beExecuted() const = 0;
 
 private:
 	std::string const _name;
