@@ -6,7 +6,9 @@ INCLUDES = -I include
 
 VPATH = src
 FILES = main.cpp \
-		ScalarConverter.cpp
+		ScalarConverter.cpp \
+		DefineTypes.cpp \
+		ConvertTypes.cpp
 		
 OBJS = $(FILES:%.cpp=$(OBJ_DIR)/%.o)
 OBJ_DIR = obj

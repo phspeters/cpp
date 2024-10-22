@@ -21,8 +21,16 @@ ScalarConverter::~ScalarConverter()
 
 void ScalarConverter::convert(std::string input)
 {
-	//detect type of input
-	//then use static_cast to convert to other types
-	//print the conversion
-
+	if (isChar(input))
+		convertChar(input);
+	else if (isInt(input))
+		convertInt(input);
+	else if (isFloat(input))
+		convertFloat(input);
+	else if (isDouble(input))
+		convertDouble(input);
+	else if (isPseudo(input))
+		convertPseudo(input);
+	else
+		std::cout << "Unknown type\n";
 }

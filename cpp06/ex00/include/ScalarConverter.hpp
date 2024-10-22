@@ -2,6 +2,9 @@
 #define SCALARCONVERTER_HPP
 
 #include <iostream>
+#include <sstream>
+#include "DefineTypes.hpp"
+#include "ConvertTypes.hpp"
 
 class ScalarConverter
 {
