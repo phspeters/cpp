@@ -1,36 +1,52 @@
 #include "ScalarConverter.hpp"
 
-ScalarConverter::ScalarConverter()
-{
+ScalarConverter::ScalarConverter() {
 }
 
-ScalarConverter::ScalarConverter(const ScalarConverter &obj)
-{
+ScalarConverter::ScalarConverter(const ScalarConverter &obj) {
+
 	*this = obj;
 }
 
-ScalarConverter &ScalarConverter::operator=(const ScalarConverter &obj)
-{
+ScalarConverter &ScalarConverter::operator=(const ScalarConverter &obj) {
+
 	(void)obj;
 	return (*this);
 }
 
-ScalarConverter::~ScalarConverter()
-{
+ScalarConverter::~ScalarConverter() {
 }
 
-void ScalarConverter::convert(std::string input)
-{
-	if (isChar(input))
-		convertChar(input);
-	else if (isInt(input))
-		convertInt(input);
-	else if (isFloat(input))
-		convertFloat(input);
-	else if (isDouble(input))
-		convertDouble(input);
-	else if (isPseudo(input))
-		convertPseudo(input);
-	else
-		std::cout << "Unknown type\n";
+void ScalarConverter::convert(std::string input) {
+	double	*literal = new double;
+
+	if (isChar(input)) {
+		std::cout << "Value is a char\n";
+		*literal = input[0];
+	}
+	else if (isInt(input)) {
+		std::cout << "Value is an int\n";
+		*literal = std::atoi(input.c_str());
+	}
+	else if (isFloat(input)){
+		std::cout << "Value is a float\n";
+		*literal = std::atof(input.c_str());
+	}
+	else if (isDouble(input)) {
+		std::cout << "Value is a double\n";
+		*literal = std::strtod(input.c_str(), NULL);
+	}
+	else {
+		literal = NULL;
+		std::cout << "Error: Unknown value type\n";
+	}
+
+	if (literal) {
+		safeCastChar(*literal);
+		safeCastInt(*literal);
+		safeCastFloat(*literal);
+		safeCastDouble(*literal);
+	}
+
+	delete literal;
 }

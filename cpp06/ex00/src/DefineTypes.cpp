@@ -1,12 +1,12 @@
 #include "DefineTypes.hpp"
 
-bool	isChar(std::string str)
-{
+bool	isChar(std::string str) {
+
 	return (str.length() == 1 && isprint(str[0]) && !isdigit(str[0]));
 }
 
-bool	isInt(std::string str)
-{
+bool	isInt(std::string str) {
+
 	std::istringstream iss(str);
 	int i;
 
@@ -17,37 +17,32 @@ bool	isInt(std::string str)
 	return (true);
 }
 
-bool	isFloat(std::string str)
-{
-	std::istringstream iss(str);
-	float f;
+bool	isFloat(std::string str) {
 
-	iss >> f;
-	if (iss.fail() || iss.eof())
-		return (false);
+	char* end;
+    errno = 0;
+    double f = strtod(str.c_str(), &end);
 
-	std::string suffix;
-	iss >> suffix;
-	if (suffix != "f" && !iss.eof())
-		return (false);
-	
-	return (true);
+    if (f > std::numeric_limits<float>::max()
+		|| f < -std::numeric_limits<float>::max()
+		|| end == str.c_str()
+		|| *end != 'f'
+		|| *(end + 1) != '\0') {
+        return false;
+    }
+
+    return true;
 }
 
-bool	isDouble(std::string str)
-{
-	std::istringstream iss(str);
-	double d;
-
-	iss >> d;
-	if (iss.fail() || !iss.eof())
-		return (false);
+bool	isDouble(std::string str) {
 	
-	return (true);
-}
+	char* end;
+    errno = 0;
+    strtod(str.c_str(), &end);
 
-bool	isPseudo(std::string str)
-{
-	return (str == "nan" || str == "+inf" || str == "-inf"
-		|| str == "+inff" || str == "-inff");
+    if (errno == ERANGE || end == str.c_str() || *end != '\0') {
+        return false;
+    }
+
+    return true;
 }

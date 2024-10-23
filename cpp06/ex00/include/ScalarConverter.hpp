@@ -4,10 +4,10 @@
 #include <iostream>
 #include <sstream>
 #include "DefineTypes.hpp"
-#include "ConvertTypes.hpp"
+#include "CastTypes.hpp"
 
-class ScalarConverter
-{
+class ScalarConverter {
+
 private:
 	ScalarConverter();
 	ScalarConverter(const ScalarConverter &obj);
