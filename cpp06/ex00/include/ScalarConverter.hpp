@@ -1,8 +1,6 @@
 #ifndef SCALARCONVERTER_HPP
 #define SCALARCONVERTER_HPP
 
-#include <iostream>
-#include <sstream>
 #include "DefineTypes.hpp"
 #include "CastTypes.hpp"
 

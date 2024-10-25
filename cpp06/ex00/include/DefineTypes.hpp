@@ -4,7 +4,6 @@
 #include <sstream>
 #include <cerrno>
 #include <cstdlib>
-#include <cfloat>
 #include <limits>
 
 bool	isChar(std::string str);

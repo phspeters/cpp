@@ -2,9 +2,6 @@
 #define CASTTYPES_HPP
 
 #include <iostream>
-#include <climits>
-#include <cfloat>
-#include <cstdlib>
 #include <cmath>
 #include <limits>
 
