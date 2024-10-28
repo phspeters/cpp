@@ -1,7 +1,6 @@
 #include "ClapTrap.hpp"
 
-int	main(void)
-{
+int	main() {
 	std::cout << "TESTING CONSTRUCTORS:\n";
 	ClapTrap firstClapTrap("First");
 	ClapTrap secondClapTrap("Second");
@@ -32,10 +31,10 @@ int	main(void)
 	std::cout << "INITIAL STATE:\n";
 	ClapTrap claptrap("CL4P-TP");
 	std::cout << '\n';
-    std::cout << "Name: " << claptrap.getName() << '\n';
-    std::cout << "Hitpoints: " << claptrap.getHitPoints() << '\n';
-    std::cout << "Energy Points: " << claptrap.getEnergyPoints() << '\n';
-    std::cout << "Attack Damage: " << claptrap.getAttackDamage() << '\n';
+	std::cout << "Name: " << claptrap.getName() << '\n';
+	std::cout << "Hitpoints: " << claptrap.getHitPoints() << '\n';
+	std::cout << "Energy Points: " << claptrap.getEnergyPoints() << '\n';
+	std::cout << "Attack Damage: " << claptrap.getAttackDamage() << '\n';
 	std::cout << '\n';
 
 	claptrap.attack("Jack");

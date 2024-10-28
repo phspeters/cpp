@@ -2,7 +2,6 @@
 
 template<typename T>
 int easyfind(T& container, int value) {
-
 	typename T::iterator it = std::find(container.begin(), container.end(), value);
 
 	if (it == container.end()) {
@@ -13,15 +12,12 @@ int easyfind(T& container, int value) {
 }
 
 template<typename T>
-void	testEasyFind(T& container, int value)
-{
-	try
-	{
+void	testEasyFind(T& container, int value) {
+	try {
 		int index = easyfind(container, value);
 		std::cout << "Found at index: " << index << "\n";
 	}
-	catch (std::exception &e)
-	{
+	catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
 	}
 }

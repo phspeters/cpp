@@ -16,9 +16,9 @@ int	main() {
 
 	std::cout << "\nIf we convert this number to hex, we get:\n";
 	std::stringstream ss;
-    ss << std::hex << serialized;
-    std::string hexStr = ss.str();
-    std::cout << "Serialized struct in hex: " << hexStr << "\n";
+	ss << std::hex << serialized;
+	std::string hexStr = ss.str();
+	std::cout << "Serialized struct in hex: " << hexStr << "\n";
 	std::cout << "We can see this is the address of the struct, so the serialize worked.\n";
 
 	std::cout << "\nNow let's deserialize the struct:\n";
@@ -32,9 +32,9 @@ int	main() {
 	serialized = Serializer::serialize(&data);
 	std::cout << "Serialized struct: " << serialized << "\n";
 	ss.str("");
-    ss << std::hex << serialized;
-    hexStr = ss.str();
-    std::cout << "Serialized struct in hex: " << hexStr << std::endl;
+	ss << std::hex << serialized;
+	hexStr = ss.str();
+	std::cout << "Serialized struct in hex: " << hexStr << std::endl;
 
 	deserialized = Serializer::deserialize(serialized);
 	std::cout << "Deserialized is a pointer to: " << deserialized << "\n";

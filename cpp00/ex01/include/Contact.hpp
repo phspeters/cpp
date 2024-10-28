@@ -1,12 +1,11 @@
 #ifndef CONTACT_HPP
-#define CONTACT_HPP
+# define CONTACT_HPP
 
-#include <iostream>
-#include <string>
-#include <cstdlib>	
+# include <iostream>
+# include <string>
+# include <cstdlib>	
 
-class Contact
-{
+class Contact {
 	private:
 		std::string	firstName;
 		std::string	lastName;

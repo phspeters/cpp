@@ -1,5 +1,5 @@
 #ifndef AFORM_HPP
-#define AFORM_HPP
+# define AFORM_HPP
 
 #include <iostream>
 #include <string>
@@ -8,8 +8,7 @@
 
 class Bureaucrat;
 
-class AForm
-{
+class AForm {
 public:
 	//Constructors
 	AForm();

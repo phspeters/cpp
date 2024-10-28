@@ -1,10 +1,9 @@
 #ifndef FRAGTRAP_HPP
-#define FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
-#include "ScavTrap.hpp"
+# include "ScavTrap.hpp"
 
-class FragTrap : virtual public ClapTrap
-{
+class FragTrap : virtual public ClapTrap {
 public:
 	//constructors
 	FragTrap(void);

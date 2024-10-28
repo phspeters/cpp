@@ -1,7 +1,6 @@
 #include "Zombie.hpp"
 
-int	main()
-{
+int	main() {
 	std::cout << "Allocating first zombie on the heap\n";
 	Zombie*	zombie1 = newZombie("Zombie1");
 	std::cout << "Allocating second zombie on the heap\n";

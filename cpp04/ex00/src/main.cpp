@@ -2,8 +2,7 @@
 #include "Dog.hpp"
 #include "WrongCat.hpp"
 
-int	main(void)
-{
+int	main() {
 	std::cout << "Instantiating Animal, Cat, and Dog objects as Animal *\n";
 	const Animal *animal = new Animal();
 	Animal *cat = new Cat();

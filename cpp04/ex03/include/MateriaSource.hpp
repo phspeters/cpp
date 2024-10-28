@@ -3,8 +3,7 @@
 
 # include "IMateriaSource.hpp"
 
-class MateriaSource : public IMateriaSource
-{
+class MateriaSource : public IMateriaSource {
 private:
 	static int const MATERIAS_INVENTORY = 4;
 	AMateria *_learntMaterias[MATERIAS_INVENTORY];

@@ -8,19 +8,16 @@ Point::Point(const float x, const float y) : _x(x), _y(y) {}
 
 Point::~Point() {}
 
-Point &Point::operator=(const Point &other)
-{
+Point &Point::operator=(const Point &other) {
 	(void)other;
 	return (*this);
 }
 
-float Point::getX() const
-{
+float Point::getX() const {
 	return (_x.toFloat());
 }
 
-float Point::getY() const
-{
+float Point::getY() const {
 	return (_y.toFloat());
 }
 
@@ -40,8 +37,7 @@ float Point::getY() const
  * @return signed double. If the result is positive, the point is on the "left side" of the line, if it
  * is negative, the point is on the "right side" of the line.
  */
-double Point::sideOfLine(const Point a, const Point b) const
-{
+double Point::sideOfLine(const Point a, const Point b) const {
 	float ax = a.getX();
 	float ay = a.getY();
 	float bx = b.getX();

@@ -1,10 +1,10 @@
 #ifndef DEFINE_TYPES_HPP
-#define DEFINE_TYPES_HPP
+# define DEFINE_TYPES_HPP
 
-#include <sstream>
-#include <cerrno>
-#include <cstdlib>
-#include <limits>
+# include <sstream>
+# include <cerrno>
+# include <cstdlib>
+# include <limits>
 
 bool	isChar(std::string str);
 bool	isInt(std::string str);

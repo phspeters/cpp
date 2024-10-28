@@ -1,7 +1,6 @@
 #include "DiamondTrap.hpp"
 
-int	main(void)
-{
+int	main() {
 	std::cout << "TESTING CONSTRUCTORS:\n";
 	DiamondTrap firstDiamondTrap("First");
 	DiamondTrap secondDiamondTrap("Second");
@@ -32,10 +31,10 @@ int	main(void)
 	std::cout << "INITIAL STATE:\n";
 	DiamondTrap diamondtrap("DI4M0ND-TP");
 	std::cout << '\n';
-    std::cout << "Name: " << diamondtrap.getName() << '\n';
-    std::cout << "Hitpoints: " << diamondtrap.getHitPoints() << '\n';
-    std::cout << "Energy Points: " << diamondtrap.getEnergyPoints() << '\n';
-    std::cout << "Attack Damage: " << diamondtrap.getAttackDamage() << '\n';
+	std::cout << "Name: " << diamondtrap.getName() << '\n';
+	std::cout << "Hitpoints: " << diamondtrap.getHitPoints() << '\n';
+	std::cout << "Energy Points: " << diamondtrap.getEnergyPoints() << '\n';
+	std::cout << "Attack Damage: " << diamondtrap.getAttackDamage() << '\n';
 	std::cout << '\n';
 
 	diamondtrap.whoAmI();

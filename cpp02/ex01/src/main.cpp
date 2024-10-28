@@ -1,7 +1,6 @@
 #include "Fixed.hpp"
 
-int	main(void)
-{
+int	main() {
 	std::cout << "DEFAULT CONSTRUCTOR:\n";
 	Fixed a;
 	std::cout << '\n';

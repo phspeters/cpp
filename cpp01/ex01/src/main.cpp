@@ -1,7 +1,6 @@
 #include "Zombie.hpp"
 
-int	main()
-{
+int	main() {
 	int hordeSize = HORDE_SIZE;
 	std::string name = HORDE_NAME;
 
@@ -11,8 +10,9 @@ int	main()
 
 
 	std::cout << "Announcing the horde:\n";
-	for (int i = 0; i < HORDE_SIZE; i++)
+	for (int i = 0; i < HORDE_SIZE; i++) {
 		horde[i].announce();
+	}		
 	std::cout << '\n';
 
 

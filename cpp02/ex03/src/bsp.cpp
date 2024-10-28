@@ -17,12 +17,11 @@
  * @return true If the point is inside the triangle
  * @return false If the point is outside the triangle
  */
-bool bsp(Point const a, Point const b, Point const c, Point const point)
-{
-    double sideAB = point.sideOfLine(a,b);
-    double sideBC = point.sideOfLine(b,c);
-    double sideCA = point.sideOfLine(c,a);
-    
-    return (sideAB >= 0 && sideBC >= 0 && sideCA >= 0) || 
-           (sideAB <= 0 && sideBC <= 0 && sideCA <= 0);
+bool bsp(Point const a, Point const b, Point const c, Point const point) {
+	double sideAB = point.sideOfLine(a,b);
+	double sideBC = point.sideOfLine(b,c);
+	double sideCA = point.sideOfLine(c,a);
+	
+	return (sideAB >= 0 && sideBC >= 0 && sideCA >= 0) || 
+		   (sideAB <= 0 && sideBC <= 0 && sideCA <= 0);
 }

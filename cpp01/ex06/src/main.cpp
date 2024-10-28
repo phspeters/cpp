@@ -1,11 +1,9 @@
 #include "Harl.hpp"
 
-int main(int argc, char **argv)
-{
+int main(int argc, char **argv) {
 	Harl harl;
 	
-	if (argc == 2)
-	{
+	if (argc == 2) {
 		harl.complain(argv[1]);
 		return (0);
 	}

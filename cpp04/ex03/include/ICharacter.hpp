@@ -5,8 +5,7 @@
 
 class AMateria;
 
-class ICharacter
-{
+class ICharacter {
 public:
 	virtual ~ICharacter() {};
 

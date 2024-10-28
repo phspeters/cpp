@@ -1,41 +1,38 @@
 #include "Cat.hpp"
 #include "Dog.hpp"
 
-#define SIZE 4
+# define SIZE 4
 
-void	testingAnimals(void)
-{
+void	testingAnimals() {
 	Animal *animals[SIZE];
 
 	std::cout << "TESTING CATS AND DOGS AS ANIMAL POINTERS FOR LEAKS\n";
 
 	std::cout << "CREATING ANIMALS\n";
-	for (int i = 0; i < SIZE; i++)
-	{
-		if (i % 2 == 0)
+	for (int i = 0; i < SIZE; i++) {
+		if (i % 2 == 0) {
 			animals[i] = new Dog();
-		else
+		}
+		else {
 			animals[i] = new Cat();
+		}
 	}
 	std::cout << '\n';
 
 	std::cout << "MAKING SOUNDS\n";
-	for (int i = 0; i < SIZE; i++)
-	{
+	for (int i = 0; i < SIZE; i++) {
 		animals[i]->makeSound();
 	}
 	std::cout << '\n';
 
 	std::cout << "DELETING ANIMALS\n";
-	for (int i = 0; i < SIZE; i++)
-	{
+	for (int i = 0; i < SIZE; i++) {
 		delete animals[i];
 	}
 	std::cout << '\n';
 }
 
-void	testingCats(void)
-{
+void	testingCats() {
 	std::cout << "TESTING DEEP COPY OF CATS ALLOCATED ON THE HEAP\n";
 
 	std::cout << "Creating a Cat named Pippin\n";
@@ -48,8 +45,7 @@ void	testingCats(void)
 	Pippin->getBrain()->setIdea(3, "Purr");
 
 	std::cout << "Pippin's ideas:\n";
-	for (int i = 0; i < 4; i++)
-	{
+	for (int i = 0; i < 4; i++) {
 		std::cout << Pippin->getBrain()->getIdea(i) << '\n';
 	}
 	std::cout << '\n';
@@ -59,8 +55,7 @@ void	testingCats(void)
 	std::cout << '\n';
 
 	std::cout << "Padme's ideas:\n";
-	for (int i = 0; i < 4; i++)
-	{
+	for (int i = 0; i < 4; i++) {
 		std::cout << Padme->getBrain()->getIdea(i) << '\n';
 	}
 	std::cout << '\n';
@@ -73,15 +68,13 @@ void	testingCats(void)
 	std::cout << '\n';
 
 	std::cout << "Pippin's ideas:\n";
-	for (int i = 0; i < 4; i++)
-	{
+	for (int i = 0; i < 4; i++) {
 		std::cout << Pippin->getBrain()->getIdea(i) << '\n';
 	}
 	std::cout << '\n';
 
 	std::cout << "Padme's ideas:\n";
-	for (int i = 0; i < 4; i++)
-	{
+	for (int i = 0; i < 4; i++) {
 		std::cout << Padme->getBrain()->getIdea(i) << '\n';
 	}
 	std::cout << '\n';
@@ -91,8 +84,7 @@ void	testingCats(void)
 	std::cout << '\n';
 }
 
-void	testingDogs(void)
-{
+void	testingDogs() {
 	std::cout << "TESTING DEEP COPY OF DOGS ALLOCATED ON THE STACK\n";
 
 	std::cout << "Creating a Dog named Caetano\n";
@@ -105,8 +97,7 @@ void	testingDogs(void)
 	Caetano.getBrain()->setIdea(3, "Play");
 
 	std::cout << "Caetano's ideas:\n";
-	for (int i = 0; i < 4; i++)
-	{
+	for (int i = 0; i < 4; i++) {
 		std::cout << Caetano.getBrain()->getIdea(i) << '\n';
 	}
 	std::cout << '\n';
@@ -116,8 +107,7 @@ void	testingDogs(void)
 	std::cout << '\n';
 
 	std::cout << "Madalena's ideas:\n";
-	for (int i = 0; i < 4; i++)
-	{
+	for (int i = 0; i < 4; i++) {
 		std::cout << Madalena.getBrain()->getIdea(i) << '\n';
 	}
 	std::cout << '\n';
@@ -130,22 +120,19 @@ void	testingDogs(void)
 	std::cout << '\n';
 
 	std::cout << "Caetano's ideas:\n";
-	for (int i = 0; i < 4; i++)
-	{
+	for (int i = 0; i < 4; i++) {
 		std::cout << Caetano.getBrain()->getIdea(i) << '\n';
 	}
 	std::cout << '\n';
 
 	std::cout << "Madalena's ideas:\n";
-	for (int i = 0; i < 4; i++)
-	{
+	for (int i = 0; i < 4; i++) {
 		std::cout << Madalena.getBrain()->getIdea(i) << '\n';
 	}
 	std::cout << '\n';
 }
 
-int	main(void)
-{
+int	main() {
 	testingAnimals();
 	testingCats();
 	testingDogs();

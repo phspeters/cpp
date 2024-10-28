@@ -3,8 +3,7 @@
 
 # include "AMateria.hpp"
 
-class Cure : public AMateria
-{
+class Cure : public AMateria {
 public:
 	Cure();
 	Cure(Cure const &copy);

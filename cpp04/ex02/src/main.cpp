@@ -1,8 +1,7 @@
 #include "Cat.hpp"
 #include "Dog.hpp"
 
-int	main(void)
-{
+int	main() {
 	std::cout << "CREATING ANIMAL OBJECTS ON THE STACK\n";
 	//Animal animal;
 	Cat cat;

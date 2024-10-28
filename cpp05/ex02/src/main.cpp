@@ -3,8 +3,7 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
-int	main(void)
-{
+int	main() {
 	std::cout << "CREATING BUREAUCRATS...\n";
 	Bureaucrat 	highLevelBureaucrat("Prostetnic Vogon Jeltz", 1);
 	Bureaucrat 	lowLevelBureaucrat("Kwaltz", 150);

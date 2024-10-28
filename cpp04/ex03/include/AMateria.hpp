@@ -6,8 +6,7 @@
 
 class ICharacter;
 
-class AMateria
-{
+class AMateria {
 public:
 	AMateria();
 	AMateria(std::string const &type);

@@ -1,6 +1,6 @@
 #include "iter.hpp"
 
-int	main(void) {
+int	main() {
 	int intArray[] = {1, 2, 3, 4, 5};
 	float floatArray[] = {1.1, 2.2, 3.3, 4.4, 5.5};
 	std::string stringArray[] = {"one", "two", "three", "four", "five"};

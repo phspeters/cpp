@@ -1,7 +1,6 @@
 #include "Fixed.hpp"
 
-int	main(void)
-{
+int	main() {
 	std::cout << std::boolalpha;
 
 	Fixed a;

@@ -1,7 +1,6 @@
 #include "Bureaucrat.hpp"
 
-int	main(void)
-{
+int	main() {
 	std::cout << "--> TESTING BUREAUCRAT DEFAULT CONSTRUCTOR\n";
 	Bureaucrat defaultBureaucrat;
 	std::cout << defaultBureaucrat << '\n';

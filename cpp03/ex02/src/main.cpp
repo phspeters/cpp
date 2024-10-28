@@ -1,7 +1,6 @@
 #include "FragTrap.hpp"
 
-int	main(void)
-{
+int	main() {
 	std::cout << "TESTING CONSTRUCTORS:\n";
 	FragTrap firstFragTrap("First");
 	FragTrap secondFragTrap("Second");
@@ -32,10 +31,10 @@ int	main(void)
 	std::cout << "INITIAL STATE:\n";
 	FragTrap fragtrap("FR4G-TP");
 	std::cout << '\n';
-    std::cout << "Name: " << fragtrap.getName() << '\n';
-    std::cout << "Hitpoints: " << fragtrap.getHitPoints() << '\n';
-    std::cout << "Energy Points: " << fragtrap.getEnergyPoints() << '\n';
-    std::cout << "Attack Damage: " << fragtrap.getAttackDamage() << '\n';
+	std::cout << "Name: " << fragtrap.getName() << '\n';
+	std::cout << "Hitpoints: " << fragtrap.getHitPoints() << '\n';
+	std::cout << "Energy Points: " << fragtrap.getEnergyPoints() << '\n';
+	std::cout << "Attack Damage: " << fragtrap.getAttackDamage() << '\n';
 	std::cout << '\n';
 
 	fragtrap.attack("Jack");

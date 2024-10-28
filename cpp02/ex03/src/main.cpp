@@ -1,8 +1,7 @@
 #include "Fixed.hpp"
 #include "Point.hpp"
 
-int	main(void)
-{
+int	main() {
 	//triangle abc sides
 	Point a(0, 0);
 	Point b(3.0f, 0);

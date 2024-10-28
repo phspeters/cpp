@@ -1,15 +1,14 @@
 #ifndef AFORM_HPP
-#define AFORM_HPP
+# define AFORM_HPP
 
-#include <iostream>
-#include <string>
-#include <exception>
-#include "Bureaucrat.hpp"
+# include <iostream>
+# include <string>
+# include <exception>
+# include "Bureaucrat.hpp"
 
 class Bureaucrat;
 
-class AForm
-{
+class AForm {
 public:
 	//Constructors
 	AForm();
@@ -32,18 +31,15 @@ public:
 	void execute(Bureaucrat const &executor) const;
 
 	//Exceptions
-	class GradeTooHighException : public std::exception
-	{
+	class GradeTooHighException : public std::exception {
 	public:
 		virtual const char *what() const throw();
 	};
-	class GradeTooLowException : public std::exception
-	{
+	class GradeTooLowException : public std::exception {
 	public:
 		virtual const char *what() const throw();
 	};
-	class FormNotSignedException : public std::exception
-	{
+	class FormNotSignedException : public std::exception {
 	public:
 		virtual const char *what() const throw();
 	};

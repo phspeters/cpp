@@ -1,11 +1,10 @@
 #ifndef ROBOTOMYREQUESTFORM_HPP
-#define ROBOTOMYREQUESTFORM_HPP
+# define ROBOTOMYREQUESTFORM_HPP
 
-#include "AForm.hpp"
-#include <cstdlib>
+# include "AForm.hpp"
+# include <cstdlib>
 
-class RobotomyRequestForm : public AForm
-{
+class RobotomyRequestForm : public AForm {
 public:
 	//Constructors
 	RobotomyRequestForm();

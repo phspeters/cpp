@@ -39,8 +39,7 @@ int	main() {
 
 	std::cout << "\nTest 3 - Identifying random classes:\n\n";
 	Base *base;
-	for (int i = 0; i < 6; i++)
-	{
+	for (int i = 0; i < 6; i++) {
 		base = generate();
 		identify(base);
 		identify(*base);

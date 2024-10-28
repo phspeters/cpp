@@ -1,7 +1,6 @@
 #include <iostream>
 
-int	main()
-{
+int	main() {
 	std::string string = "HI THIS IS BRAIN";
 	std::string *stringPTR = &string;
 	std::string &stringREF = string;
@@ -10,11 +9,12 @@ int	main()
 	std::cout << "The memory address of the string variable: " << &string << '\n';
 	std::cout << '\n';
 
-	std::cout << "The value of the stringPTR value: " << stringPTR << '\n';
+	std::cout << "The value of the stringPTR variable: " << stringPTR << '\n';
 	std::cout << "The memory address of the stringPTR variable: " << &stringPTR << '\n';
+	std::cout << "And if we dereference the pointer we get: " << *stringPTR << '\n';
 	std::cout << '\n';
 
-	std::cout << "The value of the stringREF variable " << stringREF << '\n';
+	std::cout << "The value of the stringREF variable: " << stringREF << '\n';
 	std::cout << "The memory address of the stringREF variable: " << &stringREF << '\n';
 	std::cout << '\n';
 }

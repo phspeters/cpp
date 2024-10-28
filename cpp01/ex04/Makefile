@@ -1,4 +1,4 @@
-NAME = sed
+NAME = ex04
 
 CC = c++
 CFLAGS = -std=c++98 -Wall -Werror -Wextra

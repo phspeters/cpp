@@ -1,10 +1,9 @@
 #ifndef WRONGANIMAL_HPP
-#define WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
-#include <iostream>
+# include <iostream>
 
-class WrongAnimal
-{
+class WrongAnimal {
 public:
 	//constructors
 	WrongAnimal();
@@ -21,7 +20,7 @@ public:
 	void makeSound() const;
 
 protected:
-	std::string type;
+	std::string _type;
 };
 
 #endif

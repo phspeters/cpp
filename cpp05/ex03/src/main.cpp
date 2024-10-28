@@ -4,8 +4,7 @@
 #include "PresidentialPardonForm.hpp"
 #include "Intern.hpp"
 
-int	main(void)
-{
+int	main() {
 	std::cout << "CREATING INTERN...\n";
 	Intern randomIntern;
 	std::cout << '\n';
@@ -20,20 +19,21 @@ int	main(void)
 	std::cout << '\n';
 
 	std::cout << "FORMS STATUS\n";
-	for (int i = 0; i < 5; i++)
-	{
-		if (forms[i])
+	for (int i = 0; i < 5; i++)	{
+		if (forms[i]) {
 			std::cout << *forms[i] << '\n';
-		else
+		}
+		else {
 			std::cout << "Form not found\n";
+		}
 	}
 	std::cout << '\n';
 
 	std::cout << "DELETING FORMS...\n";
-	for (int i = 0; i < 5; i++)
-	{
-		if (forms[i])
+	for (int i = 0; i < 5; i++)	{
+		if (forms[i]) {
 			delete forms[i];
+		}
 	}
 
 	std::cout << "CALLING DESTRUCTORS...\n";

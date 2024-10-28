@@ -1,31 +1,24 @@
 #include "Harl.hpp"
 
-int main()
-{
+int main() {
+	std::cout << "Constructor:\n";
 	Harl harl;
-	
-	std::cout << '\n';
-	std::cout << "Harl started to complain:\n\n";
 
-	std::cout << "DEBUG LEVEL:\n";
+	std::cout << "\nDEBUG LEVEL:\n";
 	harl.complain("DEBUG");
-	std::cout << '\n';
 
-	std::cout << "INFO LEVEL:\n";
+	std::cout << "\nINFO LEVEL:\n";
 	harl.complain("INFO");
-	std::cout << '\n';
 
-	std::cout << "WARNING LEVEL:\n";
+	std::cout << "\nWARNING LEVEL:\n";
 	harl.complain("WARNING");
-	std::cout << '\n';
 
-	std::cout << "ERROR LEVEL:\n";
+	std::cout << "\nERROR LEVEL:\n";
 	harl.complain("ERROR");
-	std::cout << '\n';
 
-	std::cout << "INVALID LEVEL:\n";
+	std::cout << "\nINVALID LEVEL:\n";
 	harl.complain("INVALID");
-	std::cout << '\n';
 
+	std::cout << "\nDestructor:\n";
 	return 0;
 }

@@ -1,9 +1,9 @@
 #ifndef CASTTYPES_HPP
-#define CASTTYPES_HPP
+# define CASTTYPES_HPP
 
-#include <iostream>
-#include <cmath>
-#include <limits>
+# include <iostream>
+# include <cmath>
+# include <limits>
 
 void	safeCastChar(double input);
 void	safeCastInt(double input);

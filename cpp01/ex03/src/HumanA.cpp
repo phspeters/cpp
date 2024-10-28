@@ -1,8 +1,7 @@
 #include "HumanA.hpp"
 
-HumanA::HumanA(std::string name, Weapon& weapon) : name(name), weapon(weapon) {}
+HumanA::HumanA(std::string name, Weapon& weapon) : _name(name), _weapon(weapon) {}
 
-void HumanA::attack() const
-{
-     std::cout << name << " attacks with their " << weapon.getType() << '\n';
+void HumanA::attack() const {
+	std::cout << _name << " attacks with " << _weapon.getType() << '\n';
 }

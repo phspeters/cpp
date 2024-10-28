@@ -1,11 +1,10 @@
 #ifndef FIXED_HPP
-#define FIXED_HPP
+# define FIXED_HPP
 
-#include <iostream>
-#include <cmath>
+# include <iostream>
+# include <cmath>
 
-class Fixed
-{
+class Fixed {
 public:
 	//constructors
 	Fixed();
@@ -20,24 +19,24 @@ public:
 	Fixed &operator=(const Fixed &other);
 
 	//comparison operators
-    bool operator==(const Fixed &other) const;
-    bool operator!=(const Fixed &other) const;
-    bool operator>(const Fixed &other) const;
-    bool operator<(const Fixed &other) const;
-    bool operator>=(const Fixed &other) const;
-    bool operator<=(const Fixed &other) const;
+	bool operator==(const Fixed &other) const;
+	bool operator!=(const Fixed &other) const;
+	bool operator>(const Fixed &other) const;
+	bool operator<(const Fixed &other) const;
+	bool operator>=(const Fixed &other) const;
+	bool operator<=(const Fixed &other) const;
 
 	//arithmetic operators
-    Fixed operator+(const Fixed &other) const;
-    Fixed operator-(const Fixed &other) const;
-    Fixed operator*(const Fixed &other) const;
-    Fixed operator/(const Fixed &other) const;
+	Fixed operator+(const Fixed &other) const;
+	Fixed operator-(const Fixed &other) const;
+	Fixed operator*(const Fixed &other) const;
+	Fixed operator/(const Fixed &other) const;
 
 	//increment and decrement operators
-    Fixed &operator++();    // Pre-increment
-    Fixed &operator--();    // Pre-decrement
-    Fixed operator++(int);  // Post-increment
-    Fixed operator--(int);  // Post-decrement
+	Fixed &operator++();	// Pre-increment
+	Fixed &operator--();	// Pre-decrement
+	Fixed operator++(int);  // Post-increment
+	Fixed operator--(int);  // Post-decrement
 
 	//getter and setter
 	int getRawBits() const;

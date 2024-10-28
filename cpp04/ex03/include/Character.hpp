@@ -3,8 +3,7 @@
 
 # include "ICharacter.hpp"
 
-class Character : public ICharacter
-{
+class Character : public ICharacter {
 public:
 	Character();
 	Character(std::string const &name);

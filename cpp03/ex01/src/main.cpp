@@ -1,7 +1,6 @@
 #include "ScavTrap.hpp"
 
-int	main(void)
-{
+int	main() {
 	std::cout << "TESTING CONSTRUCTORS:\n";
 	ScavTrap firstScavTrap("First");
 	ScavTrap secondScavTrap("Second");
@@ -32,10 +31,10 @@ int	main(void)
 	std::cout << "INITIAL STATE:\n";
 	ScavTrap scavtrap("SC4V-TP");
 	std::cout << '\n';
-    std::cout << "Name: " << scavtrap.getName() << '\n';
-    std::cout << "Hitpoints: " << scavtrap.getHitPoints() << '\n';
-    std::cout << "Energy Points: " << scavtrap.getEnergyPoints() << '\n';
-    std::cout << "Attack Damage: " << scavtrap.getAttackDamage() << '\n';
+	std::cout << "Name: " << scavtrap.getName() << '\n';
+	std::cout << "Hitpoints: " << scavtrap.getHitPoints() << '\n';
+	std::cout << "Energy Points: " << scavtrap.getEnergyPoints() << '\n';
+	std::cout << "Attack Damage: " << scavtrap.getAttackDamage() << '\n';
 	std::cout << '\n';
 
 	scavtrap.attack("Jack");

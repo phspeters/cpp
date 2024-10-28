@@ -1,67 +1,67 @@
 #include "Functions.hpp"
 
 Base	*generate(void) {
-
 	static bool	seeded = false;
-	if (!seeded)
-	{
+	if (!seeded) {
 		srand(time(NULL));
 		seeded = true;
 	}
 
 	int		random = rand() % 3;
-	switch (random)
-	{
+	switch (random) {
 	case 0:
-		std::cout << "A class generated" << std::endl;
+		std::cout << "A class generated\n";
 		return (new A);
 		break;
 	case 1:
-		std::cout << "B class generated" << std::endl;
+		std::cout << "B class generated\n";
 		return (new B);
 		break;
 	case 2:
-		std::cout << "C class generated" << std::endl;
+		std::cout << "C class generated\n";
 		return (new C);
 		break;
 	default:
-		std::cerr << "Error: generate failed" << std::endl;
+		std::cerr << "Error: generate failed\n";
 		return (NULL);
 		break;
 	}
 }
 
 void	identify(Base* p) {
-
 	std::cout << "Identifying class by pointer: ";
-	if (dynamic_cast<A*>(p))
-		std::cout << "is type: A" << std::endl;
-	else if (dynamic_cast<B*>(p))
-		std::cout << "is type: B" << std::endl;
-	else if (dynamic_cast<C*>(p))
-		std::cout << "is type: C" << std::endl;
-	else
-		std::cout << "Unknown class" << std::endl;
+	if (dynamic_cast<A*>(p)) {
+		std::cout << "is type: A\n";
+	}
+	else if (dynamic_cast<B*>(p)) {
+		std::cout << "is type: B\n";
+	}
+	else if (dynamic_cast<C*>(p)) {
+		std::cout << "is type: C\n";
+	}
+	else {
+		std::cout << "Unknown class\n";
+	}
 }
 
 void identify(Base &p) {
 
 	std::cout << "Identifying class by reference: ";
-    try {
+	try {
 		(void)dynamic_cast<A&>(p);
-		std::cout << "is type: A" << std::endl;
+		std::cout << "is type: A\n";
 		return;
-    } catch (std::exception&) {}
+	} catch (std::exception&) {}
 
-    try {
+	try {
 		(void)dynamic_cast<B&>(p);
-		std::cout << "is type: B" << std::endl;
+		std::cout << "is type: B\n";
 		return;
-    } catch (std::exception&) {}
+	} catch (std::exception&) {}
 
-    try {
+	try {
 		(void)dynamic_cast<C&>(p);
-		std::cout << "is type: C" << std::endl;
+		std::cout << "is type: C\n";
 		return;
-    } catch (std::exception&) {}
+	} catch (std::exception&) {}
 }

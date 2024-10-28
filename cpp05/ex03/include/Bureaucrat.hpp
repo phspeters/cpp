@@ -1,15 +1,14 @@
 #ifndef	BUREAUCRAT_HPP
-#define BUREAUCRAT_HPP
+# define BUREAUCRAT_HPP
 
-#include <iostream>
-#include <string>
-#include <exception>
-#include "AForm.hpp"
+# include <iostream>
+# include <string>
+# include <exception>
+# include "AForm.hpp"
 
 class AForm;
 
-class Bureaucrat
-{
+class Bureaucrat {
 public:
 	//Constructors
 	Bureaucrat();
@@ -34,12 +33,12 @@ public:
 	class GradeTooHighException : public std::exception
 	{
 	public:
-		virtual const char *what() const throw();
+		virtual const char *what() const ;
 	};
 	class GradeTooLowException : public std::exception
 	{
 	public:
-		virtual const char *what() const throw();
+		virtual const char *what() const ;
 	};
 
 private:

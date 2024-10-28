@@ -1,10 +1,9 @@
 #ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+# define ANIMAL_HPP
 
-#include <iostream>
+# include <iostream>
 
-class Animal
-{
+class Animal {
 public:
 	//constructors
 	Animal();
@@ -21,7 +20,7 @@ public:
 	virtual void makeSound() const;
 
 protected:
-	std::string type;
+	std::string _type;
 };
 
 #endif

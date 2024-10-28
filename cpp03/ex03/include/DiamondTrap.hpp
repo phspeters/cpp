@@ -1,10 +1,9 @@
 #ifndef DIAMONDTRAP_HPP
-#define DIAMONDTRAP_HPP
+# define DIAMONDTRAP_HPP
 
-#include "FragTrap.hpp"
+# include "FragTrap.hpp"
 
-class DiamondTrap : public ScavTrap, public FragTrap
-{
+class DiamondTrap : public ScavTrap, public FragTrap {
 public:
 	//constructors
 	DiamondTrap();

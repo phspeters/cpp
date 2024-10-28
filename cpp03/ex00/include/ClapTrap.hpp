@@ -1,11 +1,10 @@
 #ifndef CLAPTRAP_HPP
-#define CLAPTRAP_HPP
+# define CLAPTRAP_HPP
 
-#include <iostream>
-#include <string>
+# include <iostream>
+# include <string>
 
-class ClapTrap
-{
+class ClapTrap {
 public:
 	//constructors
 	ClapTrap(void);

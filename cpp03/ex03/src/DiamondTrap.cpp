@@ -1,7 +1,6 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(void) : ClapTrap(), ScavTrap(), FragTrap(), _name("nameless")
-{
+DiamondTrap::DiamondTrap(void) : ClapTrap(), ScavTrap(), FragTrap(), _name("nameless") {
 	_hitPoints = FragTrap::_hitPoints;
 	_energyPoints = ScavTrap::_energyPoints;
 	_attackDamage = FragTrap::_attackDamage;
@@ -9,8 +8,7 @@ DiamondTrap::DiamondTrap(void) : ClapTrap(), ScavTrap(), FragTrap(), _name("name
 	std::cout << "DiamondTrap " << _name << " has been constructed by default!\n";
 }
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name), _name(name)
-{
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name), _name(name) {
 	_hitPoints = FragTrap::_hitPoints;
 	_energyPoints = ScavTrap::_energyPoints;
 	_attackDamage = FragTrap::_attackDamage;
@@ -18,35 +16,35 @@ DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), Scav
 	std::cout << "DiamondTrap " << _name << " has been constructed!\n";
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap &diamondtrap) : ClapTrap(diamondtrap._name + "_clap_name"), ScavTrap(diamondtrap), FragTrap(diamondtrap), _name(diamondtrap._name)
-{
+DiamondTrap::DiamondTrap(const DiamondTrap &diamondtrap) : ClapTrap(diamondtrap._name + "_clap_name"), ScavTrap(diamondtrap), FragTrap(diamondtrap), _name(diamondtrap._name) {
 	std::cout << "DiamondTrap " << _name << " has been copy constructed!\n";
 }
 
-DiamondTrap &DiamondTrap::operator=(const DiamondTrap &diamondtrap)
-{
-	if (this != &diamondtrap)
-	{
-		ClapTrap::operator=(diamondtrap);
-		_name = diamondtrap._name;
-	}
+DiamondTrap &DiamondTrap::operator=(const DiamondTrap &diamondtrap) {
+	std::string oldName = _name;
 
-	std::cout << "DiamondTrap has been assigned the attributes of " << _name << '\n';
+	if (this != &diamondtrap) {
+		ClapTrap::operator=(diamondtrap);
+	}
+	
+	if (oldName != "") {
+		std::cout << "DiamondTrap "<< oldName << " has been assigned the attributes of " << _name << '\n';
+	}
+	else {
+		std::cout << "DiamondTrap has been assigned the attributes of " << _name << '\n';
+	}
 	
 	return *this;
 }
 
-DiamondTrap::~DiamondTrap(void)
-{
+DiamondTrap::~DiamondTrap(void) {
 	std::cout << "DiamondTrap " << _name << " has been destroyed!\n";
 }
 
-void DiamondTrap::whoAmI(void)
-{
+void DiamondTrap::whoAmI(void) {
 	std::cout << "DiamondTrap " << getName() << " is also known as ClapTrap " << ClapTrap::getName() << '\n';
 }
 
-std::string DiamondTrap::getName(void)
-{
+std::string DiamondTrap::getName(void) {
 	return _name;
 }

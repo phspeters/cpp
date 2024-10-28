@@ -1,7 +1,6 @@
 #include "Form.hpp"
 
-int	main(void)
-{
+int	main() {
 	std::cout << "--> TESTING FORM DEFAULT CONSTRUCTOR\n";
 	Form defaultForm;
 	std::cout << defaultForm << '\n';
