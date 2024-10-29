@@ -8,17 +8,14 @@ int	main() {
 	Zombie* horde = zombieHorde(hordeSize, name);
 	std::cout << '\n';
 
-
-	std::cout << "Announcing the horde:\n";
-	for (int i = 0; i < HORDE_SIZE; i++) {
+	std::cout << "Horde is announcing itself:\n";
+	for (int i = 0; i < hordeSize; i++) {
 		horde[i].announce();
-	}		
+	}
 	std::cout << '\n';
-
 
 	std::cout << "Deallocating Zombie horde:\n";
 	delete[] horde;
-	std::cout << '\n';
 
 	return (0);
 }

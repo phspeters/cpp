@@ -32,14 +32,14 @@ int	main(int, char **) {
 	try {
 		numbers[-2] = 0;
 	}
-	catch (const std::exception &e)	{
+	catch (const std::exception &e) {
 		std::cerr << e.what() << '\n';
 	}
 
 	try	{
 		numbers[MAX_VAL] = 0;
 	}
-	catch (const std::exception &e)	{
+	catch (const std::exception &e) {
 		std::cerr << e.what() << '\n';
 	}
 

@@ -17,6 +17,10 @@ int	main() {
 	randomChump("Zombie3");
 	std::cout << '\n';
 
+	std::cout << "Allocating fourth zombie on the stack\n";
+	randomChump("Zombie4");
+	std::cout << '\n';
+
 	std::cout << "Deleting first zombie allocated on the heap\n";
 	delete zombie1;
 	std::cout << "Deleting second zombie allocated on the heap\n";

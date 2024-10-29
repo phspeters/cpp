@@ -24,7 +24,7 @@ AForm::AForm(AForm const &other)
 		_target(other._target) {}
 
 AForm &AForm::operator=(AForm const &other) {
-	if (this != &other)	{
+	if (this != &other) {
 		_signed = other._signed;
 	}
 

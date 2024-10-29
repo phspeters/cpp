@@ -37,7 +37,7 @@ void Bureaucrat::incrementGrade() {
 		}
 		_grade--;
 	}
-	catch (const std::exception &exception)	{
+	catch (const std::exception &exception) {
 		std::cerr << "Can't increment bureaucrat " << this->getName() << "'s grade: " << exception.what() << '\n';
 		return ;
 	}
@@ -50,7 +50,7 @@ void Bureaucrat::decrementGrade() {
 		}
 		_grade++;
 	}
-	catch (const std::exception &exception)	{
+	catch (const std::exception &exception) {
 		std::cerr << "Can't decrement bureaucrat " << this->getName() << "'s grade: " << exception.what() << '\n';
 		return ;
 	}
@@ -76,7 +76,7 @@ void testBureaucrat(std::string const name, int grade) {
 		std::cout << " successfully constructed with grade ";
 		std::cout << bureaucrat.getGrade() << '\n';
 	}
-	catch (const std::exception &exception)	{
+	catch (const std::exception &exception) {
 		std::cerr << "Can't create bureaucrat with grade ";
 		std::cerr << grade << ": " << exception.what() << '\n';
 		return ;

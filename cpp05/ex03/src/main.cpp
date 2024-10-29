@@ -19,7 +19,7 @@ int	main() {
 	std::cout << '\n';
 
 	std::cout << "FORMS STATUS\n";
-	for (int i = 0; i < 5; i++)	{
+	for (int i = 0; i < 5; i++) {
 		if (forms[i]) {
 			std::cout << *forms[i] << '\n';
 		}
@@ -30,7 +30,7 @@ int	main() {
 	std::cout << '\n';
 
 	std::cout << "DELETING FORMS...\n";
-	for (int i = 0; i < 5; i++)	{
+	for (int i = 0; i < 5; i++) {
 		if (forms[i]) {
 			delete forms[i];
 		}

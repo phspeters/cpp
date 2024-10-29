@@ -6,7 +6,7 @@ Harl::~Harl() {}
 
 void Harl::complain(std::string level) {
 	int startLevel = getStartLevel(level);
-	switch (startLevel)	{
+	switch (startLevel) {
 		case DEBUG:
 			debug();
 		case INFO:
