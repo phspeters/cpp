@@ -29,7 +29,7 @@ Array<T>& Array<T>::operator=(const Array<T>& src) {
 			_array[i] = src._array[i];
 		}
 	}
-	return *this;
+	return (*this);
 }
 
 template <typename T>
@@ -38,5 +38,5 @@ T &Array<T>::operator[](unsigned int i) {
 		throw std::out_of_range("Index out of range");
 	}
 	
-	return _array[i];
+	return (_array[i]);
 }

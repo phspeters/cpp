@@ -34,7 +34,7 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &scavtrap) {
 		std::cout << "ScavTrap has been assigned the attributes of " << _name << '\n';
 	}
 	
-	return *this;
+	return (*this);
 }
 
 ScavTrap::~ScavTrap(void) {

@@ -31,7 +31,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other) {
 		std::cout << "ClapTrap has been assigned the attributes of " << _name << '\n';
 	}
 
-	return *this;
+	return (*this);
 }
 
 ClapTrap::~ClapTrap(void) {
@@ -87,19 +87,19 @@ void ClapTrap::beRepaired(unsigned int amount) {
 }
 
 std::string ClapTrap::getName(void) const {
-	return _name;
+	return (_name);
 }
 
 unsigned int ClapTrap::getHitPoints(void) const {
-	return _hitPoints;
+	return (_hitPoints);
 }
 
 unsigned int ClapTrap::getEnergyPoints(void) const {
-	return _energyPoints;
+	return (_energyPoints);
 }
 
 unsigned int ClapTrap::getAttackDamage(void) const {
-	return _attackDamage;
+	return (_attackDamage);
 }
 
 void ClapTrap::setHitPoints(unsigned int hitPoints) {

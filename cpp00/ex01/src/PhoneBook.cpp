@@ -12,7 +12,7 @@ void PhoneBook::addContact() {
 void PhoneBook::searchContact() {
 	if (contactCount == 0) {
 		std::cout << "Phonebook is empty\n\n";
-		return;
+		return ;
 	}
 
 	std::cout << "Saved contacts:\n";
@@ -34,7 +34,7 @@ void PhoneBook::searchContact() {
 	int index = std::atoi(str_index.c_str());
 	if ((str_index != "0"  && index <= 0) || index >= displayCount) {
 		std::cout << "Invalid index\n\n";
-		return;
+		return ;
 	}
 	contacts[index].displayContactInfo();
 }

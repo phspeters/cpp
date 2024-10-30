@@ -9,7 +9,7 @@ Cure &Cure::operator=(Cure const &copy) {
 		AMateria::operator=(copy);
 	}
 	
-	return *this;
+	return (*this);
 }
 
 Cure::~Cure() {}

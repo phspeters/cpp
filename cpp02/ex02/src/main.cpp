@@ -7,7 +7,6 @@ int	main() {
 	Fixed b(5.05f);
 	Fixed const c(10);
 	Fixed d(b);
-	std::cout << '\n';
 
 	std::cout << "INITIAL STATE:\n";
 	std::cout << "'a' is " << a << '\n';
@@ -16,13 +15,10 @@ int	main() {
 	std::cout << "'d' is " << d << '\n';
 	std::cout << '\n';
 
-	std::cout << "ASSIGNMENT OPERATORS:\n";
-	std::cout << "d = c\n";
-	d = c;
+	std::cout << "COMPARISON OPERATORS:\n";
 	std::cout << "'c' is " << c << " and 'd' is " << d << '\n';
 	std::cout << '\n';
-
-	std::cout << "COMPARISON OPERATORS:\n";
+	
 	std::cout << "c == d\n";
 	std::cout << (c == d) << '\n';
 	std::cout << "c != d\n";

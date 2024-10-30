@@ -12,13 +12,13 @@ AMateria &AMateria::operator=(AMateria const &copy) {
 	if (this != &copy) {
 		_type = copy._type;
 	}
-	return *this;
+	return (*this);
 }
 
 AMateria::~AMateria() {}
 
 std::string const &AMateria::getType() const {
-	return _type;
+	return (_type);
 }
 
 void AMateria::use(ICharacter &target) {

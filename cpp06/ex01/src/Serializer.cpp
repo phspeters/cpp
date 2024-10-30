@@ -10,7 +10,7 @@ Serializer::Serializer(Serializer const &other) {
 
 Serializer &Serializer::operator=(Serializer const &other) {
 	(void)other;
-	return *this;
+	return (*this);
 }
 
 uintptr_t	Serializer::serialize(Data* ptr) {

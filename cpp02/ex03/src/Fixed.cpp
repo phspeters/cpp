@@ -91,7 +91,7 @@ Fixed Fixed::operator/(const Fixed &other) const {
 			return (Fixed(-INFINITY));
 		}
 		else {
-			return (Fixed(0)); // 0 / 0 is undefined, but we can return 0
+			return (Fixed(0)); // 0 / 0 is undefined, but we can return (0)
 		}
 	}
 	return (Fixed(toFloat() / other.toFloat()));

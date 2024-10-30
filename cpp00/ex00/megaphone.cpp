@@ -4,7 +4,7 @@
 int main(int argc, char *argv[]) {
 	if (argc == 1) {
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << '\n';
-		return 0;
+		return (0);
 	}
 
 	std::string input;
@@ -18,5 +18,5 @@ int main(int argc, char *argv[]) {
 
 	std::cout << input << '\n';
 
-	return 0;
+	return (0);
 }

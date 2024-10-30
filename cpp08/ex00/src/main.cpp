@@ -27,5 +27,5 @@ int main() {
 	std::cout << "Searching for 6\n";
 	testEasyFind(deq, 6);
 
-	return 0;
+	return (0);
 }

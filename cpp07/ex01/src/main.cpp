@@ -23,5 +23,5 @@ int	main() {
 	iter(stringArray, 5, append);
 	iter(stringArray, 5, print);
 
-	return 0;
+	return (0);
 }

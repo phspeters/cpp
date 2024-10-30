@@ -8,7 +8,7 @@ Ice &Ice::operator=(Ice const &copy) {
 	if (this != &copy) {
 		AMateria::operator=(copy);
 	}
-	return *this;
+	return (*this);
 }
 
 Ice::~Ice() {}

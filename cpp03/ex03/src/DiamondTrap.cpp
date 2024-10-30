@@ -34,7 +34,7 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &diamondtrap) {
 		std::cout << "DiamondTrap has been assigned the attributes of " << _name << '\n';
 	}
 	
-	return *this;
+	return (*this);
 }
 
 DiamondTrap::~DiamondTrap(void) {
@@ -46,5 +46,5 @@ void DiamondTrap::whoAmI(void) {
 }
 
 std::string DiamondTrap::getName(void) {
-	return _name;
+	return (_name);
 }

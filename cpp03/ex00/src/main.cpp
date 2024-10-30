@@ -72,5 +72,5 @@ int	main() {
 	std::cout << '\n';
 
 	std::cout << "TESTING DESTRUCTORS:\n";
-	return 0;
+	return (0);
 }

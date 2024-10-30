@@ -40,7 +40,7 @@ MateriaSource &MateriaSource::operator=(MateriaSource const &copy) {
 		}
 	}
 
-	return *this;
+	return (*this);
 }
 
 void MateriaSource::learnMateria(AMateria *materia) {
@@ -74,7 +74,7 @@ void MateriaSource::manageMaterias(AMateria *materia) {
 	for (int i = 0; i < MAX_MATERIAS; i++) {
 		if (!_createdMaterias[i]) {
 			_createdMaterias[i] = materia;
-			return;
+			return ;
 		}
 	}
 

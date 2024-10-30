@@ -50,18 +50,18 @@ void identify(Base &p) {
 	try {
 		(void)dynamic_cast<A&>(p);
 		std::cout << "is type: A\n";
-		return;
+		return ;
 	} catch (std::exception&) {}
 
 	try {
 		(void)dynamic_cast<B&>(p);
 		std::cout << "is type: B\n";
-		return;
+		return ;
 	} catch (std::exception&) {}
 
 	try {
 		(void)dynamic_cast<C&>(p);
 		std::cout << "is type: C\n";
-		return;
+		return ;
 	} catch (std::exception&) {}
 }

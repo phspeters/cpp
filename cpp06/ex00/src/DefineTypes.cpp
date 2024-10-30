@@ -26,10 +26,10 @@ bool	isFloat(std::string str) {
 		|| end == str.c_str()
 		|| *end != 'f'
 		|| *(end + 1) != '\0') {
-		return false;
+		return (false);
 	}
 
-	return true;
+	return (true);
 }
 
 bool	isDouble(std::string str) {
@@ -38,8 +38,8 @@ bool	isDouble(std::string str) {
 	strtod(str.c_str(), &end);
 
 	if (errno == ERANGE || end == str.c_str() || *end != '\0') {
-		return false;
+		return (false);
 	}
 
-	return true;
+	return (true);
 }
