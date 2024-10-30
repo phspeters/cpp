@@ -21,7 +21,14 @@ int	main() {
 	a = Fixed(1234.4321f);
 	std::cout << '\n';
 
-	std::cout << "PRINTING VALUES AND FIXED POINT:\n";
+	std::cout << "PRINTING VALUES AS RAW BITS:\n";
+	std::cout << "a is " << a.getRawBits() << '\n';
+	std::cout << "b is " << b.getRawBits() << '\n';
+	std::cout << "c is " << c.getRawBits() << '\n';
+	std::cout << "d is " << d.getRawBits() << '\n';
+	std::cout << '\n';
+
+	std::cout << "PRINTING VALUES AS FIXED POINT:\n";
 	std::cout << "a is " << a << '\n';
 	std::cout << "b is " << b << '\n';
 	std::cout << "c is " << c << '\n';
@@ -29,10 +36,10 @@ int	main() {
 	std::cout << '\n';
 
 	std::cout << "PRINTING VALUES AS INTEGER:\n";
-	std::cout << "a is " << a.toInt() << " as integer\n";
-	std::cout << "b is " << b.toInt() << " as integer\n";
-	std::cout << "c is " << c.toInt() << " as integer\n";
-	std::cout << "d is " << d.toInt() << " as integer\n";
+	std::cout << "a is " << a.toInt() << '\n';
+	std::cout << "b is " << b.toInt() << '\n';
+	std::cout << "c is " << c.toInt() << '\n';
+	std::cout << "d is " << d.toInt() << '\n';
 	std::cout << '\n';
 	
 	std::cout << "DESTRUCTORS:\n";

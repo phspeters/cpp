@@ -33,19 +33,19 @@ Fixed &Fixed::operator=(const Fixed &other) {
 	std::cout << "Assignment operator called\n";
 	if (this != &other) {
 		_value = other.getRawBits();
-		}
+	}
 	return (*this);
 }
 
 /*********** member functions *************/
 
 int Fixed::getRawBits() const {
-	std::cout << "getRawBits member function called\n";
+	//std::cout << "getRawBits member function called\n";
 	return (_value);
 }
 
 void Fixed::setRawBits(int const raw) {
-	std::cout << "setRawBits member function called\n";
+	//std::cout << "setRawBits member function called\n";
 	_value = raw;
 }
 

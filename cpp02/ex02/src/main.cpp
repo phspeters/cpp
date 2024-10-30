@@ -17,14 +17,12 @@ int	main() {
 	std::cout << '\n';
 
 	std::cout << "ASSIGNMENT OPERATORS:\n";
+	std::cout << "d = c\n";
 	d = c;
 	std::cout << "'c' is " << c << " and 'd' is " << d << '\n';
 	std::cout << '\n';
 
 	std::cout << "COMPARISON OPERATORS:\n";
-	std::cout << "'c' is " << c << " and 'd' is " << d << '\n';
-	std::cout << '\n';
-
 	std::cout << "c == d\n";
 	std::cout << (c == d) << '\n';
 	std::cout << "c != d\n";

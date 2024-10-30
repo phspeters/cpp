@@ -17,4 +17,6 @@ int	main() {
 	std::cout << "The value of the stringREF variable: " << stringREF << '\n';
 	std::cout << "The memory address of the stringREF variable: " << &stringREF << '\n';
 	std::cout << '\n';
+	
+	return (0);
 }

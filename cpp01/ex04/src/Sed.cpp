@@ -7,7 +7,6 @@ sed::sed(std::string filename, std::string toSearch, std::string toReplace) {
 		exit(1);
 	}
 
-	// S_ISREG macro checks if it's a regular file
 	if (!S_ISREG(pathStat.st_mode)) {
 		std::cerr << "Error: path is not a regular file\n";
 		exit(1);
@@ -46,4 +45,5 @@ void sed::replace() {
 		}
 		output << line << '\n';
 	}
+	output.close();
 }
