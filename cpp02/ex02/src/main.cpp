@@ -6,7 +6,7 @@ int	main() {
 	Fixed a;
 	Fixed b(5.05f);
 	Fixed const c(10);
-	Fixed d(b);
+	Fixed const d(b);
 
 	std::cout << "INITIAL STATE:\n";
 	std::cout << "'a' is " << a << '\n';

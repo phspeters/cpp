@@ -10,7 +10,7 @@ int	main() {
 	std::cout << '\n';
 
 	std::cout << "FLOAT CONSTRUCTOR:\n";
-	Fixed const c(42.42f);
+	Fixed const c(42.42424242424242f);
 	std::cout << '\n';
 
 	std::cout << "COPY CONSTRUCTOR:\n";

@@ -12,6 +12,6 @@ public:
 	void addNumber(int n);
 	int shortestSpan();
 	int longestSpan();
-}
+};
 
 #endif
