@@ -1,47 +1,35 @@
 #include "Fixed.hpp"
 
-/*******************************************
-############### CONSTRUCTORS ###############
-*******************************************/
+/************** constructors **************/
 
-/********** default constructor ***********/
 Fixed::Fixed() : _value(0) {
 	//std::cout << "Default constructor called\n";
 }
 
-/************ copy constructor ************/
 Fixed::Fixed(const Fixed &other) {
 	*this = other;
 	
 	//std::cout << "Copy constructor called\n";
 }
 
-/************ int constructor *************/
 Fixed::Fixed(const int value) {
 	//std::cout << "Int constructor called\n";
 	_value = value << _fractionalBits;
 }
 
-/*********** float constructor ************/
 Fixed::Fixed(const float value) {
 	//std::cout << "Float constructor called\n";
 	_value = roundf(value * (1 << _fractionalBits));
 }
 
-/*******************************************
-############### DESTRUCTORS ###############
-*******************************************/
+/************** destructors ***************/
 
-/*********** default destructor ***********/
 Fixed::~Fixed() {
 	//std::cout << "Destructor called\n";
 }
 
-/*******************************************
-################ OPERATORS #################
-*******************************************/
-
 /********** assignment operator ***********/
+
 Fixed &Fixed::operator=(const Fixed &other) {
 	//std::cout << "Assignment operator called\n";
 	if (this != &other) {
@@ -129,11 +117,8 @@ Fixed Fixed::operator--(int) { // Post-decrement
 	return (temp);
 }
 
-/*******************************************
-############# MEMBER FUNCTIONS #############
-*******************************************/
-
 /*********** getter and setter ************/
+
 int Fixed::getRawBits() const {
 	//std::cout << "getRawBits member function called\n";
 	return (_value);
@@ -172,11 +157,8 @@ const Fixed &Fixed::max(const Fixed &a, const Fixed &b) {
 	return (a > b ? a : b);
 }
 
-/*******************************************
-########### NON-MEMBER FUNCTIONS ###########
-*******************************************/
-
 /*********** insertion operator ***********/
+
 std::ostream &operator<<(std::ostream &out, const Fixed &fixed) {
 	out << fixed.toFloat();
 	return (out);
