@@ -11,8 +11,10 @@ int	main() {
 	std::cout << "TESTING ASSIGNMENT OPERATOR:\n";
 	firstFragTrap.setHitPoints(42);
 	firstFragTrap.setEnergyPoints(42);
+	std::cout << '\n';
+
 	std::cout << "Before assignment:\n";
-	std::cout << "Name: " << fourthFragTrap.getName() << "\t" << "Name: " << firstFragTrap.getName() << '\n';
+	std::cout << "Name: " << fourthFragTrap.getName() << "\t\t" << "Name: " << firstFragTrap.getName() << '\n';
 	std::cout << "Hitpoints: " << fourthFragTrap.getHitPoints() << "\t\t\t" << "Hitpoints: " << firstFragTrap.getHitPoints() << '\n';
 	std::cout << "Energy Points: " << fourthFragTrap.getEnergyPoints() << "\t\t" << "Energy Points: " << firstFragTrap.getEnergyPoints() << '\n';
 	std::cout << "Attack Damage: " << fourthFragTrap.getAttackDamage() << "\t\t" << "Attack Damage: " << firstFragTrap.getAttackDamage() << '\n';
@@ -31,6 +33,7 @@ int	main() {
 	std::cout << "INITIAL STATE:\n";
 	FragTrap fragtrap("FR4G-TP");
 	std::cout << '\n';
+
 	std::cout << "Name: " << fragtrap.getName() << '\n';
 	std::cout << "Hitpoints: " << fragtrap.getHitPoints() << '\n';
 	std::cout << "Energy Points: " << fragtrap.getEnergyPoints() << '\n';
@@ -49,6 +52,8 @@ int	main() {
 	std::cout << '\n';
 
 	fragtrap.setEnergyPoints(0);
+	std::cout << '\n';
+
 	std::cout << "CURRENT ATTRIBUTES:\n";
 	std::cout << fragtrap.getName() << " has " << fragtrap.getHitPoints() << " hitpoints\n";
 	std::cout << fragtrap.getName() << " has " << fragtrap.getEnergyPoints() << " energy points\n";
@@ -63,6 +68,8 @@ int	main() {
 
 	fragtrap.setHitPoints(0);
 	fragtrap.setEnergyPoints(10);
+	std::cout << '\n';
+
 	std::cout << "CURRENT ATTRIBUTES:\n";
 	std::cout << fragtrap.getName() << " has " << fragtrap.getHitPoints() << " hitpoints\n";
 	std::cout << fragtrap.getName() << " has " << fragtrap.getEnergyPoints() << " energy points\n";

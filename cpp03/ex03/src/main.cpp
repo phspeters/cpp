@@ -11,8 +11,10 @@ int	main() {
 	std::cout << "TESTING ASSIGNMENT OPERATOR:\n";
 	firstDiamondTrap.setHitPoints(42);
 	firstDiamondTrap.setEnergyPoints(42);
+	std::cout << '\n';
+	
 	std::cout << "Before assignment:\n";
-	std::cout << "Name: " << fourthDiamondTrap.getName() << "\t" << "Name: " << firstDiamondTrap.getName() << '\n';
+	std::cout << "Name: " << fourthDiamondTrap.getName() << "\t\t" << "Name: " << firstDiamondTrap.getName() << '\n';
 	std::cout << "Hitpoints: " << fourthDiamondTrap.getHitPoints() << "\t\t\t" << "Hitpoints: " << firstDiamondTrap.getHitPoints() << '\n';
 	std::cout << "Energy Points: " << fourthDiamondTrap.getEnergyPoints() << "\t\t" << "Energy Points: " << firstDiamondTrap.getEnergyPoints() << '\n';
 	std::cout << "Attack Damage: " << fourthDiamondTrap.getAttackDamage() << "\t\t" << "Attack Damage: " << firstDiamondTrap.getAttackDamage() << '\n';
@@ -31,6 +33,7 @@ int	main() {
 	std::cout << "INITIAL STATE:\n";
 	DiamondTrap diamondtrap("DI4M0ND-TP");
 	std::cout << '\n';
+
 	std::cout << "Name: " << diamondtrap.getName() << '\n';
 	std::cout << "Hitpoints: " << diamondtrap.getHitPoints() << '\n';
 	std::cout << "Energy Points: " << diamondtrap.getEnergyPoints() << '\n';
@@ -51,6 +54,8 @@ int	main() {
 	std::cout << '\n';
 
 	diamondtrap.setEnergyPoints(0);
+	std::cout << '\n';
+
 	std::cout << "CURRENT ATTRIBUTES:\n";
 	std::cout << diamondtrap.getName() << " has " << diamondtrap.getHitPoints() << " hitpoints\n";
 	std::cout << diamondtrap.getName() << " has " << diamondtrap.getEnergyPoints() << " energy points\n";
@@ -67,6 +72,8 @@ int	main() {
 
 	diamondtrap.setHitPoints(0);
 	diamondtrap.setEnergyPoints(10);
+	std::cout << '\n';
+
 	std::cout << "CURRENT ATTRIBUTES:\n";
 	std::cout << diamondtrap.getName() << " has " << diamondtrap.getHitPoints() << " hitpoints\n";
 	std::cout << diamondtrap.getName() << " has " << diamondtrap.getEnergyPoints() << " energy points\n";

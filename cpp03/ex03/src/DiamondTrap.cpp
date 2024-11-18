@@ -1,9 +1,12 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(void) : ClapTrap(), ScavTrap(), FragTrap(), _name("nameless") {
+DiamondTrap::DiamondTrap(void) : ClapTrap("'without a name'_clap_name"), ScavTrap(), FragTrap(), _name("'without a name'") {
 	_hitPoints = FragTrap::_hitPoints;
 	_energyPoints = ScavTrap::_energyPoints;
 	_attackDamage = FragTrap::_attackDamage;
+	//_hitPoints = 100;
+	//_energyPoints = 50;
+	//_attackDamage = 30;
 
 	std::cout << "DiamondTrap " << _name << " has been constructed by default!\n";
 }
@@ -25,6 +28,7 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &diamondtrap) {
 
 	if (this != &diamondtrap) {
 		ClapTrap::operator=(diamondtrap);
+		_name = diamondtrap._name;
 	}
 	
 	if (oldName != "") {
