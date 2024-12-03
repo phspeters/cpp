@@ -51,7 +51,7 @@ void MateriaSource::learnMateria(AMateria *materia) {
 		}
 
 		if (i == 3) {
-			std::cerr << "MateriaSource: No more space to learn new materia\n";
+			std::cerr << "MateriaSource: No free slots to learn new materia\n";
 		}
 	}
 
@@ -67,6 +67,8 @@ AMateria *MateriaSource::createMateria(std::string const &type) {
 		}
 	}
 
+	std::cerr << "MateriaSource: Could not create materia of type " << type << ": type not found\n";
+
 	return (NULL);
 }
 
@@ -78,7 +80,8 @@ void MateriaSource::manageMaterias(AMateria *materia) {
 		}
 	}
 
-	std::cerr << "MateriaSource: No more space for new materia in this simulation\n";
-	std::cerr << "Deleting the last created materia\n";
+	std::cerr << "MateriaSource: Could not create materia: max limite of " << this->MAX_MATERIAS << "reached\n";
+	std::cerr << "Deleting materia of type " << materia->getType() <<"\n";
+
 	delete materia;
 }

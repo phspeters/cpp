@@ -12,6 +12,7 @@ AMateria &AMateria::operator=(AMateria const &copy) {
 	if (this != &copy) {
 		_type = copy._type;
 	}
+	
 	return (*this);
 }
 

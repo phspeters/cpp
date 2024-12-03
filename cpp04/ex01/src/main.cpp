@@ -1,7 +1,7 @@
 #include "Cat.hpp"
 #include "Dog.hpp"
 
-# define SIZE 4
+# define SIZE 6
 
 void	testingAnimals() {
 	Animal *animals[SIZE];
@@ -35,7 +35,7 @@ void	testingAnimals() {
 void	testingCats() {
 	std::cout << "TESTING DEEP COPY OF CATS ALLOCATED ON THE HEAP\n";
 
-	std::cout << "Creating a Cat named Pippin\n";
+	std::cout << "Creating a Cat named Padme\n";
 	Cat *Pippin = new Cat();
 	std::cout << '\n';
 
@@ -44,36 +44,36 @@ void	testingCats() {
 	Pippin->getBrain()->setIdea(2, "Play");
 	Pippin->getBrain()->setIdea(3, "Purr");
 
-	std::cout << "Pippin's ideas:\n";
+	std::cout << "Padme's ideas:\n";
 	for (int i = 0; i < 4; i++) {
 		std::cout << Pippin->getBrain()->getIdea(i) << '\n';
 	}
 	std::cout << '\n';
 
-	std::cout << "Creating a Cat named Padme by copying Pippin\n";
+	std::cout << "Creating a Cat named Pippin by copying Padme\n";
 	Cat *Padme = new Cat(*Pippin);
 	std::cout << '\n';
 
-	std::cout << "Padme's ideas:\n";
+	std::cout << "Pippin's ideas:\n";
 	for (int i = 0; i < 4; i++) {
 		std::cout << Padme->getBrain()->getIdea(i) << '\n';
 	}
 	std::cout << '\n';
 
-	std::cout << "Changing Pippin's ideas\n";
+	std::cout << "Changing Padme's ideas\n";
 	Pippin->getBrain()->setIdea(0, "Eat more");
 	Pippin->getBrain()->setIdea(1, "Sleep more");
 	Pippin->getBrain()->setIdea(2, "Play more");
 	Pippin->getBrain()->setIdea(3, "Purr louder");
 	std::cout << '\n';
 
-	std::cout << "Pippin's ideas:\n";
+	std::cout << "Padme's ideas:\n";
 	for (int i = 0; i < 4; i++) {
 		std::cout << Pippin->getBrain()->getIdea(i) << '\n';
 	}
 	std::cout << '\n';
 
-	std::cout << "Padme's ideas:\n";
+	std::cout << "Pippin's ideas:\n";
 	for (int i = 0; i < 4; i++) {
 		std::cout << Padme->getBrain()->getIdea(i) << '\n';
 	}
@@ -134,7 +134,9 @@ void	testingDogs() {
 
 int	main() {
 	testingAnimals();
+	std::cout << "--------------------------------------------------------------------------------\n\n";
 	testingCats();
+	std::cout << "--------------------------------------------------------------------------------\n\n";
 	testingDogs();
 	
 	return (0);

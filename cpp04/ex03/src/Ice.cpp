@@ -8,6 +8,7 @@ Ice &Ice::operator=(Ice const &copy) {
 	if (this != &copy) {
 		AMateria::operator=(copy);
 	}
+	
 	return (*this);
 }
 
