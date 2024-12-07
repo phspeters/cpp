@@ -61,6 +61,7 @@ void Character::equip(AMateria *materia) {
 	for (int i = 0; i < INVENTORY_SIZE; i++) {
 		if (!_inventory[i] && _inventory[i] != materia) {
 			_inventory[i] = materia;
+			std::cout << "Character: " << _name << " equipped " << materia->getType() << " materia on slot " << i << '\n';
 			return ;
 		}
 	}
@@ -83,6 +84,10 @@ void Character::unequip(int index) {
 		}
 	}
 	_inventory[index] = NULL;
+	if (_inventory[index]) {
+		std::cout << "Character: " << _name << " unequipped " << _inventory[index]->getType() << " materia from slot " << index << '\n';
+		_inventory[index] = NULL;
+	}
 }
 
 void Character::use(int index, ICharacter &target) {
