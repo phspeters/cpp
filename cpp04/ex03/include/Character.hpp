@@ -17,9 +17,11 @@ public:
 	void use(int index, ICharacter &target);
 
 private:
-	static const int INVENTORY_SIZE = 4;
 	std::string _name;
+	static const int INVENTORY_SIZE = 4;
 	AMateria *_inventory[INVENTORY_SIZE];
+	static const int DROPPED_SIZE = 50;
+	AMateria *_droppedMateria[DROPPED_SIZE];
 };
 
 #endif

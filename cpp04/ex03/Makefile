@@ -1,7 +1,7 @@
 NAME = ex03
 
 CC = c++
-CFLAGS = -std=c++98 -Wall -Werror -Wextra
+CFLAGS = -std=c++98 -Wall -Werror -Wextra -g3
 INCLUDES = -I include
 
 VPATH = src
