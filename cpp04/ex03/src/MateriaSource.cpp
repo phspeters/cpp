@@ -7,11 +7,7 @@ MateriaSource::MateriaSource() {
 }
 
 MateriaSource::MateriaSource(MateriaSource const &copy) {
-	for (int i = 0; i < MATERIAS_INVENTORY; i++) {
-		if (copy._learntMaterias[i]) {
-			_learntMaterias[i] = copy._learntMaterias[i]->clone();
-		}
-	}
+	*this = copy;
 }
 
 MateriaSource::~MateriaSource() {
@@ -30,9 +26,7 @@ MateriaSource &MateriaSource::operator=(MateriaSource const &copy) {
 				delete _learntMaterias[i];
 				_learntMaterias[i] = NULL;
 			}
-		}
 
-		for (int i = 0; i < MATERIAS_INVENTORY; i++) {
 			if (copy._learntMaterias[i]) {
 				_learntMaterias[i] = copy._learntMaterias[i]->clone();
 			}
@@ -40,6 +34,18 @@ MateriaSource &MateriaSource::operator=(MateriaSource const &copy) {
 	}
 
 	return (*this);
+}
+
+void MateriaSource::displayLearntMaterias() const {
+	for (int i = 0; i < MATERIAS_INVENTORY; i++) {
+		if (_learntMaterias[i]) {
+			std::cout << "Slot " << i << ": " << _learntMaterias[i]->getType() << '\n';
+		}
+		else {
+			std::cout << "Slot " << i << ": empty\n";
+		}
+	}
+	std::cout << '\n';
 }
 
 void MateriaSource::learnMateria(AMateria *materia) {

@@ -4,11 +4,19 @@ Character::Character() : _name("default") {
 	for (int i = 0; i < INVENTORY_SIZE; i++) {
 		_inventory[i] = NULL;
 	}
+
+	for (int i = 0; i < DROPPED_SIZE; i++) {
+		_droppedMateria[i] = NULL;
+	}
 }
 
 Character::Character(std::string const &name) : _name(name) {
 	for (int i = 0; i < INVENTORY_SIZE; i++) {
 		_inventory[i] = NULL;
+	}
+
+	for (int i = 0; i < DROPPED_SIZE; i++) {
+		_droppedMateria[i] = NULL;
 	}
 }
 
@@ -18,6 +26,7 @@ Character::Character(Character const &copy) {
 
 Character &Character::operator=(Character const &copy) {
 	_name = copy._name;
+
 	for (int i = 0; i < INVENTORY_SIZE; i++) {
 		if (_inventory[i]) {
 			delete _inventory[i];
@@ -52,14 +61,26 @@ std::string const &Character::getName() const {
 	return (_name);
 }
 
+void Character::displayInventory() const {
+	for (int i = 0; i < INVENTORY_SIZE; i++) {
+		if (_inventory[i]) {
+			std::cout << "Slot " << i << ": " << _inventory[i]->getType() << '\n';
+		}
+		else {
+			std::cout << "Slot " << i << ": empty\n";
+		}
+	}
+	std::cout << '\n';
+}
+
 void Character::equip(AMateria *materia) {
 	if (!materia) {
-		std::cerr << "Character: Could not equip materia: materia is NULL\n";
+		std::cerr << "Character: Could not equip materia: materia pointer is invalid\n";
 		return ;
 	}
 
 	for (int i = 0; i < INVENTORY_SIZE; i++) {
-		if (!_inventory[i] && _inventory[i] != materia) {
+		if (!_inventory[i]) {
 			_inventory[i] = materia;
 			std::cout << "Character: " << _name << " equipped " << materia->getType() << " materia on slot " << i << '\n';
 			return ;
@@ -83,7 +104,7 @@ void Character::unequip(int index) {
 			std::cerr << "Character: Could not unequip materia: dropped inventory is full\n";
 		}
 	}
-	_inventory[index] = NULL;
+	
 	if (_inventory[index]) {
 		std::cout << "Character: " << _name << " unequipped " << _inventory[index]->getType() << " materia from slot " << index << '\n';
 		_inventory[index] = NULL;

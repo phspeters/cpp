@@ -14,6 +14,8 @@ public:
 	~MateriaSource();
 	MateriaSource &operator=(MateriaSource const &copy);
 
+	void displayLearntMaterias() const;
+
 	void learnMateria(AMateria *materia);
 	AMateria *createMateria(std::string const &type);
 };

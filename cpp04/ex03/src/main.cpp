@@ -3,10 +3,42 @@
 #include "Ice.hpp"
 #include "Cure.hpp"
 
-int	main() {
+void testMateriaSource() {
+	MateriaSource src;
+	MateriaSource dst;
+
+	src.learnMateria(new Ice());
+	src.learnMateria(new Cure());
+	src.learnMateria(new Cure());
+	src.learnMateria(new Ice());
+
+	src.displayLearntMaterias();
+	dst.displayLearntMaterias();
+
+	dst = src;
+	dst.displayLearntMaterias();
+
+	dst.learnMateria(new Cure());
+}
+
+void testCharacter() {
 	IMateriaSource *src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
+
+	AMateria *tmp;
+	tmp = src->createMateria("ice");
+	tmp = src->createMateria("cure");
+
+	delete src;
+}
+
+void testBasePointers() {
+	IMateriaSource *src = new MateriaSource();
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+
+
 	ICharacter *me = new Character("me");
 
 	AMateria *tmp;
@@ -14,15 +46,6 @@ int	main() {
 	me->equip(tmp);
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
-	//me->equip(tmp);
 
 	ICharacter *bob = new Character("bob");
 	me->use(0, *bob);
@@ -59,5 +82,12 @@ int	main() {
 	delete me;
 	delete src;
 
+}
+
+int main() {
+	testMateriaSource();
+	//testCharacter();
+	//testBasePointers();
+	
 	return (0);
 }
