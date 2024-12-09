@@ -1,6 +1,6 @@
 #include "Character.hpp"
 
-Character::Character() : _name("default") {
+Character::Character() : _name("nameless") {
 	for (int i = 0; i < INVENTORY_SIZE; i++) {
 		_inventory[i] = NULL;
 	}
@@ -61,37 +61,40 @@ std::string const &Character::getName() const {
 	return (_name);
 }
 
-void Character::displayInventory() const {
-	for (int i = 0; i < INVENTORY_SIZE; i++) {
-		if (_inventory[i]) {
-			std::cout << "Slot " << i << ": " << _inventory[i]->getType() << '\n';
-		}
-		else {
-			std::cout << "Slot " << i << ": empty\n";
-		}
+std::string const &Character::getInventoryItem(int index) const {
+	if (_inventory[index]) {
+		return(_inventory[index]->getType());
 	}
-	std::cout << '\n';
+	else {
+		static const std::string empty = "empty";
+		return empty;
+	}
 }
 
 void Character::equip(AMateria *materia) {
 	if (!materia) {
-		std::cerr << "Character: Could not equip materia: materia pointer is invalid\n";
+		std::cerr << _name <<": could not equip materia, materia is unknown\n";
 		return ;
 	}
 
 	for (int i = 0; i < INVENTORY_SIZE; i++) {
 		if (!_inventory[i]) {
 			_inventory[i] = materia;
-			std::cout << "Character: " << _name << " equipped " << materia->getType() << " materia on slot " << i << '\n';
+			std::cout << _name << ": equipped '" << materia->getType() << "' materia in slot " << i << '\n';
 			return ;
 		}
 	}
 
-	std::cerr << "Character: Could not equip materia: inventory is full\n";
+	std::cerr << _name <<": could not equip materia, my inventory is full\n";
 }
 
 void Character::unequip(int index) {
-	if (index < 0 || index >= INVENTORY_SIZE || !_inventory[index]) {
+	if (index < 0 || index >= INVENTORY_SIZE) {
+		return ;
+	}
+
+	if (!_inventory[index]) {
+		std::cerr << _name << ": could not unequip materia, slot " << index << " is already empty\n";
 		return ;
 	}
 
@@ -101,20 +104,25 @@ void Character::unequip(int index) {
 			break;
 		}
 		if (i == DROPPED_SIZE - 1) {
-			std::cerr << "Character: Could not unequip materia: dropped inventory is full\n";
+			std::cerr << _name << ": could not unequip materia, floor is already full of materias\n";
+			return ;
 		}
 	}
 	
-	if (_inventory[index]) {
-		std::cout << "Character: " << _name << " unequipped " << _inventory[index]->getType() << " materia from slot " << index << '\n';
-		_inventory[index] = NULL;
-	}
+	std::cout << _name << ": unequipped '" << _inventory[index]->getType() << "' materia from slot " << index << '\n';
+	_inventory[index] = NULL;
 }
 
 void Character::use(int index, ICharacter &target) {
-	if (index < 0 || index >= INVENTORY_SIZE || !_inventory[index]) {
+	if (index < 0 || index >= INVENTORY_SIZE) {
 		return ;
 	}
 
+	if (!_inventory[index]) {
+		std::cerr << _name << ": could not use materia, slot " << index << " is empty\n";
+		return ;
+	}
+
+	std::cout << _name << ": ";
 	_inventory[index]->use(target);
 }

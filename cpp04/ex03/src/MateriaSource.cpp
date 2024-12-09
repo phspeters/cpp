@@ -36,27 +36,26 @@ MateriaSource &MateriaSource::operator=(MateriaSource const &copy) {
 	return (*this);
 }
 
-void MateriaSource::displayLearntMaterias() const {
-	for (int i = 0; i < MATERIAS_INVENTORY; i++) {
-		if (_learntMaterias[i]) {
-			std::cout << "Slot " << i << ": " << _learntMaterias[i]->getType() << '\n';
-		}
-		else {
-			std::cout << "Slot " << i << ": empty\n";
-		}
+std::string const &MateriaSource::getLearntMateria(int index) const {
+	if (_learntMaterias[index]) {
+		return(_learntMaterias[index]->getType());
 	}
-	std::cout << '\n';
+	else {
+		static const std::string empty = "empty";
+		return empty;
+	}
 }
 
 void MateriaSource::learnMateria(AMateria *materia) {
 	for (int i = 0; i < MATERIAS_INVENTORY; i++) {
 		if (!_learntMaterias[i]) {
-			_learntMaterias[i] = materia->clone();
+			_learntMaterias[i] = materia;
+			std::cout << "MateriaSource: learnt new materia of type '" << materia->getType() << "' on slot " << i << '\n';
 			break;
 		}
 
 		if (i == 3) {
-			std::cerr << "MateriaSource: No free slots to learn new materia\n";
+			std::cerr << "MateriaSource: no free slots to learn new materia\n";
 			delete materia;
 		}
 	}
@@ -70,7 +69,7 @@ AMateria *MateriaSource::createMateria(std::string const &type) {
 		}
 	}
 
-	std::cerr << "MateriaSource: Could not create materia of type " << type << ": type not found\n";
+	std::cerr << "MateriaSource: could not create materia of type '" << type << "': type not found\n";
 
 	return (NULL);
 }

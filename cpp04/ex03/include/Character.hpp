@@ -12,7 +12,7 @@ public:
 	~Character();
 
 	std::string const &getName() const;
-	void	displayInventory() const;
+	std::string	const &getInventoryItem(int index) const;
 
 	void equip(AMateria *materia);
 	void unequip(int index);

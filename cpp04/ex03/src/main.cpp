@@ -3,7 +3,24 @@
 #include "Ice.hpp"
 #include "Cure.hpp"
 
+void compareLearntMaterias(MateriaSource &src, MateriaSource &dst) {
+	std::cout << "Comparing learnt materias of 'src' and 'dst'\n";
+	for (int i = 0; i < 4; i++) {
+		std::cout << "src: " << i << " " << src.getLearntMateria(i) << "\t|\t";
+		std::cout << "dst: " << i << " " << dst.getLearntMateria(i) << '\n';
+	}
+}
+
+void compareInventories(Character &first, Character &second) {
+	std::cout << "Comparing inventories of " << first.getName() << " and " << second.getName() << '\n';
+	for (int i = 0; i < 4; i++) {
+		std::cout << first.getName() << ": " << i << " " << first.getInventoryItem(i) << "\t|\t";
+		std::cout << second.getName() << ": " << i << " " << second.getInventoryItem(i) << '\n';
+	}
+}
+
 void testMateriaSource() {
+	std::cout << "TESTING MATERIASOURCE IMPLEMENTATION\n";
 	MateriaSource src;
 	MateriaSource dst;
 
@@ -11,83 +28,135 @@ void testMateriaSource() {
 	src.learnMateria(new Cure());
 	src.learnMateria(new Cure());
 	src.learnMateria(new Ice());
+	std::cout << '\n';
 
-	src.displayLearntMaterias();
-	dst.displayLearntMaterias();
+	std::cout << "Learning fifth materia in order to test limit\n";
+	src.learnMateria(new Cure());
+	std::cout << '\n';
 
+	std::cout << "Creating new 'ice' materia\n";
+	AMateria *tmp;
+	tmp = src.createMateria("ice");
+	std::cout << "Materia type: " << tmp->getType() << '\n';
+	delete tmp;
+	std::cout << "Creating new 'cure' materia\n";
+	tmp = src.createMateria("cure");
+	std::cout << "Materia type: " << tmp->getType() << '\n';
+	delete tmp;
+	std::cout << "Creating new 'unknown' materia\n";
+	tmp = src.createMateria("unknown");
+	std::cout << '\n';
+
+	std::cout << "TESTING MATERIASOURCE DEEP COPY\n";
+
+	compareLearntMaterias(src, dst);
+	std::cout << '\n';
+
+	std::cout << "Assigning 'src' to 'dst'\n";
 	dst = src;
-	dst.displayLearntMaterias();
+	std::cout << '\n';
 
-	dst.learnMateria(new Cure());
+	compareLearntMaterias(src, dst);
+	std::cout << '\n';
 }
 
 void testCharacter() {
 	IMateriaSource *src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
+	std::cout << '\n';
 
+	std::cout << "TESTING CHARACTER IMPLEMENTATION\n";
+	Character andy("andy");
+	Character bob("bob");
+
+	std::cout << "Equipping materias 'ice' and 'cure'\n";
 	AMateria *tmp;
 	tmp = src->createMateria("ice");
+	andy.equip(tmp);
 	tmp = src->createMateria("cure");
+	andy.equip(tmp);
+	std::cout << '\n';
+
+	std::cout << "Using materias\n";
+	andy.use(0, bob);
+	andy.use(1, bob);
+	andy.use(2, bob);
+	std::cout << '\n';
+
+	std::cout << "Equipping 3 other materias in order to test inventory limit\n";
+	tmp = src->createMateria("ice");
+	andy.equip(tmp);
+	tmp = src->createMateria("cure");
+	andy.equip(tmp);
+	tmp = src->createMateria("ice");
+	andy.equip(tmp);
+	std::cout << '\n';
+
+	std::cout << "Unequipping first materia\n";
+	andy.unequip(0);
+
+	std::cout << "Displaying inventory\n";
+	std::cout << "Slot 0: " << andy.getInventoryItem(0) << '\n';
+	std::cout << "Slot 1: " << andy.getInventoryItem(1) << '\n';
+	std::cout << "Slot 2: " << andy.getInventoryItem(2) << '\n';
+	std::cout << "Slot 3: " << andy.getInventoryItem(3) << '\n';
+	std::cout << '\n';
+
+	std::cout << "TESTING CHARACTER DEEP COPY\n";
+	compareInventories(andy, bob);
+	std::cout << '\n';
+
+	std::cout << "Assigning 'andy' to 'bob'\n";
+	bob = andy;
+
+	compareInventories(andy, bob);
+	std::cout << '\n';
+
+	std::cout << "Unequipping third materia from 'andy', former 'bob'\n";
+	bob.unequip(3);
+	std::cout << '\n';
+
+	compareInventories(andy, bob);
+	std::cout << '\n';
 
 	delete src;
 }
 
 void testBasePointers() {
-	IMateriaSource *src = new MateriaSource();
+	IMateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
 
+	ICharacter* me = new Character("me");
 
-	ICharacter *me = new Character("me");
-
-	AMateria *tmp;
+	AMateria* tmp;
 	tmp = src->createMateria("ice");
 	me->equip(tmp);
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
+	tmp = src->createMateria("fire");
+	me->equip(tmp);
 
-	ICharacter *bob = new Character("bob");
+	ICharacter* bob = new Character("bob");
 	me->use(0, *bob);
 	me->use(1, *bob);
 	me->use(2, *bob);
-	me->use(3, *bob);
 
-	src->learnMateria(new Cure());
-	src->learnMateria(new Ice());
-	//bob->equip(tmp);
-
-	//tmp = src->createMateria("ice");
-	//bob->equip(tmp);
-	//bob->equip(tmp);
-	//bob->equip(tmp);
-
-	//bob->use(0, *bob);
-	//bob->use(1, *me);
-	//bob->use(2, *me);
-	//bob->use(3, *me);
-	//bob->use(4, *me);
-
-	//me->unequip(0);
-	//me->unequip(1);
-	//me->unequip(2);
-	//me->unequip(3);
-
-	//bob->unequip(0);
-	//bob->unequip(1);
-	//bob->unequip(2);
-	//bob->unequip(3);
+	me->unequip(0);
+	me->use(0, *bob);
 
 	delete bob;
 	delete me;
 	delete src;
-
 }
 
 int main() {
 	testMateriaSource();
-	//testCharacter();
-	//testBasePointers();
+	std::cout << "--------------------------------------------------------------------------------\n\n";
+	testCharacter();
+	std::cout << "--------------------------------------------------------------------------------\n\n";
+	testBasePointers();
 	
 	return (0);
 }
