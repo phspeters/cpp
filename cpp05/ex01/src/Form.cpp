@@ -25,6 +25,7 @@ Form &Form::operator=(Form const &other) {
 	if (this != &other) {
 		_signed = other._signed;
 	}
+	
 	return (*this);
 }
 
@@ -50,6 +51,7 @@ void Form::beSigned(Bureaucrat const &bureaucrat) {
 	if (bureaucrat.getGrade() > _gradeToSign) {
 		throw Form::GradeTooLowException();
 	}
+
 	_signed = true;
 }
 
@@ -62,7 +64,7 @@ const char *Form::GradeTooLowException::what() const throw() {
 }
 
 std::ostream &operator<<(std::ostream &out, Form const &form) {
-	out << "Form " << form.getName() << " is " << (form.getSigned() ? "signed" : "not signed");
+	out << "Form " << form.getName() << " is " << (form.getSigned() ? "signed" : "NOT signed");
 	out << " and requires grade " << form.getGradeToSign() << " to sign and grade ";
 	out << form.getGradeToExecute() << " to execute";
 	return (out);
@@ -74,6 +76,6 @@ void testForm(std::string const name, int gradeToSign, int gradeToExecute) {
 		std::cout << form << '\n';
 	}
 	catch (const std::exception &exception) {
-		std::cerr << "Can't create form " << name << ": " << exception.what() << '\n';
+		std::cerr << "Error: can't create form " << name << ": " << exception.what() << '\n';
 	}
 }

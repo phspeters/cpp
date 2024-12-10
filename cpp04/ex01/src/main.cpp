@@ -36,51 +36,51 @@ void	testingCats() {
 	std::cout << "TESTING DEEP COPY OF CATS ALLOCATED ON THE HEAP\n";
 
 	std::cout << "Creating a Cat named Padme\n";
-	Cat *Pippin = new Cat();
+	Cat *Padme = new Cat();
 	std::cout << '\n';
 
-	Pippin->getBrain()->setIdea(0, "Eat");
-	Pippin->getBrain()->setIdea(1, "Sleep");
-	Pippin->getBrain()->setIdea(2, "Play");
-	Pippin->getBrain()->setIdea(3, "Purr");
+	Padme->getBrain()->setIdea(0, "Eat");
+	Padme->getBrain()->setIdea(1, "Sleep");
+	Padme->getBrain()->setIdea(2, "Play");
+	Padme->getBrain()->setIdea(3, "Purr");
 
 	std::cout << "Padme's ideas:\n";
 	for (int i = 0; i < 4; i++) {
-		std::cout << Pippin->getBrain()->getIdea(i) << '\n';
+		std::cout << Padme->getBrain()->getIdea(i) << '\n';
 	}
 	std::cout << '\n';
 
 	std::cout << "Creating a Cat named Pippin by copying Padme\n";
-	Cat *Padme = new Cat(*Pippin);
+	Cat *Pippin = new Cat(*Padme);
 	std::cout << '\n';
 
 	std::cout << "Pippin's ideas:\n";
-	for (int i = 0; i < 4; i++) {
-		std::cout << Padme->getBrain()->getIdea(i) << '\n';
-	}
-	std::cout << '\n';
-
-	std::cout << "Changing Padme's ideas\n";
-	Pippin->getBrain()->setIdea(0, "Eat more");
-	Pippin->getBrain()->setIdea(1, "Sleep more");
-	Pippin->getBrain()->setIdea(2, "Play more");
-	Pippin->getBrain()->setIdea(3, "Purr louder");
-	std::cout << '\n';
-
-	std::cout << "Padme's ideas:\n";
 	for (int i = 0; i < 4; i++) {
 		std::cout << Pippin->getBrain()->getIdea(i) << '\n';
 	}
 	std::cout << '\n';
 
-	std::cout << "Pippin's ideas:\n";
+	std::cout << "Changing Padme's ideas\n";
+	Padme->getBrain()->setIdea(0, "Eat more");
+	Padme->getBrain()->setIdea(1, "Sleep more");
+	Padme->getBrain()->setIdea(2, "Play more");
+	Padme->getBrain()->setIdea(3, "Purr louder");
+	std::cout << '\n';
+
+	std::cout << "Padme's ideas:\n";
 	for (int i = 0; i < 4; i++) {
 		std::cout << Padme->getBrain()->getIdea(i) << '\n';
 	}
 	std::cout << '\n';
+
+	std::cout << "Pippin's ideas:\n";
+	for (int i = 0; i < 4; i++) {
+		std::cout << Pippin->getBrain()->getIdea(i) << '\n';
+	}
+	std::cout << '\n';
 	
-	delete Pippin;
 	delete Padme;
+	delete Pippin;
 	std::cout << '\n';
 }
 

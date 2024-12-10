@@ -1,7 +1,7 @@
 NAME = identify
 
 CC = c++
-CFLAGS = -std=c++98 -Wall -Werror -Wextra -Wshadow
+CFLAGS = -std=c++98 -Wall -Werror -Wextra
 INCLUDES = -I include
 
 VPATH = src

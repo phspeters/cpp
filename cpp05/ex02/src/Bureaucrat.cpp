@@ -38,7 +38,7 @@ void Bureaucrat::incrementGrade() {
 		_grade--;
 	}
 	catch (const std::exception &exception) {
-		std::cerr << "Can't increment bureaucrat " << this->getName() << "'s grade: " << exception.what() << '\n';
+		std::cerr << "Error: can't increment bureaucrat " << this->getName() << "'s grade: " << exception.what() << '\n';
 		return ;
 	}
 }
@@ -51,7 +51,7 @@ void Bureaucrat::decrementGrade() {
 		_grade++;
 	}
 	catch (const std::exception &exception) {
-		std::cerr << "Can't decrement bureaucrat " << this->getName() << "'s grade: " << exception.what() << '\n';
+		std::cerr << "Error: can't decrement bureaucrat " << this->getName() << "'s grade: " << exception.what() << '\n';
 		return ;
 	}
 }
@@ -62,7 +62,7 @@ void Bureaucrat::signForm(AForm &form) {
 		std::cout << this->getName() << " signed " << form.getName() << '\n';
 	}
 	catch (const std::exception &exception) {
-		std::cerr << this->getName() << " can't sign form " << form.getName() << ": ";
+		std::cerr << "Error: " << this->getName() << " can't sign form " << form.getName() << ": ";
 		std::cerr  << exception.what() << '\n';
 	}
 }
@@ -73,16 +73,16 @@ void Bureaucrat::executeForm(AForm const &form) {
 		std::cout << this->getName() << " executed " << form.getName() << '\n';
 	}
 	catch (const std::exception &exception) {
-		std::cerr << this->getName() << " can't execute form " << form.getName() << ": ";
+		std::cerr << "Error: " << this->getName() << " can't execute form " << form.getName() << ": ";
 		std::cerr << exception.what() << '\n';
 	}
 }
 
-const char *Bureaucrat::GradeTooHighException::what() const {
+const char *Bureaucrat::GradeTooHighException::what() const throw() {
 	return ("Grade is too high");
 }
 
-const char *Bureaucrat::GradeTooLowException::what() const {
+const char *Bureaucrat::GradeTooLowException::what() const throw() {
 	return ("Grade is too low");
 }
 
@@ -99,7 +99,7 @@ void testBureaucrat(std::string const name, int grade) {
 		std::cout << bureaucrat.getGrade() << '\n';
 	}
 	catch (const std::exception &exception) {
-		std::cerr << "Can't create bureaucrat with grade ";
+		std::cerr << "Error: can't create bureaucrat " << name << "with grade ";
 		std::cerr << grade << ": " << exception.what() << '\n';
 		return ;
 	}

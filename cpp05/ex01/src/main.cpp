@@ -18,15 +18,16 @@ int	main() {
 	std::cout << "--> TESTING FORM COPY CONSTRUCTOR\n";
 	Form a("A24", 1, 1);
 	Form b(a);
-	std::cout << "...printing 'a'" << '\n';
+	std::cout << "... printing 'a'" << '\n';
 	std::cout << a << '\n';
-	std::cout << "...printing 'b'" << '\n';
+	std::cout << "... printing 'b'" << '\n';
 	std::cout << b << '\n';
 	std::cout << '\n';
 
 	std::cout << "--> TESTING FORM SIGNING\n";
 	Bureaucrat bureaucrat("Ananias", 2);
 	std::cout << bureaucrat << '\n';
+	std::cout << a << '\n';
 	std::cout << "... Ananias is signing form\n";
 	bureaucrat.signForm(a);
 	std::cout << a << '\n';
@@ -36,5 +37,19 @@ int	main() {
 	std::cout << "... Ananias is signing form again\n";
 	bureaucrat.signForm(a);
 	std::cout << a << '\n';
+	std::cout << '\n';
+
+	std::cout << "--> TESTING FORM ASSIGNMENT OPERATOR\n";
+	Form c("C42", 99, 99);
+	std::cout << "... printing 'a'" << '\n';
+	std::cout << a << '\n';
+	std::cout << "... printing 'c'" << '\n';
+	std::cout << c << '\n';
+	std::cout << "... assigning 'a' to 'c'" << '\n';
+	c = a;
+	std::cout << "... printing 'a'" << '\n';
+	std::cout << a << '\n';
+	std::cout << "... printing 'c'" << '\n';
+	std::cout << c << '\n';
 	std::cout << '\n';
 }

@@ -7,11 +7,17 @@ int	main() {
 	std::cout << '\n';
 
 	std::cout << "--> TESTING BUREAUCRAT PARAMETERIZED CONSTRUCTOR\n";
+	std::cout << "A) ";
 	testBureaucrat("Ananias", 1);
+	std::cout << "B) ";
 	testBureaucrat("Boris", 150);
+	std::cout << "C) ";
 	testBureaucrat("Charlinho", 0);
+	std::cout << "D) ";
 	testBureaucrat("Diogenes", 151);
+	std::cout << "E) ";
 	testBureaucrat("Eustaquio", -10);
+	std::cout << "F) ";
 	testBureaucrat("Felix", 99);
 	std::cout << '\n';
 
