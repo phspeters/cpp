@@ -47,6 +47,11 @@ std::string const &MateriaSource::getLearntMateria(int index) const {
 }
 
 void MateriaSource::learnMateria(AMateria *materia) {
+	if (!materia) {
+		std::cerr << "MateriaSource: cannot learn invalid materia\n";
+		return;
+	}
+
 	for (int i = 0; i < MATERIAS_INVENTORY; i++) {
 		if (!_learntMaterias[i]) {
 			_learntMaterias[i] = materia;

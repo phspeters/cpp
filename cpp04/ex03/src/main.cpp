@@ -124,9 +124,12 @@ void testCharacter() {
 }
 
 void testBasePointers() {
+	std::cout << "TESTING CLASSES IMPLEMENTATION AS BASE POINTERS\n";
 	IMateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
+	src->learnMateria(NULL);
+	std::cout << '\n';
 
 	ICharacter* me = new Character("me");
 
@@ -137,14 +140,19 @@ void testBasePointers() {
 	me->equip(tmp);
 	tmp = src->createMateria("fire");
 	me->equip(tmp);
+	std::cout << '\n';
 
 	ICharacter* bob = new Character("bob");
 	me->use(0, *bob);
 	me->use(1, *bob);
 	me->use(2, *bob);
+	std::cout << '\n';
 
 	me->unequip(0);
 	me->use(0, *bob);
+	me->use(1, *bob);
+	me->unequip(0);
+	std::cout << '\n';
 
 	delete bob;
 	delete me;

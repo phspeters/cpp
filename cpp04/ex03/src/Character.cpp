@@ -86,6 +86,8 @@ void Character::equip(AMateria *materia) {
 	}
 
 	std::cerr << _name <<": could not equip materia, my inventory is full\n";
+	delete materia;
+	materia = NULL;
 }
 
 void Character::unequip(int index) {
