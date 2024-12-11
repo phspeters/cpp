@@ -1,4 +1,4 @@
-NAME = identify
+NAME = ex02
 
 CC = c++
 CFLAGS = -std=c++98 -Wall -Werror -Wextra
