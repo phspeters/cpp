@@ -1,10 +1,12 @@
 #include "ScalarConverter.hpp"
 
-int main() {
-	std::string input;
-
-	std::cout << "Enter a value: ";
-	std::cin >> input;
+int main(int argc, char **argv) {
+	if (argc != 2) {
+		std::cout << "Usage: ./convert [value]" << std::endl;
+		return (1);
+	}
+	
+	std::string input = argv[1];
 	ScalarConverter::convert(input);
 	return (0);
 }
