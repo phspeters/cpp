@@ -40,3 +40,21 @@ T &Array<T>::operator[](unsigned int i) {
 	
 	return (_array[i]);
 }
+
+template <typename T>
+unsigned int Array<T>::size() const {
+	return (_size);
+}
+
+template <typename T>
+std::ostream &operator<<(std::ostream &out, Array<T> &arr) {
+	out << "{ ";
+	for (unsigned int i = 0; i < arr.size(); i++) {
+		out << arr[i];
+		if (i < arr.size() - 1) {
+			out << ", ";
+		}
+	}
+	out << " }";
+	return (out);
+}

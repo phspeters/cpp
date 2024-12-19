@@ -16,6 +16,10 @@ int	main(int, char **) {
 		mirror[i] = value;
 	}
 
+	std::cout << "Printing numbers and mirror arrays" << '\n';
+	std::cout << numbers << '\n';
+	std::cout << mirror << '\n';
+
 	// SCOPE
 	{
 		Array<int> tmp = numbers;
@@ -24,7 +28,7 @@ int	main(int, char **) {
 
 	for (int i = 0; i < MAX_VAL; i++) {
 		if (mirror[i] != numbers[i]) {
-			std::cerr << "didn't save the same value!!" << std::endl;
+			std::cerr << "didn't save the same value!!" << '\n';
 			return (1);
 		}
 	}
