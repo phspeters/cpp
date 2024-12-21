@@ -5,7 +5,7 @@
 
 # define MAX_VAL 750
 
-int	main(int, char **) {
+int subject_tests(void) {
 	Array<int> numbers(MAX_VAL);
 	int *mirror = new int[MAX_VAL];
 	srand(time(NULL));
@@ -48,5 +48,25 @@ int	main(int, char **) {
 	}
 
 	delete[] mirror;
+}
+
+int other_tests(void) {
+	Array<int> numbers(5);
+	Array<int> mirror(5);
+
+	for (int i = 0; i < MAX_VAL; i++) {
+		const int value = rand();
+		numbers[i] = value;
+		mirror[i] = value;
+	}
+
+	std::cout << "numbers: " << numbers << '\n';
+	std::cout << "mirror: " << mirror << '\n';
+	return (0);
+}
+
+int	main(void) {
+	subject_tests();
+	other_tests();
 	return (0);
 }
