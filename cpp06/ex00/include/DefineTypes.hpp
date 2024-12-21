@@ -1,6 +1,7 @@
 #ifndef DEFINE_TYPES_HPP
 # define DEFINE_TYPES_HPP
 
+# include <iostream>
 # include <sstream>
 # include <cerrno>
 # include <cstdlib>

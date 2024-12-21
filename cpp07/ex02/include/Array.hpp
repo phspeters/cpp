@@ -10,11 +10,11 @@ public:
 	Array(unsigned int n);
 	Array(const Array<T>& src);
 	~Array();
-	
+
 	Array<T>& operator=(const Array<T>& src);
 	T &operator[](unsigned int i);
 
-	unsigned int size() const { return (_size); }
+	unsigned int size() const
 	
 private:
 	T *_array;
@@ -22,6 +22,6 @@ private:
 };
 
 template <typename T>
-std::ostream &operator<<(std::ostream &out, const Array<T> &arr);
+std::ostream &operator<<(std::ostream &out, Array<T> &arr);
 
 #endif

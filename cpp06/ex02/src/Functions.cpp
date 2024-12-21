@@ -31,13 +31,13 @@ Base	*generate(void) {
 void	identify(Base* p) {
 	std::cout << "Identifying class by pointer: ";
 	if (dynamic_cast<A*>(p)) {
-		std::cout << "is type: A\n";
+		std::cout << "it's of type: A\n";
 	}
 	else if (dynamic_cast<B*>(p)) {
-		std::cout << "is type: B\n";
+		std::cout << "it's of type: B\n";
 	}
 	else if (dynamic_cast<C*>(p)) {
-		std::cout << "is type: C\n";
+		std::cout << "it's of type: C\n";
 	}
 	else {
 		std::cout << "Unknown class\n";
@@ -49,19 +49,19 @@ void identify(Base &p) {
 	std::cout << "Identifying class by reference: ";
 	try {
 		(void)dynamic_cast<A&>(p);
-		std::cout << "is type: A\n";
+		std::cout << "it's of type: A\n";
 		return ;
 	} catch (std::exception&) {}
 
 	try {
 		(void)dynamic_cast<B&>(p);
-		std::cout << "is type: B\n";
+		std::cout << "it's of type: B\n";
 		return ;
 	} catch (std::exception&) {}
 
 	try {
 		(void)dynamic_cast<C&>(p);
-		std::cout << "is type: C\n";
+		std::cout << "it's of type: C\n";
 		return ;
 	} catch (std::exception&) {}
 }
