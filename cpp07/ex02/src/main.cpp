@@ -55,6 +55,11 @@ int subject_tests(void) {
 
 int other_tests(void) {
 	std::cout << "OTHER TESTS" << '\n';
+	Array<int> empty;
+
+	std::cout << "empty: " << empty << '\n';
+	std::cout << '\n';
+
 	Array<int> numbers(5);
 	Array<int> mirror(5);
 
