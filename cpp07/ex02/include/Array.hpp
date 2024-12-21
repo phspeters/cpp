@@ -8,20 +8,21 @@ class Array {
 public:
 	Array();
 	Array(unsigned int n);
-	Array(const Array<T>& src);
+	Array(const Array<T>& other);
 	~Array();
 
-	Array<T>& operator=(const Array<T>& src);
-	T &operator[](unsigned int i);
+	Array<T>& operator=(const Array<T>& other);
+	T &operator[](unsigned int index);
+	const T &operator[](unsigned int index) const;
 
-	unsigned int size() const
+	size_t size() const;
 	
 private:
 	T *_array;
-	unsigned int _size;
+	size_t _size;
 };
 
 template <typename T>
-std::ostream &operator<<(std::ostream &out, Array<T> &arr);
+std::ostream &operator<<(std::ostream &out, Array<T> const &arr);
 
 #endif

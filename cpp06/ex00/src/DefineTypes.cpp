@@ -21,7 +21,7 @@ bool	isFloat(std::string str) {
 	errno = 0;
 	double f = strtod(str.c_str(), &end);
 
-	if (((str == "+inff") || (str == "-inff") || (str == "inff"))) {
+	if (((str == "+inff") || (str == "-inff") || (str == "inff")) || (str == "nanf")) {
 		return (true);
 	}
 

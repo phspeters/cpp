@@ -6,6 +6,8 @@
 # define MAX_VAL 750
 
 int subject_tests(void) {
+	std::cout << "SUBJECT TESTS" << '\n';
+
 	Array<int> numbers(MAX_VAL);
 	int *mirror = new int[MAX_VAL];
 	srand(time(NULL));
@@ -15,10 +17,6 @@ int subject_tests(void) {
 		numbers[i] = value;
 		mirror[i] = value;
 	}
-
-	std::cout << "Printing numbers and mirror arrays" << '\n';
-	std::cout << numbers << '\n';
-	std::cout << mirror << '\n';
 
 	// SCOPE
 	{
@@ -52,25 +50,43 @@ int subject_tests(void) {
 	}
 
 	delete[] mirror;
+	return (0);
 }
 
 int other_tests(void) {
+	std::cout << "OTHER TESTS" << '\n';
 	Array<int> numbers(5);
 	Array<int> mirror(5);
 
-	for (int i = 0; i < MAX_VAL; i++) {
-		const int value = rand();
+	for (int i = 0; i < 5; i++) {
+		const int value = rand() % 1000;
 		numbers[i] = value;
-		mirror[i] = value;
 	}
 
 	std::cout << "numbers: " << numbers << '\n';
 	std::cout << "mirror: " << mirror << '\n';
+	std::cout << '\n';
+
+	mirror = numbers;
+
+	std::cout << "numbers: " << numbers << '\n';
+	std::cout << "mirror: " << mirror << '\n';
+	std::cout << '\n';
+
+	for (int i = 0; i < 5; i++) {
+		numbers[i] = 42;
+	}
+
+	std::cout << "numbers: " << numbers << '\n';
+	std::cout << "mirror: " << mirror << '\n';
+	std::cout << '\n';
+
 	return (0);
 }
 
 int	main(void) {
 	subject_tests();
+	std::cout << '\n';
 	other_tests();
 	return (0);
 }
