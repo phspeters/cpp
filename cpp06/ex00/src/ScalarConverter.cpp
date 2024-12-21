@@ -15,35 +15,33 @@ ScalarConverter::~ScalarConverter() {
 }
 
 void ScalarConverter::convert(std::string input) {
-	double	*literal = new double;
+	double	literal = 0;
 
 	if (isChar(input)) {
 		std::cout << "Value is a --> char <--\n";
-		*literal = input[0];
+		literal = input[0];
 	}
 	else if (isInt(input)) {
 		std::cout << "Value is an --> int <--\n";
-		*literal = std::atoi(input.c_str());
+		literal = std::atoi(input.c_str());
 	}
 	else if (isFloat(input)){
 		std::cout << "Value is a --> float <--\n";
-		*literal = std::atof(input.c_str());
+		literal = std::atof(input.c_str());
 	}
 	else if (isDouble(input)) {
 		std::cout << "Value is a --> double <--\n";
-		*literal = std::strtod(input.c_str(), NULL);
+		literal = std::strtod(input.c_str(), NULL);
 	}
 	else {
-		literal = NULL;
+		literal = 0;
 		std::cout << "Error: Unknown value type\n";
 	}
 
 	if (literal) {
-		safeCastChar(*literal);
-		safeCastInt(*literal);
-		safeCastFloat(*literal);
-		safeCastDouble(*literal);
+		safeCastChar(literal);
+		safeCastInt(literal);
+		safeCastFloat(literal);
+		safeCastDouble(literal);
 	}
-
-	delete literal;
 }
