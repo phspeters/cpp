@@ -2,7 +2,7 @@
 
 int	main() {
 	int intArray[] = {1, 2, 3, 4, 5};
-	float floatArray[] = {1.1, 2.2, 3.3, 4.4, 5.5};
+	double doubleArray[] = {1.1, 2.2, 3.3, 4.4, 5.5};
 	std::string stringArray[] = {"one", "two", "three", "four", "five"};
 
 	std::cout << "INTEGER ARRAY:'\n";
@@ -18,17 +18,17 @@ int	main() {
 	iter(intArray, 5, print);
 	std::cout << '\n';
 
-	std::cout << "FLOAT ARRAY:\n";
+	std::cout << "DOUBLE ARRAY:\n";
 	std::cout << "Printing members:\n";
-	iter(floatArray, 5, print);
+	iter(doubleArray, 5, print);
 	std::cout << '\n';
 
 	std::cout << "... Adding one to every member\n";
 	std::cout << '\n';
 
-	iter(floatArray, 5, sumOne);
+	iter(doubleArray, 5, sumOne);
 	std::cout << "Printing members again:\n";
-	iter(floatArray, 5, print);
+	iter(doubleArray, 5, print);
 	std::cout << '\n';
 
 	std::cout << "STRING ARRAY:\n";
