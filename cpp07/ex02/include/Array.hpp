@@ -12,8 +12,7 @@ public:
 	~Array();
 
 	Array<T>& operator=(const Array<T>& other);
-	T &operator[](unsigned int index);
-	const T &operator[](unsigned int index) const;
+	T &operator[](unsigned int index) const;
 
 	size_t size() const;
 	
