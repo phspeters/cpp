@@ -3,6 +3,7 @@
 int main() {
 	int arr[] = {1, 2, 3, 4, 5};
 	const size_t arr_size = sizeof(arr) / sizeof(arr[0]);
+	
 	std::vector<int> vec(arr, arr + arr_size);
 	std::list<int> lst(arr, arr + arr_size);
 	std::deque<int> deq(arr, arr + arr_size);
