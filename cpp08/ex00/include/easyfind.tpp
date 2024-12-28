@@ -1,3 +1,6 @@
+#ifndef EASYFIND_TPP
+# define EASYFIND_TPP
+
 #include "easyfind.hpp"
 
 template<typename T>
@@ -5,7 +8,7 @@ int easyfind(T& container, int value) {
 	typename T::iterator it = std::find(container.begin(), container.end(), value);
 
 	if (it == container.end()) {
-		throw std::runtime_error("Value not found in container");
+		throw std::runtime_error("Error: Value not found inside container");
 	}
 
 	return std::distance(container.begin(), it);
@@ -21,3 +24,5 @@ void	testEasyFind(T& container, int value) {
 		std::cout << e.what() << std::endl;
 	}
 }
+
+#endif
