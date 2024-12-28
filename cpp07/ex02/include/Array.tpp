@@ -1,4 +1,7 @@
-#include "Array.hpp"
+#ifndef ARRAY_TPP
+# define ARRAY_TPP
+
+# include "Array.hpp"
 
 template <typename T>
 Array<T>::Array() : _array(NULL), _size(0) {}
@@ -67,3 +70,5 @@ std::ostream &operator<<(std::ostream &out, const Array<T> &arr) {
 	out << " }";
 	return (out);
 }
+
+#endif

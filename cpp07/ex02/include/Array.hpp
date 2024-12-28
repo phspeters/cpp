@@ -25,4 +25,6 @@ private:
 template <typename T>
 std::ostream &operator<<(std::ostream &out, Array<T> const &arr);
 
+# include "Array.tpp"
+
 #endif
