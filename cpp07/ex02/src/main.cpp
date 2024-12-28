@@ -62,7 +62,6 @@ int other_tests(void) {
 	std::cout << "empty: " << empty << '\n';
 	std::cout << '\n';
 
-
 	std::cout << "... Testing assignment operator = ...\n";
 	Array<int> numbers(5);
 	Array<int> mirror(5);
@@ -78,7 +77,7 @@ int other_tests(void) {
 	std::cout << "mirror: " << mirror << '\n';
 	std::cout << '\n';
 
-	std::cout << "Assigning numbers to mirror...\n";
+	std::cout << "... Assigning numbers to mirror ...\n";
 	mirror = numbers;
 	std::cout << '\n';
 
@@ -103,13 +102,13 @@ int other_tests(void) {
 	std::cout << "copy: " << copy << '\n';
 	std::cout << '\n';
 
-	std::cout << "... Testing size()...\n";
+	std::cout << "... Testing size() ...\n";
 	std::cout << "numbers.size(): " << numbers.size() << '\n';
 	std::cout << "copy.size(): " << copy.size() << '\n';
 	std::cout << "empty.size(): " << empty.size() << '\n';
 	std::cout << '\n';
 
-	std::cout << "... Testing access operator []...\n";
+	std::cout << "... Testing access operator [] ...\n";
 	std::cout << "copy[0]: " << copy[0] << '\n';
 	std::cout << "copy[3]: " << copy[3] << '\n';
 	try {

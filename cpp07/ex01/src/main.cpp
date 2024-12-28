@@ -10,7 +10,7 @@ int	main() {
 	iter(intArray, 5, print);
 	std::cout << '\n';
 
-	std::cout << "..Adding one to every member\n";
+	std::cout << "... Adding one to every member\n";
 	std::cout << '\n';
 
 	iter(intArray, 5, sumOne);

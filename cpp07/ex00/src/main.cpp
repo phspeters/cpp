@@ -3,7 +3,7 @@
 int	main() {
 	std::cout << "TESTING INTEGERS\n";
 	int a = 2;
-	int b = 3;
+	int b = 9;
 
 	std::cout << "a = " << a << ", b = " << b << "\n";
 	std::cout << "swap( a, b )\n";
@@ -13,8 +13,8 @@ int	main() {
 	std::cout << "max( a, b ) = " << ::max(a, b) << "\n\n";
 
 	std::cout << "TESTING STRINGS\n";
-	std::string c = "chaine1";
-	std::string d = "chaine2";
+	std::string c = "Hello";
+	std::string d = "World!";
 
 
 	std::cout << "c = " << c << ", d = " << d << "\n";
@@ -39,7 +39,7 @@ int	main() {
 	Data g;
 	Data h;
 	g.nbr = 42;
-	h.nbr = 84;
+	h.nbr = 24;
 
 	std::cout << "g.nbr = " << g.nbr << ", h.nbr = " << h.nbr << "\n";
 	std::cout << "swap( g, h )\n";
