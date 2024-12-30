@@ -7,6 +7,8 @@
 # include <exception>
 # include <ctime>
 # include <cstdlib>
+# include <numeric>
+# include <limits>
 
 class Span {
 public:
@@ -18,18 +20,22 @@ public:
 	Span &operator=(Span const &rhs);
 
 	void addNumber(int n);
-	int shortestSpan();
-	int longestSpan();
+	void addRange(std::vector<int>::iterator begin, std::vector<int>::iterator end);
+
+	unsigned int shortestSpan() const;
+	unsigned int longestSpan() const;
+
+	void fillSpan();
+	void randomizeSpan(int max = RAND_MAX - 1);
+
 	unsigned int size() const;
-
-	void randomizeSpan();
-
-	std::vector<int> _numbers;
+	std::vector<int> &getRange();
 
 private:
+	std::vector<int> _range;
 	unsigned int _size;
 };
 
-std::ostream &operator<<(std::ostream &out, Span const &span);
+std::ostream &operator<<(std::ostream &out, Span &span);
 
 #endif
