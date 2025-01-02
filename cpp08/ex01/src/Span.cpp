@@ -18,7 +18,7 @@ Span &Span::operator=(Span const &other) {
 }
 
 void Span::addNumber(int n) {
-	if (_range.size() == size())
+	if (_range.size() >= size())
 		throw std::overflow_error("Span is full: cannot add more numbers");
 
 	_range.push_back(n);
