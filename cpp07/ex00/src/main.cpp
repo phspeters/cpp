@@ -35,18 +35,16 @@ int	main() {
 	std::cout << "min( e, f ) = " << ::min(e, f) << "\n";
 	std::cout << "max( e, f ) = " << ::max(e, f) << "\n\n";
 
-	std::cout << "TESTING STRUCTS\n";
-	Data g;
-	Data h;
-	g.nbr = 42;
-	h.nbr = 24;
+	std::cout << "TESTING CHARS\n";
+	char	g = 'a';
+	char	h = 'z';
 
-	std::cout << "g.nbr = " << g.nbr << ", h.nbr = " << h.nbr << "\n";
+	std::cout << "g = " << g << ", h = " << h << "\n";
 	std::cout << "swap( g, h )\n";
 	swap(g, h);
-	std::cout << "g.nbr = " << g.nbr << ", h.nbr = " << h.nbr << "\n";
-	std::cout << "min( g, h ) = " << ::min(g.nbr, h.nbr) << "\n";
-	std::cout << "max( g, h ) = " << ::max(g.nbr, h.nbr) << "\n";
+	std::cout << "g = " << g << ", h = " << h << "\n";
+	std::cout << "min( g, h ) = " << ::min(g, h) << "\n";
+	std::cout << "max( g, h ) = " << ::max(g, h) << "\n\n";
 
 	return (0);
 }

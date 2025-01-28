@@ -57,8 +57,6 @@ int other_tests(void) {
 	
 	std::cout << "... Testing empty array ...\n";
 	Array<int> empty;
-
-	std::cout << "... Testing empty array" << '\n';
 	std::cout << "empty: " << empty << '\n';
 	std::cout << '\n';
 
@@ -72,7 +70,6 @@ int other_tests(void) {
 	}
 	std::cout << '\n';
 
-	std::cout << "... Testing assignment operator\n";
 	std::cout << "Before assignment:\n";
 	std::cout << "numbers: " << numbers << '\n';
 	std::cout << "mirror: " << mirror << '\n';
@@ -80,7 +77,6 @@ int other_tests(void) {
 
 	std::cout << "... Assigning numbers to mirror ...\n";
 	mirror = numbers;
-	std::cout << '\n';
 	std::cout << '\n';
 
 	std::cout << "... After assignment ...\n";
@@ -91,9 +87,7 @@ int other_tests(void) {
 	std::cout << "... Changing mirror array ...\n";
 	for (int i = 0; i < 5; i++) {
 		mirror[i] = 42;
-		mirror[i] = 42;
 	}
-	std::cout << '\n';
 	std::cout << '\n';
 
 	std::cout << "... After changes ...\n";
