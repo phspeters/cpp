@@ -16,6 +16,7 @@ ScalarConverter::~ScalarConverter() {
 
 void ScalarConverter::convert(std::string input) {
 	double	literal = 0;
+	bool	isConvertable = true;
 
 	if (isChar(input)) {
 		std::cout << "Value is a --> char <--\n";
@@ -34,11 +35,11 @@ void ScalarConverter::convert(std::string input) {
 		literal = std::strtod(input.c_str(), NULL);
 	}
 	else {
-		literal = 0;
+		isConvertable = false;
 		std::cout << "Error: Unknown value type\n";
 	}
 
-	if (literal) {
+	if (isConvertable) {
 		safeCastChar(literal);
 		safeCastInt(literal);
 		safeCastFloat(literal);
