@@ -24,8 +24,8 @@ void subjectTests(void) {
 }
 
 void shortSpanTests(void) {
-	std::cout << "SHORT SPAN (100) TESTS\n\n";
-	Span sp(100);
+	std::cout << "SHORT SPAN (10) TESTS\n\n";
+	Span sp(10);
 
 	std::cout << "... Testing inclusion of a range of numbers:\n";
 	int arr[] = {42, 21, 84, 24, 12, 48};
@@ -56,6 +56,12 @@ void shortSpanTests(void) {
 	std::cout << "... Testing shortest and longest spans:\n";
 	std::cout << "Shortest span: " << sp.shortestSpan() << '\n';
 	std::cout << "Longest span: " << sp.longestSpan() << '\n';
+	std::cout << '\n';
+
+	std::cout << "... Printing sorted span to improve readability:\n";
+	std::cout << "Span sp: ";
+	std::sort(sp.getRange().begin(), sp.getRange().end());
+	std::cout << sp << '\n';
 }
 
 void longSpanTests(void) {

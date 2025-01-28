@@ -19,11 +19,11 @@ public:
 	
 	Span &operator=(Span const &rhs);
 
-	void addNumber(int n);
-	void addRange(std::vector<int>::iterator begin, std::vector<int>::iterator end);
+	void addNumber(int n) throw(std::overflow_error);
+	void addRange(std::vector<int>::iterator begin, std::vector<int>::iterator end) throw(std::overflow_error);
 
-	unsigned int shortestSpan() const;
-	unsigned int longestSpan() const;
+	unsigned int shortestSpan() const throw(std::underflow_error);
+	unsigned int longestSpan() const throw(std::underflow_error);
 
 	void fillSpan();
 	void randomizeSpan(int max = RAND_MAX - 1);

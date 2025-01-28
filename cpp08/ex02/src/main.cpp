@@ -99,7 +99,7 @@ void canonicalTests(void) {
 	std::cout << '\n';
 
 	mstack3 = mstack2;
-	std::cout << "mstack3: " << mstack3 << '\n';
+	std::cout << "mstack3: " << mstack3;
 	std::cout << '\n';
 }
 
@@ -123,6 +123,7 @@ void methodsTests(void) {
 	std::cout << "---> Methods:\n";
 	std::cout << "mstack.top(): " << mstack.top() << '\n';
 	std::cout << "mstack.size(): " << mstack.size() << '\n';
+	std::cout << "mstack.empty(): " << (mstack.empty() ? "true" : "false") << '\n';
 	std::cout << "mstack: " << mstack << '\n';
 	std::cout << '\n';
 
@@ -141,14 +142,14 @@ void methodsTests(void) {
 
 	std::cout << "mstack.top(): " << mstack.top() << '\n';
 	std::cout << "mstack.size(): " << mstack.size() << '\n';
-	std::cout << "mstack: " << mstack << '\n';
+	std::cout << "mstack: " << mstack;
 	std::cout << '\n';
 }
 
 void iteratorsTests(void) {
 	std::cout << "ITERATORS TESTS\n\n";
 
-	std::cout << "... Creating MutantStack with 5, 17, 3, 5, 737, 0 ...\n";
+	std::cout << "... Creating MutantStack and pushing 5, 17, 3, 5, 737, 0 ...\n";
 	MutantStack<int> mstack;
 	mstack.push(5);
 	mstack.push(17);
@@ -182,8 +183,7 @@ void iteratorsTests(void) {
 	}
 	std::cout << '\n';
 
-	std::cout << "... Decrementing const iterator twice ...\n";
-	--cit;
+	std::cout << "... Decrementing const iterator once ...\n";
 	--cit;
 	std::cout << "cit: " << *cit << '\n';
 	std::cout << '\n';
