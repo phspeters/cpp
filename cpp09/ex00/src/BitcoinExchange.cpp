@@ -62,7 +62,7 @@ void BitcoinExchange::_convertQueries(const std::string & filename) {
 		char *end;
 		double value = std::strtod(line.substr(pipe + 1).c_str(), &end);
 		if (!_isValidValue(value) || *end != '\0') {
-			std::cout << "Error: invalid value => " << line.substr(pipe + 1) << '\n';
+			std::cout << "Error: invalid value =>" << line.substr(pipe + 1) << (value > 1000 ? ": Too large a number\n" : "\n");
 			continue;
 		}
 
