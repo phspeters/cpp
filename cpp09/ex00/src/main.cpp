@@ -7,8 +7,8 @@ int main(int argc, char **argv) {
 	}
 
 	BitcoinExchange exchange;
-	exchange.loadCsv("data/data.csv");
-	exchange.loadQuery(argv[1]);
-	exchange.displayConvertion();
+	
+	exchange.displayConvertions("data/data.csv", argv[1]);
+
 	return 0;
 }
