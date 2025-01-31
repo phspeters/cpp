@@ -10,26 +10,32 @@ You will discover new concepts step-by-step. The exercises will progressively in
 
 ## 💭 Main concepts from each module
 
-**- cpp00:** Namespaces, classes, member functions, stdio streamsinitialization lists, static, const, and some other basic stuff
+- **cpp00:** Namespaces, classes, member functions, stdio streamsinitialization lists, static, const, and some other basic stuff
 
-**- cpp01:** Memory allocation, pointers to members, references, switch statement
+- **cpp01:** Memory allocation, pointers to members, references, switch statement
 
-**- cpp02:** Ad-hoc polymorphism, operator overloading and Orthodox Canonical class form
+- **cpp02:** Ad-hoc polymorphism, operator overloading and Orthodox Canonical class form
 
-**- cpp03:** Inheritance
+- **cpp03:** Inheritance
 
-**- cpp04:** Subtype polymorphism, abstract classes, interfaces
+- **cpp04:** Subtype polymorphism, abstract classes, interfaces
 
-**- cpp05:** Repetition and Exceptions
+- **cpp05:** Repetition and Exceptions
 
-**- cpp06:** C++ casts
+- **cpp06:** C++ casts
 
-**- cpp07:** C++ templates
+- **cpp07:** C++ templates
 
-**- cpp08:** Templated containers, iterators, algorithms
+- **cpp08:** Templated containers, iterators, algorithms
 
-**- cpp09:** STL
+- **cpp09:** STL
 
+## 🚫 Project constraints
+
+- C++11 (and derived forms) and Boost libraries are forbidden.
+- The using namespace <ns_name> and friend keywords are forbidden
+- From Module 02 to Module 09, your classes must be designed in the Orthodox Canonical Form, except when explicitely stated otherwise.
+- You are allowed to use the STL in the Module 08 and 09 only. That means: no Containers (vector/list/map/and so forth) and no Algorithms (anything that requires to include the <algorithm> header) until then.
 
 ## 📋 Testing
 
