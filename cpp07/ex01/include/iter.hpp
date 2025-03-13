@@ -3,25 +3,29 @@
 
 # include <iostream>
 
-template <typename T>
-void iter(T *array, size_t length, void (*f)(T &)) {
+template <typename T, typename F>
+void iter(T *array, size_t length, F function) {
+	if (!array) {
+		return;
+	}
+
 	for (size_t i = 0; i < length; i++) {
-		f(array[i]);
+		function(array[i]);
 	}
 }
 
 template <typename T>
-void print(T &value) {
+void print(T& value) {
 	std::cout << value << std::endl;
 }
 
 template <typename T>
-void sumOne(T &value) {
+void sumOne(T& value) {
 	value += 1;
 }
 
 template <typename T>
-void append(T &value) {
+void append(T& value) {
 	value += "!";
 }
 
