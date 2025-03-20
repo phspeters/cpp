@@ -12,4 +12,6 @@ int main(int argc, char **argv) {
 	}
 
 	pm.sort_vec(vec);
+	print_container(vec);
+	std::cout << "Number of comparisons: " << PmergeMe::nbr_of_comps << std::endl;
 }

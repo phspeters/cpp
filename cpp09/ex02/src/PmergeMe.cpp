@@ -1,5 +1,9 @@
 #include "PmergeMe.hpp"
 
+int PmergeMe::nbr_of_comps = 0;
+
+std::size_t PmergeMe::_jacobsthal_cache[62] = {0};
+
 PmergeMe::PmergeMe() {}
 
 PmergeMe::PmergeMe(PmergeMe const & src) {
@@ -14,11 +18,19 @@ PmergeMe & PmergeMe::operator=(PmergeMe const & rhs) {
 PmergeMe::~PmergeMe() {}
 
 void PmergeMe::sort_vec(std::vector<int>& vec) {
-	_merge_insertion_sort<std::vector<int> >(vec, 1);
+	_merge_insertion_sort<std::vector<int>, std::vector<typename std::vector<int>::iterator> >(vec, 1);
 }
 
 void PmergeMe::sort_deque(std::deque<int>& deque) {
-    _merge_insertion_sort<std::deque<int> >(deque, 1);
+	_merge_insertion_sort<std::deque<int>, std::deque<typename std::deque<int>::iterator> >(deque, 1);
 }
 
-int PmergeMe::nbr_of_comps = 0;
+std::size_t PmergeMe::_jacobsthal_number(std::size_t n) {
+	if (std::size_t cache = _jacobsthal_cache[n])
+		return cache;
+
+	std::size_t result = round((pow(2, n + 1) + pow(-1, n)) / 3);
+    _jacobsthal_cache[n] = result;
+
+	return result;
+}
