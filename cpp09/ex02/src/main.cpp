@@ -39,8 +39,7 @@ int main(int argc, char **argv) {
 		
 		vec.push_back(static_cast<int>(value));
 	}
-	
-	// Create deque with vector's data
+
 	std::deque<int> deq(vec.begin(), vec.end());
 	
 	PmergeMe pm;
@@ -60,7 +59,7 @@ int main(int argc, char **argv) {
 
 	std::cout << "After:  ";
 	print_container(vec);
-	//std::cout << std::fixed << std::setprecision(6);
+
 	std::cout << "Time to process a range of 5 elements with std::vector : " << vec_time << " us\n";
 	std::cout << "Time to process a range of 5 elements with std::deque  : " << deq_time << " us\n";
 	if (DEBUG_MODE) {
