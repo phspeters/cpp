@@ -136,10 +136,8 @@ std::size_t PmergeMe::_optimized_insertion(Chain& main, Chain& pend) {
 			
 			std::advance(pend_it, -1);
 		}
-		
 		processed_pend_elements += group_size;
 	}
-
 	return (processed_pend_elements);
 }
 
@@ -211,19 +209,6 @@ template <typename Container>
 void print_container(Container& container) {
 	for (typename Container::iterator it = container.begin(); it != container.end(); it++) {
 		std::cout << *it << " ";
-	}
-	std::cout << std::endl;
-}
-
-template <typename Container, typename Chain>
-void print_chain(Chain& chain, int pair_group_size) {
-	typedef typename Container::iterator Iterator;
-	for (typename Chain::iterator it = chain.begin(); it != chain.end(); it++) {
-		for (int group_pos = 0; group_pos < pair_group_size; group_pos++) {
-			Iterator group_anchor = *it;
-			std::advance(group_anchor, -pair_group_size + group_pos + 1);
-			std::cout << *group_anchor << " ";
-		}
 	}
 	std::cout << std::endl;
 }
