@@ -24,25 +24,25 @@ void print_container(Container& container);
 
 class PmergeMe
 {
-  public:
-    PmergeMe();
-    PmergeMe(const PmergeMe& pm);
-    PmergeMe& operator=(const PmergeMe& pm);
-    ~PmergeMe();
+public:
+	PmergeMe();
+	PmergeMe(const PmergeMe& pm);
+	PmergeMe& operator=(const PmergeMe& pm);
+	~PmergeMe();
 
-	static int nbr_of_comps;
-    
+	static int comparison_counter;
+	
 	void sort_vec(std::vector<int>& vec);
-    void sort_deque(std::deque<int>& deque);
+	void sort_deque(std::deque<int>& deque);
 
-  private:
+private:
 	std::size_t _jacobsthal_number(std::size_t n);
 	static std::size_t _jacobsthal_cache[62];
 
-    template <typename Container, typename Chain> void _merge_insertion_sort(Container& container, int pair_group_size);
+	template <typename Container, typename Chain> void _merge_insertion_sort(Container& container, int pair_group_size);
 	template <typename Container, typename Chain> void _merge_phase(Container& container, int pair_group_size);
 	template <typename Container, typename Chain> void _create_chains(Container& container, int pair_group_size, Chain& main, Chain& pend);
-    template <typename Container, typename Chain> std::size_t _optimized_insertion(Chain& main, Chain& pend);
+	template <typename Container, typename Chain> std::size_t _optimized_insertion(Chain& main, Chain& pend);
 	template <typename Container, typename Chain> void _insert_remaining(std::size_t container_size, int pair_group_size, Chain& main, Chain& pend, std::size_t processed_pend_elements);
 	template <typename Container, typename Chain> void _update_container(Container& container, Chain& main, int pair_group_size);
 };
@@ -51,8 +51,8 @@ template <typename Container, typename Chain>
 void PmergeMe::_merge_insertion_sort(Container& container, int pair_group_size) {
 	_merge_phase<Container, Chain>(container, pair_group_size);
 
-    Chain main;
-    Chain pend;
+	Chain main;
+	Chain pend;
 	_create_chains<Container, Chain>(container, pair_group_size, main, pend);
 
 	std::size_t processed_pend_elements = _optimized_insertion<Container, Chain>(main, pend);
@@ -66,25 +66,25 @@ template <typename Container, typename Chain>
 void PmergeMe::_merge_phase(Container& container, int pair_group_size) {
 	typedef typename Container::iterator Iterator;
 
-    int group_count = container.size() / pair_group_size;
-    if (group_count < 2) {
-        return;
+	int group_count = container.size() / pair_group_size;
+	if (group_count < 2) {
+		return;
 	}
 
 	int pair_count = group_count / 2;
 
 	Iterator first_pair_begin = container.begin();
 	Iterator last_pair_end = get_iterator_at_offset(container.begin(), pair_group_size * 2 * pair_count);
-   
-    int jump = 2 * pair_group_size;
-    for (Iterator it = first_pair_begin; it != last_pair_end; std::advance(it, jump)) {
-        Iterator this_group_largest_element = get_iterator_at_offset(it, pair_group_size - 1);
-        Iterator next_group_largest_element = get_iterator_at_offset(it, pair_group_size * 2 - 1);
 
-        if (_comp(next_group_largest_element, this_group_largest_element)) {
-            _swap_with_next_pair(this_group_largest_element, pair_group_size);
-        }
-    }
+	int jump = 2 * pair_group_size;
+	for (Iterator it = first_pair_begin; it != last_pair_end; std::advance(it, jump)) {
+		Iterator this_group_largest_element = get_iterator_at_offset(it, pair_group_size - 1);
+		Iterator next_group_largest_element = get_iterator_at_offset(it, pair_group_size * 2 - 1);
+
+		if (_comp(next_group_largest_element, this_group_largest_element)) {
+			_swap_with_next_pair(this_group_largest_element, pair_group_size);
+		}
+	}
 	
 	_merge_insertion_sort<Container, Chain>(container, pair_group_size * 2);
 }
@@ -186,25 +186,25 @@ void PmergeMe::_update_container(Container& container, Chain& main, int pair_gro
  */
 template <typename Iterator>
 void _swap_with_next_pair(Iterator rightmost_element_it, int pair_group_size) {
-    Iterator current_pair_begin = get_iterator_at_offset(rightmost_element_it, -pair_group_size + 1);
-    Iterator next_pair_begin = get_iterator_at_offset(current_pair_begin, pair_group_size);
-    
-    while (current_pair_begin != next_pair_begin) {
-        std::iter_swap(current_pair_begin, get_iterator_at_offset(current_pair_begin, pair_group_size));
-        current_pair_begin++;
-    }
+	Iterator current_pair_begin = get_iterator_at_offset(rightmost_element_it, -pair_group_size + 1);
+	Iterator next_pair_begin = get_iterator_at_offset(current_pair_begin, pair_group_size);
+	
+	while (current_pair_begin != next_pair_begin) {
+		std::iter_swap(current_pair_begin, get_iterator_at_offset(current_pair_begin, pair_group_size));
+		current_pair_begin++;
+	}
 }
 
 template <typename Iterator>
 bool _comp(Iterator lv, Iterator rv) {
-	PmergeMe::nbr_of_comps++;
+	PmergeMe::comparison_counter++;
 	return *lv < *rv;
 }
 
 template <typename Iterator> 
 Iterator get_iterator_at_offset(Iterator it, int steps) {
-    std::advance(it, steps);
-    return it;
+	std::advance(it, steps);
+	return it;
 }
 
 template <typename Container>
