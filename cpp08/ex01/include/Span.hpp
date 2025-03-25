@@ -4,11 +4,10 @@
 # include <iostream>
 # include <vector>
 # include <algorithm>
-# include <exception>
+# include <stdexcept>
 # include <ctime>
 # include <cstdlib>
 # include <numeric>
-# include <limits>
 
 class Span {
 public:
@@ -19,11 +18,11 @@ public:
 	
 	Span &operator=(Span const &rhs);
 
-	void addNumber(int n) throw(std::overflow_error);
-	void addRange(std::vector<int>::iterator begin, std::vector<int>::iterator end) throw(std::overflow_error);
+	void addNumber(int n);
+	void addRange(std::vector<int>::iterator begin, std::vector<int>::iterator end);
 
-	unsigned int shortestSpan() const throw(std::underflow_error);
-	unsigned int longestSpan() const throw(std::underflow_error);
+	unsigned int shortestSpan() const;
+	unsigned int longestSpan() const;
 
 	void fillSpan();
 	void randomizeSpan(int max = RAND_MAX - 1);

@@ -1,4 +1,7 @@
 #include "easyfind.hpp"
+#include <vector>
+#include <list>
+#include <deque>
 
 int main() {
 	int arr[] = {1, 2, 3, 4, 5};
@@ -11,22 +14,22 @@ int main() {
 	std::cout << "All containers have been initialized with { 1, 2, 3, 4, 5 }\n";
 
 	std::cout << "\nTESTING VECTOR\n";
-	std::cout << "Searching for 3\n";
+	std::cout << "Searching for number 3\n";
 	testEasyFind(vec, 3);
-	std::cout << "Searching for 6\n";
+	std::cout << "Searching for number 6\n";
 	testEasyFind(vec, 6);
 
 	std::cout << "\nTESTING LIST\n";
-	std::cout << "Searching for 3\n";
-	testEasyFind(lst, 3);
-	std::cout << "Searching for 6\n";
-	testEasyFind(lst, 6);
+	std::cout << "Searching for number 2\n";
+	testEasyFind(lst, 2);
+	std::cout << "Searching for number 10\n";
+	testEasyFind(lst, 10);
 
 	std::cout << "\nTESTING DEQUE\n";
-	std::cout << "Searching for 3\n";
-	testEasyFind(deq, 3);
-	std::cout << "Searching for 6\n";
-	testEasyFind(deq, 6);
+	std::cout << "Searching for number 4\n";
+	testEasyFind(deq, 4);
+	std::cout << "Searching for number 42\n";
+	testEasyFind(deq, 42);
 
 	return (0);
 }

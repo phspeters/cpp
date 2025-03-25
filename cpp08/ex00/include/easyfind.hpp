@@ -3,13 +3,10 @@
 
 # include <algorithm>
 # include <iostream>
-# include <vector>
-# include <list>
-# include <deque>
-# include <exception>
+# include <stdexcept>
 
 template<typename T>
-int easyfind(T& container, int value) throw(std::runtime_error) {
+int easyfind(T& container, int value) {
 	typename T::iterator it = std::find(container.begin(), container.end(), value);
 
 	if (it == container.end()) {

@@ -1,8 +1,12 @@
 #include "Span.hpp"
 
-Span::Span() : _range(), _size(0) {}
+Span::Span() : _range(), _size(0) {
+	std::srand(static_cast<unsigned int>(std::time(0)));
+}
 
-Span::Span(unsigned int n) : _range(), _size(n) {}
+Span::Span(unsigned int n) : _range(), _size(n) {
+	std::srand(static_cast<unsigned int>(std::time(0)));
+}
 
 Span::Span(Span const &src) : _range(src._range), _size(src._size) {}
 
@@ -17,14 +21,14 @@ Span &Span::operator=(Span const &other) {
 	return (*this);
 }
 
-void Span::addNumber(int n) throw(std::overflow_error) {
+void Span::addNumber(int n) {
 	if (_range.size() >= size())
 		throw std::overflow_error("Span is full: cannot add more numbers");
 
 	_range.push_back(n);
 }
 
-void Span::addRange(std::vector<int>::iterator begin, std::vector<int>::iterator end) throw(std::overflow_error) {
+void Span::addRange(std::vector<int>::iterator begin, std::vector<int>::iterator end) {
 	if (_range.size() + std::distance(begin, end) > size()) {
 		throw std::overflow_error("Span cannot hold this range: exceeding capacity");
 	}
@@ -32,7 +36,7 @@ void Span::addRange(std::vector<int>::iterator begin, std::vector<int>::iterator
 	_range.insert(_range.end(), begin, end);
 }
 
-unsigned int Span::shortestSpan() const throw(std::underflow_error) {
+unsigned int Span::shortestSpan() const {
 	if (_range.size() < 2) {
 		throw std::underflow_error("Span is too short: not enough elements to calculate a span");
 	}
@@ -46,7 +50,7 @@ unsigned int Span::shortestSpan() const throw(std::underflow_error) {
 	return (shortest);
 }
 
-unsigned int Span::longestSpan() const throw(std::underflow_error) {
+unsigned int Span::longestSpan() const {
 	if (_range.size() < 2) {
 		throw std::underflow_error("Span is too short: not enough elements to calculate a span");
 	}
