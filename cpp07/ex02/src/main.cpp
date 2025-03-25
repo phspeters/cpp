@@ -112,7 +112,7 @@ int other_tests(void) {
 	try {
 		std::cout << "copy[5]: " << copy[5] << '\n';
 	}
-	catch (const std::exception &e) {
+	catch (std::exception &e) {
 		std::cerr << e.what() << '\n';
 	}
 

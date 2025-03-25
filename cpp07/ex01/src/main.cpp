@@ -54,6 +54,14 @@ int	main() {
 	iter(charArray, 5, print<char>);
 	std::cout << '\n';
 
+	std::cout << "... Adding one to every character\n";
+	std::cout << '\n';
+
+	iter(charArray, 5, sumOne<char>);
+	std::cout << "Printing members again:\n";
+	iter(charArray, 5, print<char>);
+	std::cout << '\n';
+
 	std::cout << "... Converting every character to upper case\n";
 	std::cout << '\n';
 
@@ -63,29 +71,3 @@ int	main() {
 
 	return (0);
 }
-
-//SUJECT
-//class Awesome
-//{
-//  public:
-//    Awesome( void ) : _n( 42 ) { return; }
-//    int get( void ) const { return this->_n; }
-//  private:
-//    int _n;
-//};
-
-//std::ostream & operator<<( std::ostream & o, Awesome const & rhs )
-//{
-//  o << rhs.get();
-//  return o;
-//}
-
-//int main() {
-//  int tab[] = { 0, 1, 2, 3, 4 };
-//  Awesome tab2[5];
-
-//  iter( tab, 5, print<const int> );
-//  iter( tab2, 5, print<Awesome> );
-
-//  return 0;
-//}
