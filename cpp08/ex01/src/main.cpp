@@ -23,6 +23,37 @@ void subjectTests(void) {
 	}
 }
 
+void unitarySpanTests(void) {
+	std::cout << "UNITARY SPAN (1) TESTS\n\n";
+	Span sp(1);
+
+	std::cout << "... Adding a number to an empty Span sp:\n";
+	sp.addNumber(42);
+	std::cout << "Span sp: " << sp << '\n';
+	std::cout << '\n';
+
+	std::cout << "... Adding a number to a full Span sp:\n";
+	try {
+		sp.addNumber(21);
+	} catch (std::exception &e) {
+		std::cerr << "Error: " << e.what() << '\n';
+	}
+	std::cout << '\n';
+
+	std::cout << "... Testing shortest and longest spans:\n";
+	try {
+	std::cout << "Shortest span: " << sp.shortestSpan() << '\n';
+	} catch (std::exception &e) {
+		std::cerr << "Error: " << e.what() << '\n';
+	}
+	try {
+	std::cout << "Longest span: " << sp.longestSpan() << '\n';
+	} catch (std::exception &e) {
+		std::cerr << "Error: " << e.what() << '\n';
+	}
+	std::cout << '\n';
+}
+
 void shortSpanTests(void) {
 	std::cout << "SHORT SPAN (10) TESTS\n\n";
 	Span sp(10);
@@ -84,6 +115,8 @@ void longSpanTests(void) {
 
 int	main(void) {
 	subjectTests();
+	std::cout << "\n--------------------------------------------------------------------------------\n\n";
+	unitarySpanTests();
 	std::cout << "\n--------------------------------------------------------------------------------\n\n";
 	shortSpanTests();
 	std::cout << "\n--------------------------------------------------------------------------------\n\n";
