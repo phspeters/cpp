@@ -52,6 +52,7 @@ Array<T>& Array<T>::operator=(const Array<T>& other) {
 			_array[i] = other._array[i];
 		}
 	}
+
 	return (*this);
 }
 
@@ -88,6 +89,7 @@ std::ostream &operator<<(std::ostream &out, const Array<T> &arr) {
 		}
 	}
 	out << " }";
+	
 	return (out);
 }
 

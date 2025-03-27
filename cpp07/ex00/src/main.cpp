@@ -17,7 +17,6 @@ int	main() {
 	std::string c = "Hello";
 	std::string d = "World!";
 
-
 	std::cout << "c = " << c << ", d = " << d << "\n";
 	std::cout << "swap( c, d )\n";
 	swap(c, d);
