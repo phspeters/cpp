@@ -21,8 +21,7 @@ void testEasyFind(T& container, int value) {
 	try {
 		int index = easyfind(container, value);
 		std::cout << "Found at index: " << index << "\n";
-	}
-	catch (std::exception &e) {
+	} catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
 	}
 }

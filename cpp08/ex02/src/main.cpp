@@ -26,13 +26,14 @@ void subjectTests(void) {
 	++it;
 	--it;
 
-	while (it != ite)
-	{
+	while (it != ite) {
 		std::cout << *it;
 		++it;
-		if (it != ite)
+		if (it != ite) {
 			std::cout << ", ";
+		}
 	}
+
 	std::stack<int> s(mstack);
 	std::cout << '\n';
 }
@@ -62,13 +63,14 @@ void subjectTestsWithList(void) {
 	++it;
 	--it;
 
-	while (it != ite)
-	{
+	while (it != ite) {
 		std::cout << *it;
 		++it;
-		if (it != ite)
+		if (it != ite) {
 			std::cout << ", ";
+		}
 	}
+	
 	std::list<int> s(list);
 	std::cout << '\n';
 }
