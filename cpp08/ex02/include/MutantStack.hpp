@@ -27,17 +27,17 @@ public:
 	const_iterator end() const { return std::stack<T, Container>::c.end(); };
 };
 
-std::ostream &operator<<(std::ostream &out, MutantStack<int> const &mstack) {
-	MutantStack<int>::const_iterator it = mstack.begin();
-	MutantStack<int>::const_iterator ite = mstack.end();
+template <typename T, typename Container>
+std::ostream &operator<<(std::ostream &out, MutantStack<T, Container> const &mstack) {
+	typename MutantStack<T, Container>::const_iterator it = mstack.begin();
+	typename MutantStack<T, Container>::const_iterator ite = mstack.end();
 
 	out << "{ ";
-	while (it != ite) {
+	if (it != ite) {
 		out << *it;
-		if (it + 1 != ite) {
-			out << ", ";
+		while (++it != ite) {
+			out << ", " << *it;
 		}
-		++it;
 	}
 	out << " }";
 	
