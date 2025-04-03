@@ -6,8 +6,8 @@
 # include <stdexcept>
 
 template<typename T>
-int easyfind(T& container, int value) {
-	typename T::iterator it = std::find(container.begin(), container.end(), value);
+int easyfind(const T& container, int value) {
+	typename T::const_iterator it = std::find(container.begin(), container.end(), value);
 
 	if (it == container.end()) {
 		throw std::runtime_error("Error: Value not found inside container");
@@ -17,7 +17,7 @@ int easyfind(T& container, int value) {
 }
 
 template<typename T>
-void testEasyFind(T& container, int value) {
+void testEasyFind(const T& container, int value) {
 	try {
 		int index = easyfind(container, value);
 		std::cout << "Found at index: " << index << "\n";

@@ -12,9 +12,7 @@ public:
 	~MutantStack() {};
 
 	MutantStack<T, Container> &operator=(MutantStack const &other) {
-		if (this != &other) {
-			std::stack<T, Container>::operator=(other);
-		}
+		std::stack<T, Container>::operator=(other);
 		return (*this);
 	};
 

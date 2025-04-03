@@ -90,15 +90,16 @@ void Span::_generateRandomSeedOnce() {
 }
 
 std::ostream &operator<<(std::ostream &out, Span &span) {
+	std::vector<int>::const_iterator it = span.getRange().begin();
+	std::vector<int>::const_iterator ite = span.getRange().end();
+	
 	out << "{";
-
-	for (std::vector<int>::const_iterator i = span.getRange().begin(); i != span.getRange().end(); ++i) {
-		out << *i;
-		if (i + 1 != span.getRange().end()) {
-			out << ", ";
+	if (it != ite) {
+		out << *it;
+		while (++it != ite) {
+			out << ", " << *it;
 		}
 	}
-
 	out << "}";
 
 	return (out);

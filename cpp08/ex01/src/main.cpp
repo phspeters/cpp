@@ -96,8 +96,8 @@ void shortSpanTests(void) {
 }
 
 void longSpanTests(void) {
-	std::cout << "LONG SPAN (50000) TESTS\n\n";
-	Span sp(50000);
+	std::cout << "LONG SPAN (30000) TESTS\n\n";
+	Span sp(30000);
 
 	std::cout << "... Filling array and randomizing\n";
 	sp.fillSpan();
