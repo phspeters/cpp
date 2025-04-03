@@ -1,12 +1,8 @@
 #include "Span.hpp"
 
-Span::Span() : _range(), _size(0) {
-	std::srand(static_cast<unsigned int>(std::time(0)));
-}
+Span::Span() : _range(), _size(0) {}
 
-Span::Span(unsigned int n) : _range(), _size(n) {
-	std::srand(static_cast<unsigned int>(std::time(0)));
-}
+Span::Span(unsigned int n) : _range(), _size(n) {}
 
 Span::Span(Span const &src) : _range(src._range), _size(src._size) {}
 
@@ -22,18 +18,11 @@ Span &Span::operator=(Span const &other) {
 }
 
 void Span::addNumber(int n) {
-	if (_range.size() >= size())
+	if (_range.size() >= size()) {
 		throw std::overflow_error("Span is full: cannot add more numbers");
-
-	_range.push_back(n);
-}
-
-void Span::addRange(std::vector<int>::iterator begin, std::vector<int>::iterator end) {
-	if (_range.size() + std::distance(begin, end) > size()) {
-		throw std::overflow_error("Span cannot hold this range: exceeding capacity");
 	}
 
-	_range.insert(_range.end(), begin, end);
+	_range.push_back(n);
 }
 
 unsigned int Span::shortestSpan() const {
@@ -68,14 +57,17 @@ void Span::fillSpan() {
 }
 
 void Span::randomizeSpan(int max) {
-	std::srand(std::time(0));
-
-	for (std::vector<int>::iterator i = _range.begin(); i != _range.end(); ++i) {
-		*i = std::rand() % max;
-		if (std::rand() % 2) {
-			*i *= -1;
-		}
+	_generateRandomSeedOnce();
+	
+    if (max <= 0) {
+        max = RAND_MAX;
 	}
+            
+    for (std::vector<int>::iterator i = _range.begin(); i != _range.end(); ++i) {
+        int randomValue = static_cast<int>(static_cast<double>(std::rand()) / RAND_MAX * max);
+
+        *i = (std::rand() & 1) ? randomValue : -randomValue;
+    }
 }
 
 unsigned int Span::size() const {
@@ -84,6 +76,17 @@ unsigned int Span::size() const {
 
 std::vector<int> &Span::getRange() {
 	return (_range);
+}
+
+void Span::_generateRandomSeedOnce() {
+	static bool seedGenerated = false;
+
+	if (seedGenerated) {
+		return;
+	}
+
+	std::srand(static_cast<unsigned int>(std::time(0)));
+	seedGenerated = true;
 }
 
 std::ostream &operator<<(std::ostream &out, Span &span) {
