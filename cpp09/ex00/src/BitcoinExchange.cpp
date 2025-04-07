@@ -84,33 +84,38 @@ void BitcoinExchange::_convertValue(const std::pair<std::string, double> & entry
 }
 
 const char* BitcoinExchange::_validateFile(const std::string & filename) {
-    struct stat pathStat;
-    if (stat(filename.c_str(), &pathStat) != 0) {
-        std::cerr << "Error: file '" << filename << "' does not exist" << std::endl;
-        exit(1);
-    }
-    
-    if (!S_ISREG(pathStat.st_mode)) {
-        std::cerr << "Error: '" << filename << "' is not a regular file" << std::endl;
-        exit(1);
-    }
+	if (filename.size() < 4 || (filename.substr(filename.size() - 4) != ".txt" && filename.substr(filename.size() - 4) != ".csv")) {
+		std::cerr << "Error: file '" << filename << "' does not have a .txt or .csv extension" << std::endl;
+		exit(1);
+	}
+	
+	struct stat pathStat;
+	if (stat(filename.c_str(), &pathStat) != 0) {
+		std::cerr << "Error: file '" << filename << "' does not exist" << std::endl;
+		exit(1);
+	}
+	
+	if (!S_ISREG(pathStat.st_mode)) {
+		std::cerr << "Error: '" << filename << "' is not a regular file" << std::endl;
+		exit(1);
+	}
 
-    std::ifstream file(filename.c_str());
-    if (!file.is_open()) {
-        std::cerr << "Error: could not open file '" << filename << "'" << std::endl;
-        exit(1);
-    }
+	std::ifstream file(filename.c_str());
+	if (!file.is_open()) {
+		std::cerr << "Error: could not open file '" << filename << "'" << std::endl;
+		exit(1);
+	}
 
-    if (file.peek() == std::ifstream::traits_type::eof()) {
-        std::cerr << "Error: file '" << filename << "' is empty" << std::endl;
-        exit(1);
-    }
+	if (file.peek() == std::ifstream::traits_type::eof()) {
+		std::cerr << "Error: file '" << filename << "' is empty" << std::endl;
+		exit(1);
+	}
 
-    return filename.c_str();
+	return filename.c_str();
 }
 
 bool BitcoinExchange::_isValidDate(const std::string& date) {
-    std::istringstream ss(date);
+	std::istringstream ss(date);
 	int year, month, day;
 	char sep1, sep2;
 
@@ -120,13 +125,13 @@ bool BitcoinExchange::_isValidDate(const std::string& date) {
 		return false;
 	}
 
-    int daysInMonth[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-        
-    if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
-        daysInMonth[1] = 29;
-    }
+	int daysInMonth[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+		
+	if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+		daysInMonth[1] = 29;
+	}
 
-    return day <= daysInMonth[month - 1];
+	return day <= daysInMonth[month - 1];
 }
 
 bool BitcoinExchange::_isValidRecord(const std::string & date) {
