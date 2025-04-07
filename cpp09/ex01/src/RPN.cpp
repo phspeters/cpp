@@ -12,7 +12,7 @@ RPN::~RPN() {}
 
 RPN & RPN::operator=(RPN const & rhs) {
 	if (this != &rhs) {
-		this->_stack = rhs._stack;
+		_stack = rhs._stack;
 	}
 
 	return *this;
@@ -26,16 +26,16 @@ void RPN::solveExpression(std::string expression) {
 
 	while (iss >> token) {
 		if (token == "+" || token == "-" || token == "*" || token == "/") {
-			if (this->_stack.size() < 2) {
+			if (_stack.size() < 2) {
 				std::cout << "Error: not enough operands" << std::endl;
 				return;
 			}
 
-			int a = this->_stack.top();
-			this->_stack.pop();
+			int a = _stack.top();
+			_stack.pop();
 
-			int b = this->_stack.top();
-			this->_stack.pop();
+			int b = _stack.top();
+			_stack.pop();
 
 			if (token == "/" && a == 0) {
                 std::cout << "Error: division by zero" << std::endl;
@@ -43,21 +43,21 @@ void RPN::solveExpression(std::string expression) {
             }
 
 			if (token == "+") {
-				this->_stack.push(b + a);
+				_stack.push(b + a);
 			} else if (token == "-") {
-				this->_stack.push(b - a);
+				_stack.push(b - a);
 			} else if (token == "*") {
-				this->_stack.push(b * a);
+				_stack.push(b * a);
 			} else if (token == "/") {
-				this->_stack.push(b / a);
+				_stack.push(b / a);
 			}
 
 		} else {
-			this->_stack.push(atoi(token.c_str()));
+			_stack.push(atoi(token.c_str()));
 		}
 	}
 
-	std::cout << this->_stack.top() << std::endl;
+	std::cout << _stack.top() << std::endl;
 }
 
 void RPN::_validateExpression(std::string expression) {
@@ -88,10 +88,6 @@ bool RPN::_isValidOperand(std::string token) {
 	if (token.size() == 1 && token[0] >= '0' && token[0] <= '9') {
 		return true;
 	}
-
-	if (token.size() == 2 && token[0] == '-' && token[1] >= '0' && token[1] <= '9') {
-		return true;
-	}
-
+	
 	return false;
 }
