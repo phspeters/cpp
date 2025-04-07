@@ -30,6 +30,7 @@ private:
 	bool _isValidDate(const std::string & date);
 	bool _isValidRecord(const std::string & date);
 	bool _isValidValue(double & value);
+	std::string _trim(const std::string & str);
 };
 
 #endif

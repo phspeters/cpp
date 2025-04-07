@@ -45,24 +45,31 @@ void BitcoinExchange::_convertQueries(const std::string & filename) {
 	while (getline(file, line)) {
 		size_t pipe = line.find('|');
 		if (pipe == std::string::npos) {
-			std::cout << "Error: missing divider ('|')\n";
+			std::cout << "Error: missing divider '|'\n";
 			continue;
 		}
 
-		std::string date = line.substr(0, pipe);
+		std::string date = _trim(line.substr(0, pipe));
 		if (!_isValidDate(date)) {
-			std::cout << "Error: invalid date => " << date << "\n";
+			std::cout << "Error: invalid date => '" << date << "'\n";
 			continue;
 		}
+		
 		if (!_isValidRecord(date)) {
 			std::cout << "Error: records start at 2009-01-02 and end at 2022-03-29\n";
 			continue;
 		}
 
+		std::string value_str = _trim(line.substr(pipe + 1));
+		if (value_str.empty()) {
+			std::cout << "Error: invalid value => ''\n";
+			continue;
+		}
+
 		char *end;
-		double value = std::strtod(line.substr(pipe + 1).c_str(), &end);
+		double value = std::strtod(value_str.c_str(), &end);
 		if (!_isValidValue(value) || *end != '\0') {
-			std::cout << "Error: invalid value =>" << line.substr(pipe + 1) << (value > 1000 ? ": Too large a number\n" : "\n");
+			std::cout << "Error: invalid value => '" << value_str << "'" << (value > 1000 ? ": Too large a number\n" : "\n");
 			continue;
 		}
 
@@ -121,7 +128,7 @@ bool BitcoinExchange::_isValidDate(const std::string& date) {
 
 	ss >> year >> sep1 >> month >> sep2 >> day;
 
-	if (ss.fail() || ss.get() != ' ' || sep1 != '-' || sep2 != '-' || day < 1 || month < 1 || month > 12 || year < 0) {
+	if (ss.fail() || sep1 != '-' || sep2 != '-' || day < 1 || month < 1 || month > 12 || year < 0) {
 		return false;
 	}
 
@@ -144,7 +151,7 @@ bool BitcoinExchange::_isValidRecord(const std::string & date) {
 		return false;
 	}
 
-	if (date < "2009-01-02 " || date > "2022-03-29 ") {
+	if (date < "2009-01-02" || date > "2022-03-29") {
 		return false;
 	}
 
@@ -157,4 +164,16 @@ bool BitcoinExchange::_isValidValue(double & value) {
 	}
 
 	return true;
+
+
+}
+
+std::string BitcoinExchange::_trim(const std::string &s) {
+	size_t start = s.find_first_not_of(" \t\n\r\f\v");
+	if (start == std::string::npos){
+		return "";
+	}
+	
+	size_t end = s.find_last_not_of(" \t\n\r\f\v");
+	return s.substr(start, end - start + 1);
 }
