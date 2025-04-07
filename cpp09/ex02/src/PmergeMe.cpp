@@ -27,7 +27,7 @@ void PmergeMe::sort_deque(std::deque<int>& deque) {
 	_merge_insertion_sort<std::deque<int>, std::deque< std::deque<int>::iterator> >(deque, 1);
 }
 
-std::size_t PmergeMe::_jacobsthal_number(std::size_t n) {
+std::size_t PmergeMe::_calculate_jacobsthal_number(std::size_t n) {
 	if (std::size_t cache = _jacobsthal_cache[n])
 		return cache;
 
