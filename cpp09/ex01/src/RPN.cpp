@@ -64,22 +64,25 @@ void RPN::_validateExpression(std::string expression) {
 	std::string token;
 	std::istringstream iss(expression);
 
-	int nbOperands = 0;
-	int nbOperators = 0;
+	int operands = 0;
+	int operators = 0;
 
 	while (iss >> token) {
 		if (token == "+" || token == "-" || token == "*" || token == "/") {
-			nbOperators++;
+			operators++;
 		} else if (_isValidOperand(token)) {
-			nbOperands++;
+			operands++;
 		} else {
 			std::cout << "Error: invalid token \'" << token << "\'"<< std::endl;
 			exit(1);
 		}
 	}
 
-	if (nbOperands != nbOperators + 1) {
-		std::cout << "Error: invalid number of operands and operators" << std::endl;
+	if (operands > operators + 1) {
+		std::cout << "Error: missing " << operands - (operators + 1) << " operators" << std::endl;
+		exit(1);
+	} else if (operands < operators + 1) {
+		std::cout << "Error: missing " << (operators + 1)  - operands << " operands" << std::endl;
 		exit(1);
 	}
 }
