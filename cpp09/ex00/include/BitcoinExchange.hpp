@@ -27,6 +27,7 @@ private:
 	void _convertQueries(const std::string & filename);
 	void _convertValue(const std::pair<std::string, double> & entry);
 
+	bool _isValidHeader(const std::string & header);
 	bool _isValidDate(const std::string & date);
 	bool _isValidRecord(const std::string & date);
 	bool _isValidValue(double & value);

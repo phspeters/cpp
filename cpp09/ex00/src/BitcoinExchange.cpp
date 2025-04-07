@@ -41,11 +41,15 @@ void BitcoinExchange::_convertQueries(const std::string & filename) {
 
 	std::string line;
 	getline(file, line);
+	if (!_isValidHeader(line)) {
+		std::cout << "Error: invalid header => '" << line << "'\n";
+		return;
+	}
 
 	while (getline(file, line)) {
 		size_t pipe = line.find('|');
 		if (pipe == std::string::npos) {
-			std::cout << "Error: missing divider '|'\n";
+			std::cout << "Error: invalid input => missing divider '|'\n";
 			continue;
 		}
 
@@ -119,6 +123,18 @@ const char* BitcoinExchange::_validateFile(const std::string & filename) {
 	}
 
 	return filename.c_str();
+}
+
+bool BitcoinExchange::_isValidHeader(const std::string & header) {
+	std::istringstream ss(header);
+	std::string date, pipe, value;
+
+	ss >> date >> pipe >> value;
+	if (ss.fail() || pipe != "|" || date != "date" || value != "value") {
+		return false;
+	}
+
+	return true;
 }
 
 bool BitcoinExchange::_isValidDate(const std::string& date) {
