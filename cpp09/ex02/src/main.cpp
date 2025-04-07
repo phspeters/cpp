@@ -5,7 +5,7 @@
 
 #define DEBUG_MODE 0
 
-int max_comparison(int n)
+int max_comparisons(int n)
 {
 	int sum = 0;
 	for (int k = 1; k <= n; ++k) {
@@ -14,6 +14,7 @@ int max_comparison(int n)
 	}
 	return sum;
 }
+
 void parse_args(int argc, char **argv, std::vector<int>& vec, std::deque<int>& deq) {
 	for (int i = 1; i < argc; i++) {
 		char* endptr;
@@ -71,6 +72,6 @@ int main(int argc, char **argv) {
 	if (DEBUG_MODE) {
 		std::cout << std::endl;
 		std::cout << "Number of comparisons: " << PmergeMe::comparison_counter << std::endl;
-		std::cout << "Maximum number of comparisons: " << max_comparison(argc - 1) << std::endl;
+		std::cout << "Maximum number of comparisons: " << max_comparisons(argc - 1) << std::endl;
 	}
 }
