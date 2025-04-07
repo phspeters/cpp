@@ -19,12 +19,12 @@ PmergeMe::~PmergeMe() {}
 
 void PmergeMe::sort_vec(std::vector<int>& vec) {
 	comparison_counter = 0;
-	_merge_insertion_sort<std::vector<int>, std::vector<typename std::vector<int>::iterator> >(vec, 1);
+	_merge_insertion_sort<std::vector<int>, std::vector< std::vector<int>::iterator> >(vec, 1);
 }
 
 void PmergeMe::sort_deque(std::deque<int>& deque) {
 	comparison_counter = 0;
-	_merge_insertion_sort<std::deque<int>, std::deque<typename std::deque<int>::iterator> >(deque, 1);
+	_merge_insertion_sort<std::deque<int>, std::deque< std::deque<int>::iterator> >(deque, 1);
 }
 
 std::size_t PmergeMe::_jacobsthal_number(std::size_t n) {

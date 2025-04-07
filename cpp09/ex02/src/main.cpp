@@ -65,8 +65,8 @@ int main(int argc, char **argv) {
 	std::cout << "After:  ";
 	print_container(vec);
 
-	std::cout << "Time to process a range of 5 elements with std::vector : " << vec_time << " us\n";
-	std::cout << "Time to process a range of 5 elements with std::deque  : " << deq_time << " us\n";
+	std::cout << "Time to process a range of " << vec.size() << " elements with std::vector : " << vec_time << " us\n";
+	std::cout << "Time to process a range of " << deq.size() << " elements with std::deque  : " << deq_time << " us\n";
 
 	if (DEBUG_MODE) {
 		std::cout << std::endl;
