@@ -13,14 +13,6 @@ void subjectTests(void) {
 	std::cout << "... Printing Span sp: " << sp << '\n';
 	std::cout << "Shortest span: " << sp.shortestSpan() << '\n';
 	std::cout << "Longest span: " << sp.longestSpan() << '\n';
-	std::cout << '\n';
-
-	std::cout << "... Adding a number to a full Span sp:\n";
-	try {
-		sp.addNumber(42);
-	} catch (std::exception &e) {
-		std::cerr << "Error: " << e.what() << '\n';
-	}
 }
 
 void unitarySpanTests(void) {
@@ -51,7 +43,6 @@ void unitarySpanTests(void) {
 	} catch (std::exception &e) {
 		std::cerr << "Error: " << e.what() << '\n';
 	}
-	std::cout << '\n';
 }
 
 void shortSpanTests(void) {
