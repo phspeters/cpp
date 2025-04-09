@@ -6,8 +6,8 @@ std::size_t PmergeMe::_jacobsthal_cache[62] = {0};
 
 PmergeMe::PmergeMe() {}
 
-PmergeMe::PmergeMe(PmergeMe const & src) {
-	*this = src;
+PmergeMe::PmergeMe(PmergeMe const & rhs) {
+	(void)rhs;
 }
 
 PmergeMe & PmergeMe::operator=(PmergeMe const & rhs) {

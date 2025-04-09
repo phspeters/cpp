@@ -27,21 +27,21 @@ public:
 	PmergeMe& operator=(const PmergeMe& pm);
 	~PmergeMe();
 
-	static int comparison_counter;
-	
 	void sort_vec(std::vector<int>& vec);
 	void sort_deque(std::deque<int>& deque);
 
-private:
-static std::size_t _jacobsthal_cache[62];
-	std::size_t _calculate_jacobsthal_number(std::size_t n);
+	static int comparison_counter;
 
+private:
 	template <typename Container, typename Chain> void _merge_insertion_sort(Container& container, int pair_group_size);
 	template <typename Container, typename Chain> void _merge_phase(Container& container, int pair_group_size);
 	template <typename Container, typename Chain> void _create_chains(Container& container, int pair_group_size, Chain& main, Chain& pend);
 	template <typename Container, typename Chain> std::size_t _optimized_insertion(Chain& main, Chain& pend);
 	template <typename Container, typename Chain> void _insert_remaining(std::size_t container_size, int pair_group_size, Chain& main, Chain& pend, std::size_t processed_pend_elements);
 	template <typename Container, typename Chain> void _update_container(Container& container, Chain& main, int pair_group_size);
+	std::size_t _calculate_jacobsthal_number(std::size_t n);
+	
+	static std::size_t _jacobsthal_cache[62];
 };
 
 template <typename Container, typename Chain>
