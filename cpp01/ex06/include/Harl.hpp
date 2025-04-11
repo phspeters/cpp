@@ -1,29 +1,26 @@
 #ifndef HARL_HPP
-# define HARL_HPP
+#define HARL_HPP
 
-# include <iostream>
+#include <iostream>
 
 class Harl {
-public:
-	Harl();
-	~Harl();
-	void complain(std::string level);
+   public:
+    Harl();
+    ~Harl();
 
-private:
-	typedef void (Harl::*HarlMemberFunction)(void);
-	
-	int	getStartLevel(std::string level);
-	void debug(void);
-	void info(void);
-	void warning(void);
-	void error(void);
+    void complain(std::string level);
 
-	enum Level {
-		DEBUG,
-		INFO,
-		WARNING,
-		ERROR
-	};
+   private:
+    typedef void (Harl::*HarlMemberFunction)(void);
+
+    int getStartLevel(std::string level);
+
+    void debug(void);
+    void info(void);
+    void warning(void);
+    void error(void);
+
+    enum Level { DEBUG, INFO, WARNING, ERROR };
 };
 
 #endif

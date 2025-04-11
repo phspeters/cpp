@@ -1,17 +1,17 @@
 #ifndef CURE_HPP
-# define CURE_HPP
+#define CURE_HPP
 
-# include "AMateria.hpp"
+#include "AMateria.hpp"
 
 class Cure : public AMateria {
-public:
-	Cure();
-	Cure(Cure const &copy);
-	~Cure();
-	Cure &operator=(Cure const &copy);
+   public:
+    Cure();
+    Cure(const Cure& copy);
+    ~Cure();
+    Cure& operator=(const Cure& copy);
 
-	AMateria *clone() const;
-	void use(ICharacter &target);
+    AMateria* clone() const;
+    void use(ICharacter& target);
 };
 
 #endif

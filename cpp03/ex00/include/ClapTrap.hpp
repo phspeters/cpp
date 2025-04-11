@@ -1,43 +1,43 @@
 #ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#define CLAPTRAP_HPP
 
-# include <iostream>
-# include <string>
+#include <iostream>
+#include <string>
 
 class ClapTrap {
-public:
-	//constructors
-	ClapTrap(void);
-	ClapTrap(std::string name);
-	ClapTrap(const ClapTrap &claptrap);
+   public:
+    // constructors
+    ClapTrap(void);
+    ClapTrap(std::string name);
+    ClapTrap(const ClapTrap& claptrap);
 
-	//assignment operator
-	ClapTrap &operator=(const ClapTrap &claptrap);
+    // assignment operator
+    ClapTrap& operator=(const ClapTrap& claptrap);
 
-	//destructor
-	~ClapTrap(void);
+    // destructor
+    ~ClapTrap(void);
 
-	//member functions
-	void	attack(const std::string &target);
-	void	takeDamage(unsigned int amount);
-	void	beRepaired(unsigned int amount);
+    // member functions
+    void attack(const std::string& target);
+    void takeDamage(unsigned int amount);
+    void beRepaired(unsigned int amount);
 
-	//getters
-	std::string		getName(void) const;
-	unsigned int	getHitPoints(void) const;
-	unsigned int	getEnergyPoints(void) const;
-	unsigned int	getAttackDamage(void) const;
+    // getters
+    std::string getName(void) const;
+    unsigned int getHitPoints(void) const;
+    unsigned int getEnergyPoints(void) const;
+    unsigned int getAttackDamage(void) const;
 
-	//setters
-	void	setHitPoints(unsigned int hitPoints);
-	void	setEnergyPoints(unsigned int energyPoints);
+    // setters
+    void setHitPoints(unsigned int hitPoints);
+    void setEnergyPoints(unsigned int energyPoints);
 
-private:
-	//member attributes
-	std::string		_name;
-	unsigned int	_hitPoints;
-	unsigned int	_energyPoints;
-	unsigned int	_attackDamage;
+   private:
+    // member attributes
+    std::string _name;
+    unsigned int _hitPoints;
+    unsigned int _energyPoints;
+    unsigned int _attackDamage;
 };
 
 #endif

@@ -1,26 +1,26 @@
 #ifndef RPN_HPP
-# define RPN_HPP
+#define RPN_HPP
 
-# include <cstdlib>
-# include <iostream>
-# include <sstream>
-# include <string>
-# include <stack>
+#include <cstdlib>
+#include <iostream>
+#include <sstream>
+#include <stack>
+#include <string>
 
 class RPN {
-public:
-	RPN();
-	RPN(RPN const & src);
-	~RPN();
-	RPN & operator=(RPN const & rhs);
+   public:
+    RPN();
+    RPN(RPN const& src);
+    ~RPN();
+    RPN& operator=(RPN const& rhs);
 
-	void solveExpression(std::string expression);
+    int solveExpression(std::string expression);
 
-private:
-	std::stack<int> _stack;
+   private:
+    std::stack<int> _stack;
 
-	void _validateExpression(std::string expression);
-	bool _isValidOperand(std::string token);
+    bool _isValidExpression(std::string expression);
+    bool _isValidOperand(std::string token);
 };
 
 #endif

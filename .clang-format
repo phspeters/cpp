@@ -1,0 +1,14 @@
+# Google or LLVM, Mozilla, WebKit, Microsoft
+BasedOnStyle: Google
+IndentWidth: 4
+TabWidth: 4
+#UseTab: ForIndentation
+# For & and * placement
+PointerAlignment: Left
+# Place const before type
+QualifierAlignment: Left
+# Don't align assignments
+AlignConsecutiveAssignments: false
+# Don't align declarations 
+AlignConsecutiveDeclarations: false
+SpaceBeforeParens: ControlStatements

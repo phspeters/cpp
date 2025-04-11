@@ -2,26 +2,22 @@
 
 AMateria::AMateria() : _type("unknown") {}
 
-AMateria::AMateria(std::string const &type) : _type(type) {}
+AMateria::AMateria(const std::string& type) : _type(type) {}
 
-AMateria::AMateria(AMateria const &copy) {
-	*this = copy;
-}
+AMateria::AMateria(const AMateria& copy) { *this = copy; }
 
-AMateria &AMateria::operator=(AMateria const &copy) {
-	if (this != &copy) {
-		_type = copy._type;
-	}
-	
-	return (*this);
+AMateria& AMateria::operator=(const AMateria& copy) {
+    if (this != &copy) {
+        _type = copy._type;
+    }
+
+    return *this;
 }
 
 AMateria::~AMateria() {}
 
-std::string const &AMateria::getType() const {
-	return (_type);
-}
+const std::string& AMateria::getType() const { return _type; }
 
-void AMateria::use(ICharacter &target) {
-	std::cout << "* uses unknown materia on " << target.getName() << " *\n";
+void AMateria::use(ICharacter& target) {
+    std::cout << "* uses unknown materia on " << target.getName() << " *\n";
 }

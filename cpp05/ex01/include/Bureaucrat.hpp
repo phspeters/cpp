@@ -1,49 +1,50 @@
-#ifndef	BUREAUCRAT_HPP
-# define BUREAUCRAT_HPP
+#ifndef BUREAUCRAT_HPP
+#define BUREAUCRAT_HPP
 
-# include <iostream>
-# include <string>
-# include <exception>
-# include "Form.hpp"
+#include <exception>
+#include <iostream>
+#include <string>
+
+#include "Form.hpp"
 
 class Form;
 
 class Bureaucrat {
-public:
-	//Constructors
-	Bureaucrat();
-	Bureaucrat(std::string const name, int grade);
-	Bureaucrat(Bureaucrat const &other);
+   public:
+    // Constructors
+    Bureaucrat();
+    Bureaucrat(const std::string name, int grade);
+    Bureaucrat(const Bureaucrat& other);
 
-	//Assignment operator
-	Bureaucrat &operator=(Bureaucrat const &other);
+    // Assignment operator
+    Bureaucrat& operator=(const Bureaucrat& other);
 
-	//Destructor
-	~Bureaucrat();
+    // Destructor
+    ~Bureaucrat();
 
-	//Member functions
-	std::string const getName() const;
-	int getGrade() const;
-	void incrementGrade();
-	void decrementGrade();
-	void signForm(Form &form);
+    // Member functions
+    const std::string getName() const;
+    int getGrade() const;
+    void incrementGrade();
+    void decrementGrade();
+    void signForm(Form& form);
 
-	//Exceptions
-	class GradeTooHighException : public std::exception {
-	public:
-		virtual const char *what() const throw();
-	};
-	class GradeTooLowException : public std::exception {
-	public:
-		virtual const char *what() const throw();
-	};
+    // Exceptions
+    class GradeTooHighException : public std::exception {
+       public:
+        virtual const char* what() const throw();
+    };
+    class GradeTooLowException : public std::exception {
+       public:
+        virtual const char* what() const throw();
+    };
 
-private:
-	std::string const _name;
-	int _grade;
+   private:
+    const std::string _name;
+    int _grade;
 };
 
-std::ostream &operator<<(std::ostream &out, Bureaucrat const &bureaucrat);
-void testBureaucrat(std::string const name, int grade);
+std::ostream& operator<<(std::ostream& out, const Bureaucrat& bureaucrat);
+void testBureaucrat(const std::string name, int grade);
 
 #endif
